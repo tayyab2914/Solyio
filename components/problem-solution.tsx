@@ -13,6 +13,7 @@ export function ProblemSolution() {
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl text-balance">
             Pain-free AI MVP development, <span className="text-[#1e3a5f]">done properly</span>
           </h2>
+          <p className="text-lg text-muted-foreground">— without the pressure to expand your team</p>
         </div>
 
         {/* First Feature Block - Build Fast & Smart */}

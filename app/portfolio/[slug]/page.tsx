@@ -2,6 +2,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ProjectDetail } from "@/components/project-detail"
 import { notFound } from "next/navigation"
+import type { Metadata } from "next"
 
 const projects = {
   robomarketer: {
@@ -29,13 +30,14 @@ const projects = {
       { metric: "Time Saved", value: "40hrs", description: "saved per week on marketing tasks" },
       { metric: "Campaign ROI", value: "285%", description: "average return on ad spend" },
     ],
+    seoKeywords: ["AI marketing automation", "content generation platform", "marketing AI agent"],
   },
   expertaiq: {
     name: "ExpertAIQ",
     tagline: "Transform data into actionable insights",
     description: "AI-powered insights platform that transforms raw data into actionable business intelligence.",
     fullDescription:
-      "ExpertAIQ is an AI-driven analytics platform that helps businesses make data-informed decisions faster. The platform ingests data from multiple sources, processes it through intelligent agents, and delivers actionable insights in plain language. Perfect for businesses drowning in data but starving for insights.",
+      "ExpertAIQ is an AI-driven analytics platform that helps businesses make data-informed decisions faster. The platform ingests data from multiple sources, processes it through intelligent agents, and delivers actionable insights in plain language.",
     aiAgent: "Research & Analysis Agent",
     outcome: "80% reduction in manual research",
     tags: ["Analytics", "AI Insights", "Data"],
@@ -55,13 +57,14 @@ const projects = {
       { metric: "Data Sources", value: "15+", description: "integrated data sources" },
       { metric: "Reports", value: "500+", description: "automated reports generated monthly" },
     ],
+    seoKeywords: ["AI analytics platform", "business intelligence AI", "data analysis automation"],
   },
   cashads: {
     name: "CashAds",
     tagline: "AI-optimized advertising that maximizes ROAS",
     description: "Automated ad management platform with AI-driven bidding and creative optimization.",
     fullDescription:
-      "CashAds revolutionizes digital advertising by putting AI in charge of your ad campaigns. The platform automatically manages bidding strategies, optimizes creative assets, and reallocates budget to top-performing campaigns. It supports Google Ads, Meta Ads, and TikTok Ads from a unified interface.",
+      "CashAds revolutionizes digital advertising by putting AI in charge of your ad campaigns. The platform automatically manages bidding strategies, optimizes creative assets, and reallocates budget to top-performing campaigns.",
     aiAgent: "Ad Optimization Agent",
     outcome: "35% improvement in ROAS",
     tags: ["Advertising", "Optimization", "AI"],
@@ -81,13 +84,14 @@ const projects = {
       { metric: "CPA", value: "42%", description: "reduction in cost per acquisition" },
       { metric: "Ad Spend", value: "$2M+", description: "managed monthly ad budget" },
     ],
+    seoKeywords: ["AI advertising platform", "ad optimization AI", "ROAS improvement"],
   },
   "healthtrack-ai": {
     name: "HealthTrack AI",
     tagline: "Personalized health insights powered by AI",
     description: "Patient engagement platform with AI-powered health recommendations and appointment scheduling.",
     fullDescription:
-      "HealthTrack AI transforms patient engagement for healthcare providers. The platform uses AI agents to provide personalized health recommendations, automate appointment scheduling, and deliver proactive health insights. Patients get a personalized health companion while providers see improved engagement and reduced no-shows.",
+      "HealthTrack AI transforms patient engagement for healthcare providers. The platform uses AI agents to provide personalized health recommendations, automate appointment scheduling, and deliver proactive health insights.",
     aiAgent: "Health & Wellness Agent",
     outcome: "60% reduction in no-shows",
     tags: ["Healthcare", "Patient Engagement", "AI"],
@@ -107,13 +111,14 @@ const projects = {
       { metric: "Patient Engagement", value: "3x", description: "increase in app interactions" },
       { metric: "Time Saved", value: "25hrs", description: "saved weekly on scheduling" },
     ],
+    seoKeywords: ["healthcare AI platform", "patient engagement AI", "medical appointment scheduling"],
   },
   learnmate: {
     name: "LearnMate",
     tagline: "AI tutoring that adapts to every student",
     description: "Adaptive learning platform with AI tutors that personalize education for each student.",
     fullDescription:
-      "LearnMate is an AI-powered educational platform that provides personalized tutoring at scale. The platform analyzes each student's learning style, identifies knowledge gaps, and creates customized learning paths. AI tutors provide real-time assistance, making quality education accessible to everyone.",
+      "LearnMate is an AI-powered educational platform that provides personalized tutoring at scale. The platform analyzes each student's learning style, identifies knowledge gaps, and creates customized learning paths.",
     aiAgent: "Education & Tutoring Agent",
     outcome: "45% improvement in test scores",
     tags: ["Education", "EdTech", "AI Tutoring"],
@@ -133,6 +138,7 @@ const projects = {
       { metric: "Students", value: "10K+", description: "active learners on platform" },
       { metric: "Sessions", value: "50K+", description: "tutoring sessions monthly" },
     ],
+    seoKeywords: ["AI tutoring platform", "adaptive learning AI", "edtech AI"],
   },
   propwise: {
     name: "PropWise",
@@ -140,7 +146,7 @@ const projects = {
     description:
       "Real estate management platform with AI agents for tenant communication and maintenance coordination.",
     fullDescription:
-      "PropWise streamlines property management with intelligent AI agents. The platform handles tenant inquiries, coordinates maintenance requests, and automates rent collection. Property managers can manage their entire portfolio from one dashboard while AI handles the day-to-day operations.",
+      "PropWise streamlines property management with intelligent AI agents. The platform handles tenant inquiries, coordinates maintenance requests, and automates rent collection.",
     aiAgent: "Property Management Agent",
     outcome: "50% faster maintenance resolution",
     tags: ["Real Estate", "Property Management", "AI"],
@@ -160,35 +166,125 @@ const projects = {
       { metric: "Properties", value: "500+", description: "units managed on platform" },
       { metric: "Tenant Satisfaction", value: "4.8/5", description: "average rating" },
     ],
+    seoKeywords: ["property management AI", "real estate automation", "tenant management platform"],
   },
 }
+
+type ProjectKey = keyof typeof projects
 
 export function generateStaticParams() {
   return Object.keys(projects).map((slug) => ({ slug }))
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const project = projects[params.slug as keyof typeof projects]
-  if (!project) return { title: "Project Not Found - Solyio" }
-  return {
-    title: `${project.name} - Solyio Portfolio`,
-    description: project.description,
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const project = projects[slug as ProjectKey]
+
+  if (!project) {
+    return { title: "Project Not Found - Solyio" }
   }
+
+  return {
+    title: `${project.name} - AI-Powered ${project.tags[0]} MVP Case Study`,
+    description: `${project.fullDescription} Built in ${project.timeline} with ${project.aiAgent}. Results: ${project.outcome}.`,
+    keywords: [
+      ...(project.seoKeywords || []),
+      "AI MVP case study",
+      "SaaS development",
+      project.clientType,
+      ...project.tags.map((t) => t.toLowerCase()),
+    ],
+    alternates: {
+      canonical: `https://solyio.com/portfolio/${slug}`,
+    },
+    openGraph: {
+      title: `${project.name} - Solyio Portfolio`,
+      description: project.description,
+      url: `https://solyio.com/portfolio/${slug}`,
+      type: "article",
+      images: [
+        {
+          url: `/portfolio/${slug}-og.png`,
+          width: 1200,
+          height: 630,
+          alt: `${project.name} - AI-Powered MVP by Solyio`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.name} - AI MVP Case Study`,
+      description: `${project.description} ${project.outcome}`,
+    },
+  }
+}
+
+function ProjectJsonLd({ project, slug }: { project: (typeof projects)[ProjectKey]; slug: string }) {
+  const caseStudySchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: `${project.name} - AI-Powered MVP Case Study`,
+    description: project.fullDescription,
+    author: {
+      "@type": "Organization",
+      name: "Solyio",
+      url: "https://solyio.com",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Solyio",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://solyio.com/logo.png",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://solyio.com/portfolio/${slug}`,
+    },
+    about: {
+      "@type": "SoftwareApplication",
+      name: project.name,
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Web",
+      description: project.description,
+    },
+  }
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://solyio.com" },
+      { "@type": "ListItem", position: 2, name: "Portfolio", item: "https://solyio.com/portfolio" },
+      { "@type": "ListItem", position: 3, name: project.name, item: `https://solyio.com/portfolio/${slug}` },
+    ],
+  }
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(caseStudySchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+    </>
+  )
 }
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const project = projects[slug as keyof typeof projects]
+  const project = projects[slug as ProjectKey]
 
   if (!project) {
     notFound()
   }
 
   return (
-    <main className="min-h-screen bg-background">
-      <Header />
-      <ProjectDetail project={project} />
-      <Footer />
-    </main>
+    <>
+      <ProjectJsonLd project={project} slug={slug} />
+      <main className="min-h-screen bg-background" role="main" aria-label={`${project.name} Case Study`}>
+        <Header />
+        <ProjectDetail project={project} />
+        <Footer />
+      </main>
+    </>
   )
 }
