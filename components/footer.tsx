@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 
 export function Footer() {
   const footerLinks = {
@@ -49,10 +50,7 @@ export function Footer() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#1e3a5f]">
-                <span className="text-sm font-bold text-white">S</span>
-              </div>
-              <span className="text-xl font-semibold text-foreground">Solyio</span>
+              <Image src="/logo.svg" alt="Solyio Logo" width={85} height={48} />
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">
               AI-powered MVP development for side-hustlers and non-technical founders.

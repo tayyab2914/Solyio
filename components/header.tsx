@@ -4,6 +4,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
+import Image from "next/image"
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -12,10 +13,11 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#1e3a5f]">
+          {/* <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#1e3a5f]">
             <span className="text-sm font-bold text-white">S</span>
           </div>
-          <span className="text-xl font-semibold text-foreground">Solyio</span>
+          <span className="text-xl font-semibold text-foreground">Solyio</span> */}
+         <Image src="/logo.svg" alt="Solyio Logo" width={85} height={48} />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
