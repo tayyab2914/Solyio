@@ -14,7 +14,7 @@ export function Hero() {
             </div>
 
             <h1 className="text-4xl font-bold leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl text-balance">
-              Launch a revenue-ready SaaS MVP in <span className="text-[#1e3a5f]">10 days</span>
+              Launch a revenue ready SaaS MVP in <span className="text-[#1e3a5f]">10 days</span>
             </h1>
 
             <p className="max-w-lg text-lg text-muted-foreground">
@@ -29,19 +29,19 @@ export function Hero() {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-[#1e3a5f] text-[#1e3a5f] hover:bg-[#f0f7ff] bg-transparent"
-              >
-                <Play className="mr-2 h-4 w-4" />
-                See AI use cases
-              </Button>
+              <Link href="/portfolio" className="inline-block">
+                <div
+                  className="border-[#1e3a5f] text-[#1e3a5f] hover:bg-[#f0f7ff] bg-transparent flex"
+                >
+                  <Play className="mr-2 h-4 w-4" />
+                  See AI use cases
+                </div>
+              </Link>
             </div>
 
             <p className="text-sm text-muted-foreground">
               <span className="inline-flex items-center gap-1">
-                <Check className="h-4 w-4 text-[#1e3a5f]" /> Limited slots per month
+                <Check className="h-4 w-4 text-[#1e3a5f]" /> High-touch development
               </span>
               <span className="mx-3">|</span>
               <span className="inline-flex items-center gap-1">

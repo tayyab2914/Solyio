@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export function ProblemSolution() {
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-16 md:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mx-auto mb-20 max-w-3xl text-center">
@@ -25,7 +25,7 @@ export function ProblemSolution() {
             </h3>
             <p className="mb-6 text-muted-foreground leading-relaxed">
               Stop wasting months on development cycles. With Solyio, you get a production-ready MVP with AI agents
-              integrated from day one — designed to generate revenue, not just look good.
+              integrated from day one. Designed to generate revenue, not just look good.
             </p>
 
             {/* Feature Tags */}
@@ -48,7 +48,7 @@ export function ProblemSolution() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-foreground">Sarah Chen</p>
-                  <p className="text-xs text-muted-foreground">Founder, HealthTrack AI</p>
+                  <p className="text-xs text-muted-foreground">Founder, ExpertAIQ</p>
                 </div>
               </div>
               <p className="text-sm italic text-muted-foreground">

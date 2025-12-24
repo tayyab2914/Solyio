@@ -36,7 +36,7 @@ export function HowItWorks() {
   ]
 
   return (
-    <section id="your-mvp-journey" className="py-20 md:py-28">
+    <section id="your-mvp-journey" className="py-16 md:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto mb-16 max-w-3xl text-center">
           <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-[#1e3a5f]">Your MVP Journey</p>

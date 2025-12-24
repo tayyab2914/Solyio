@@ -67,7 +67,7 @@ export function AIAgents() {
   ]
 
   return (
-    <section id="ai-agents" className="bg-muted/30 py-20 md:py-28">
+    <section id="ai-agents" className="bg-muted/30 py-16 md:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto mb-16 max-w-3xl text-center">
           <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-[#1e3a5f]">AI Agent Capabilities</p>
