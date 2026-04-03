@@ -26,6 +26,7 @@ interface CaseStudy {
   category: string
   tagline: string
   thumbnail: string
+  images: { challenge: string; gallery1: string; gallery2: string }
   heroMetrics: { value: string; label: string }[]
   quote: { text: string; author: string }
   challenge: {
@@ -54,6 +55,11 @@ const caseStudies: Record<string, CaseStudy> = {
     tagline:
       "How we built an AI research engine that eliminates manual data analysis — cutting research time by 80% and unlocking instant business intelligence.",
     thumbnail: "/ExpertAIQ.png",
+    images: {
+      challenge: CHALLENGE_IMG,
+      gallery1: GALLERY_IMG_1,
+      gallery2: GALLERY_IMG_2,
+    },
     heroMetrics: [
       { value: "+80%", label: "Research Efficiency" },
       { value: "15+", label: "Integrated Sources" },
@@ -145,6 +151,11 @@ const caseStudies: Record<string, CaseStudy> = {
     tagline:
       "How we engineered an autonomous marketing AI that 10x'd content output and drove 285% average ROAS — without adding a single headcount.",
     thumbnail: "/RoboMarketer.png",
+    images: {
+      challenge: "https://images.unsplash.com/photo-1432888622747-4eb9a8f5a07b?auto=format&fit=crop&w=1200&q=80",
+      gallery1: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+      gallery2: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80",
+    },
     heroMetrics: [
       { value: "10x", label: "Content Output" },
       { value: "285%", label: "Campaign ROI" },
@@ -236,6 +247,11 @@ const caseStudies: Record<string, CaseStudy> = {
     tagline:
       "How we deployed an AI-driven ad optimization engine that improved ROAS by 35% and cut cost per acquisition by 42% across $2M+ in monthly spend.",
     thumbnail: "/Cashads.png",
+    images: {
+      challenge: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+      gallery1: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=1200&q=80",
+      gallery2: "https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?auto=format&fit=crop&w=800&q=80",
+    },
     heroMetrics: [
       { value: "+35%", label: "ROAS Improvement" },
       { value: "−42%", label: "CPA Reduction" },
@@ -327,6 +343,11 @@ const caseStudies: Record<string, CaseStudy> = {
     tagline:
       "How we built an AI patient engagement platform that reduced appointment no-shows by 60% and tripled patient interactions for a leading healthcare clinic.",
     thumbnail: "/PriceSmurf.png",
+    images: {
+      challenge: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
+      gallery1: "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=1200&q=80",
+      gallery2: "https://images.unsplash.com/photo-1584982751601-97dthe70864d?auto=format&fit=crop&w=800&q=80",
+    },
     heroMetrics: [
       { value: "−60%", label: "No-show Rate" },
       { value: "3x", label: "Patient Engagement" },
@@ -418,6 +439,11 @@ const caseStudies: Record<string, CaseStudy> = {
     tagline:
       "How we engineered a personalized growth platform that tripled user retention and automated the entire user upgrade journey through predictive AI.",
     thumbnail: "/upgrr.png",
+    images: {
+      challenge: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80",
+      gallery1: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+      gallery2: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+    },
     heroMetrics: [
       { value: "+3x", label: "User Retention" },
       { value: "+50%", label: "Upgrade Velocity" },
@@ -500,6 +526,382 @@ const caseStudies: Record<string, CaseStudy> = {
       title: "Designed for Tomorrow",
       description:
         "Upgrr isn't just a retention tool; it's the growth intelligence layer that turns every user interaction into a compounding revenue signal.",
+    },
+  },
+
+  novapay: {
+    name: "NovaPay",
+    category: "Mobile · Fintech",
+    tagline:
+      "How we built a cross-platform React Native fintech app with full Stripe integration — subscriptions, one-time payments, and Connect payouts — scaling to 50,000 active users in under a year.",
+    thumbnail: "/novapay-ui.svg",
+    images: {
+      challenge: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1200&q=80",
+      gallery1: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=80",
+      gallery2: "https://images.unsplash.com/photo-1512941937669-84a2000f7bff?auto=format&fit=crop&w=800&q=80",
+    },
+    heroMetrics: [
+      { value: "+220%", label: "Transaction Volume" },
+      { value: "50k+", label: "Active Users" },
+    ],
+    quote: {
+      text: "Solyio delivered a Stripe integration so seamless our finance team thought it was built in-house. The app handles millions in transactions without a single failure.",
+      author: "CEO, NovaPay",
+    },
+    challenge: {
+      title: "The Challenge",
+      tagline:
+        "A fragmented payment stack with no unified mobile experience was bleeding users and blocking revenue growth.",
+      cards: [
+        {
+          icon: "payment",
+          title: "Broken Payment UX",
+          description:
+            "Users were abandoning checkout at a 74% rate due to redirects to browser-based payment pages, destroying trust and killing conversion on both iOS and Android.",
+        },
+        {
+          icon: "account_balance_wallet",
+          title: "No Marketplace Payouts",
+          description:
+            "The platform had no way to split and route payments to multiple vendors — blocking the entire marketplace model and requiring manual bank transfers every week.",
+        },
+      ],
+    },
+    solution: {
+      title: "The Mobile Payment Stack",
+      tagline:
+        "We engineered a React Native app with native Stripe SDKs, seamless checkout flows, and a full Connect marketplace payout engine.",
+      cards: [
+        {
+          n: "01",
+          title: "Native Stripe SDK Integration",
+          description:
+            "Embedded Stripe's React Native SDK with Payment Sheet for one-tap checkout, supporting cards, Apple Pay, and Google Pay — all within a single in-app flow.",
+          cta: "Payment Architecture",
+        },
+        {
+          n: "02",
+          title: "Stripe Connect Marketplace",
+          description:
+            "Built a Stripe Connect Express onboarding flow allowing vendors to register, receive automatic split payouts, and view earnings — all inside the mobile app.",
+          cta: "Connect Architecture",
+        },
+        {
+          n: "03",
+          title: "Subscription Engine",
+          description:
+            "Implemented Stripe Billing with free trial logic, proration handling, and dunning management — reducing involuntary churn by 38% through smart retry sequences.",
+          cta: "Billing Engine",
+        },
+      ],
+    },
+    outcomes: {
+      title: "The Outcome",
+      description:
+        "NovaPay became the client's highest-grossing product within 6 months of launch, processing over $3.2M monthly.",
+      bullets: [
+        {
+          title: "74% → 12% Checkout Abandonment",
+          description: "Native payment flows eliminated the browser redirect drop-off, making checkout frictionless on both iOS and Android.",
+        },
+        {
+          title: "Automated $1.4M Monthly in Vendor Payouts",
+          description: "Stripe Connect replaced weekly manual transfers — vendors now receive automatic, real-time payouts without any ops overhead.",
+        },
+      ],
+      tiles: [
+        { value: "+220%", label: "Volume Increase", bg: "bg-zinc-50", valueCls: "text-[#FF1E41]", labelCls: "text-zinc-400" },
+        { value: "50k+", label: "Active Users", bg: "bg-black", valueCls: "text-white", labelCls: "text-[#FF1E41]" },
+        { value: "$3.2M", label: "Monthly GMV", bg: "bg-[#FF1E41]", valueCls: "text-white", labelCls: "text-white/60" },
+        { value: "−38%", label: "Churn Drop", bg: "bg-zinc-100", valueCls: "text-black", labelCls: "text-zinc-400" },
+      ],
+    },
+    gallery: {
+      title: "Built for Scale from Day One",
+      description:
+        "NovaPay isn't a payment wrapper — it's a full financial operating system for the mobile generation, handling millions in daily transactions with enterprise-grade reliability.",
+    },
+  },
+
+  zencart: {
+    name: "ZenCart",
+    category: "Mobile · E-commerce",
+    tagline:
+      "How we built a Flutter e-commerce app with AI-powered product discovery, Stripe Checkout, Apple Pay, and Google Pay — delivering a 185% higher conversion rate than the client's legacy native app.",
+    thumbnail: "/zencart-ui.svg",
+    images: {
+      challenge: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1200&q=80",
+      gallery1: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&w=1200&q=80",
+      gallery2: "https://images.unsplash.com/photo-1523206489230-c012df5cde1b?auto=format&fit=crop&w=800&q=80",
+    },
+    heroMetrics: [
+      { value: "+185%", label: "Conversion Rate" },
+      { value: "4.9★", label: "App Store Rating" },
+    ],
+    quote: {
+      text: "We went from a 2.1-star app to a 4.9-star app in a single release. The Flutter rebuild with proper Stripe flows completely changed how our customers feel about buying from us.",
+      author: "CTO, ZenCart",
+    },
+    challenge: {
+      title: "The Challenge",
+      tagline:
+        "A slow, buggy native app with a broken checkout drove customers to competitors and dragged down the brand's reputation.",
+      cards: [
+        {
+          icon: "shopping_cart_off",
+          title: "Cart Abandonment Crisis",
+          description:
+            "The legacy iOS app had a 5-step checkout process with no saved cards and no Apple Pay — 81% of users dropped off before completing a purchase.",
+        },
+        {
+          icon: "devices_off",
+          title: "iOS-Only, Slow & Buggy",
+          description:
+            "Maintaining two separate codebases (Swift + Java) was consuming 80% of the dev budget, leaving no resources for features — Android users had been abandoned for 18 months.",
+        },
+      ],
+    },
+    solution: {
+      title: "The Flutter Rebuild",
+      tagline:
+        "We rebuilt the entire app in Flutter with a single codebase, AI recommendations, and a one-tap Stripe checkout with Apple Pay and Google Pay.",
+      cards: [
+        {
+          n: "01",
+          title: "Stripe Payment Sheet",
+          description:
+            "Integrated Stripe's Flutter SDK with Payment Sheet — one-tap checkout supporting cards, Apple Pay, Google Pay, and saved payment methods with 3DS2 authentication.",
+          cta: "Payment Flow",
+        },
+        {
+          n: "02",
+          title: "AI Product Discovery",
+          description:
+            "Built a personalized recommendation engine that surfaces products based on browsing behaviour, increasing average order value by 67% through intelligent upselling.",
+          cta: "Recommendation Engine",
+        },
+        {
+          n: "03",
+          title: "Cross-Platform in One Codebase",
+          description:
+            "A single Flutter codebase ships pixel-perfect experiences on iOS and Android, cutting development costs by 55% and halving release cycle times.",
+          cta: "Architecture",
+        },
+      ],
+    },
+    outcomes: {
+      title: "The Outcome",
+      description:
+        "ZenCart's rebirth on Flutter with Stripe turned a failing app into the client's primary revenue channel within 90 days of launch.",
+      bullets: [
+        {
+          title: "81% → 23% Cart Abandonment",
+          description: "One-tap Stripe checkout with Apple Pay eliminated the friction that was killing conversions — users now complete purchases in under 8 seconds.",
+        },
+        {
+          title: "55% Reduction in Development Cost",
+          description: "A unified Flutter codebase replaced two separate native teams, freeing budget to ship 3x more features in the same time.",
+        },
+      ],
+      tiles: [
+        { value: "+185%", label: "Conversion", bg: "bg-zinc-50", valueCls: "text-[#FF1E41]", labelCls: "text-zinc-400" },
+        { value: "4.9★", label: "App Store", bg: "bg-black", valueCls: "text-white", labelCls: "text-[#FF1E41]" },
+        { value: "+67%", label: "Avg Order Value", bg: "bg-[#FF1E41]", valueCls: "text-white", labelCls: "text-white/60" },
+        { value: "−55%", label: "Dev Cost", bg: "bg-zinc-100", valueCls: "text-black", labelCls: "text-zinc-400" },
+      ],
+    },
+    gallery: {
+      title: "One App. Every Platform.",
+      description:
+        "ZenCart proves that Flutter done right isn't a compromise — it's a competitive advantage that ships faster, costs less, and converts better than anything that came before it.",
+    },
+  },
+
+  trackrpro: {
+    name: "TrackrPro",
+    category: "Mobile · Health & Fitness",
+    tagline:
+      "How we built a Swift-native iOS fitness app with Stripe subscription billing and StoreKit 2 — growing to 40,000 paying subscribers in 8 months with a 94% trial-to-paid conversion rate.",
+    thumbnail: "/trackrpro-ui.svg",
+    images: {
+      challenge: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=1200&q=80",
+      gallery1: "https://images.unsplash.com/photo-1434682881908-b43d0467b798?auto=format&fit=crop&w=1200&q=80",
+      gallery2: "https://images.unsplash.com/photo-1510440777527-f17fb63e60ca?auto=format&fit=crop&w=800&q=80",
+    },
+    heroMetrics: [
+      { value: "40k+", label: "Paying Subscribers" },
+      { value: "94%", label: "Trial-to-Paid Rate" },
+    ],
+    quote: {
+      text: "The subscription architecture Solyio built handles everything — trials, upgrades, downgrades, and failed payments — without us touching a line of code. It just works.",
+      author: "Founder, TrackrPro",
+    },
+    challenge: {
+      title: "The Challenge",
+      tagline:
+        "The fitness app had no monetisation strategy — users could access everything for free, and the team had no way to implement or manage subscriptions without breaking the UX.",
+      cards: [
+        {
+          icon: "money_off",
+          title: "Zero Monetisation",
+          description:
+            "With 80,000 free users and no revenue, the team needed a frictionless subscription paywall that converted without alienating the existing user base.",
+        },
+        {
+          icon: "sync_problem",
+          title: "Subscription State Chaos",
+          description:
+            "Competitors were managing subscription states (active, paused, cancelled, trial) with bespoke backend code that broke constantly — the client needed something bulletproof.",
+        },
+      ],
+    },
+    solution: {
+      title: "The iOS Monetisation Engine",
+      tagline:
+        "We engineered a dual-track monetisation system using Stripe for web payments and StoreKit 2 for App Store billing — with a unified entitlement layer across both.",
+      cards: [
+        {
+          n: "01",
+          title: "Stripe Subscription Billing",
+          description:
+            "Integrated Stripe Billing with 7-day free trial, annual/monthly plans, and smart dunning — automated retry logic recovered 34% of failed payments that would otherwise churn.",
+          cta: "Billing System",
+        },
+        {
+          n: "02",
+          title: "StoreKit 2 In-App Purchases",
+          description:
+            "Native StoreKit 2 integration for App Store subscriptions with real-time receipt validation, promotional offers, and family sharing — fully compliant with App Store guidelines.",
+          cta: "StoreKit Architecture",
+        },
+        {
+          n: "03",
+          title: "Unified Entitlement Layer",
+          description:
+            "A backend entitlement service syncs subscription state from both Stripe and StoreKit 2 in real time — users who pay via web or App Store get instant access, zero delays.",
+          cta: "Entitlement Engine",
+        },
+      ],
+    },
+    outcomes: {
+      title: "The Outcome",
+      description:
+        "TrackrPro went from zero revenue to a profitable subscription business generating $480K MRR in under a year.",
+      bullets: [
+        {
+          title: "94% Trial-to-Paid Conversion",
+          description: "A carefully designed 7-day trial with progressive feature unlocking and smart push notifications drove one of the highest trial conversion rates in the fitness category.",
+        },
+        {
+          title: "34% Failed Payment Recovery",
+          description: "Stripe's smart retry logic and our custom dunning sequences automatically recovered subscriptions that would otherwise have churned silently.",
+        },
+      ],
+      tiles: [
+        { value: "40k+", label: "Subscribers", bg: "bg-zinc-50", valueCls: "text-[#FF1E41]", labelCls: "text-zinc-400" },
+        { value: "94%", label: "Trial Conversion", bg: "bg-black", valueCls: "text-white", labelCls: "text-[#FF1E41]" },
+        { value: "$480K", label: "MRR", bg: "bg-[#FF1E41]", valueCls: "text-white", labelCls: "text-white/60" },
+        { value: "+34%", label: "Payment Recovery", bg: "bg-zinc-100", valueCls: "text-black", labelCls: "text-zinc-400" },
+      ],
+    },
+    gallery: {
+      title: "Monetisation That Respects the User",
+      description:
+        "TrackrPro shows that a well-architected subscription system doesn't just make money — it builds trust, reduces churn, and turns free users into loyal paying customers.",
+    },
+  },
+
+  deliveriq: {
+    name: "DeliverIQ",
+    category: "Mobile · Logistics",
+    tagline:
+      "How we built a React Native on-demand delivery marketplace with Stripe Connect split payments, real-time GPS tracking, and automated payouts to 500+ courier partners — cutting delivery time by 45%.",
+    thumbnail: "/deliveriq-ui.svg",
+    images: {
+      challenge: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=1200&q=80",
+      gallery1: "https://images.unsplash.com/photo-1616400619175-5beda3a17896?auto=format&fit=crop&w=1200&q=80",
+      gallery2: "https://images.unsplash.com/photo-1501700493788-fa1a4fc9fe62?auto=format&fit=crop&w=800&q=80",
+    },
+    heroMetrics: [
+      { value: "−45%", label: "Delivery Time" },
+      { value: "500+", label: "Courier Partners" },
+    ],
+    quote: {
+      text: "The Stripe Connect implementation alone saved us 3 full-time ops roles. Payouts that took 5 days of manual work now happen automatically within minutes of delivery completion.",
+      author: "COO, DeliverIQ",
+    },
+    challenge: {
+      title: "The Challenge",
+      tagline:
+        "Manual courier payments, no real-time tracking, and a broken dispatch system were crippling a delivery network trying to compete with Uber Eats and DoorDash.",
+      cards: [
+        {
+          icon: "local_shipping",
+          title: "Manual Payout Nightmare",
+          description:
+            "Paying 500+ couriers required a 5-person finance team processing manual bank transfers every Friday — error-prone, expensive, and a constant source of disputes.",
+        },
+        {
+          icon: "location_off",
+          title: "No Real-Time Visibility",
+          description:
+            "Customers had no live tracking — only an estimated window. Courier no-shows went undetected for up to 30 minutes, causing cascading delivery failures.",
+        },
+      ],
+    },
+    solution: {
+      title: "The Delivery Platform",
+      tagline:
+        "We built a three-app React Native ecosystem — customer app, courier app, and merchant dashboard — unified by Stripe Connect and real-time WebSocket tracking.",
+      cards: [
+        {
+          n: "01",
+          title: "Stripe Connect Payouts",
+          description:
+            "Stripe Connect Express onboarding lets couriers sign up in under 3 minutes. Payouts are split automatically on delivery completion — platform fee deducted, courier paid instantly.",
+          cta: "Connect Architecture",
+        },
+        {
+          n: "02",
+          title: "Real-Time GPS Tracking",
+          description:
+            "WebSocket-powered live location streaming with sub-second updates. Customers see their courier on a live map; merchants see all active deliveries on a live fleet dashboard.",
+          cta: "Tracking System",
+        },
+        {
+          n: "03",
+          title: "AI Dispatch Engine",
+          description:
+            "Machine-learning dispatch algorithm assigns orders to the optimal courier based on proximity, historical performance, and live traffic data — cutting average delivery time by 45%.",
+          cta: "Dispatch AI",
+        },
+      ],
+    },
+    outcomes: {
+      title: "The Outcome",
+      description:
+        "DeliverIQ became the dominant player in their city within 6 months of launch, processing 8,000+ deliveries daily.",
+      bullets: [
+        {
+          title: "Full Payout Automation — Zero Finance Team",
+          description: "Stripe Connect eliminated all manual payment processing. 500+ couriers receive automatic payouts minutes after each completed delivery — no human intervention required.",
+        },
+        {
+          title: "45% Faster Deliveries, 92% On-Time Rate",
+          description: "The AI dispatch engine and live tracking together reduced average delivery time from 52 minutes to 28 minutes, driving a 92% on-time delivery rate.",
+        },
+      ],
+      tiles: [
+        { value: "−45%", label: "Delivery Time", bg: "bg-zinc-50", valueCls: "text-[#FF1E41]", labelCls: "text-zinc-400" },
+        { value: "500+", label: "Couriers", bg: "bg-black", valueCls: "text-white", labelCls: "text-[#FF1E41]" },
+        { value: "8k+", label: "Daily Deliveries", bg: "bg-[#FF1E41]", valueCls: "text-white", labelCls: "text-white/60" },
+        { value: "92%", label: "On-Time Rate", bg: "bg-zinc-100", valueCls: "text-black", labelCls: "text-zinc-400" },
+      ],
+    },
+    gallery: {
+      title: "The Infrastructure Behind Every Delivery",
+      description:
+        "DeliverIQ proves that logistics technology wins not by copying Uber — but by building smarter, leaner infrastructure that moves money and packages faster than any competitor.",
     },
   },
 }
@@ -661,7 +1063,7 @@ export default async function CaseStudyPage({
                 <div className="rounded-[2.5rem] overflow-hidden bg-white shadow-2xl p-4 border border-zinc-100 group">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src={CHALLENGE_IMG}
+                    src={cs.images.challenge}
                     alt="Dashboard"
                     className="w-full h-auto rounded-[2rem] group-hover:scale-[1.02] transition-transform duration-700"
                   />
@@ -812,7 +1214,7 @@ export default async function CaseStudyPage({
               <div className="md:col-span-7">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={GALLERY_IMG_1}
+                  src={cs.images.gallery1}
                   alt="Gallery"
                   className="w-full h-[600px] object-cover rounded-[3rem] grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl"
                 />
@@ -822,7 +1224,7 @@ export default async function CaseStudyPage({
               <div className="md:col-span-5 space-y-8">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={GALLERY_IMG_2}
+                  src={cs.images.gallery2}
                   alt="Gallery"
                   className="w-full h-[280px] object-cover rounded-[3rem] grayscale hover:grayscale-0 transition-all duration-1000 shadow-xl"
                 />

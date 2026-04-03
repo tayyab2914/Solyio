@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="system-ui,-apple-system,sans-serif">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#0F1419"/>
+  <!-- Gradient orb -->
+  <radialGradient id="orb1" cx="75%" cy="35%" r="50%">
+    <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.15"/>
+    <stop offset="100%" stop-color="#0F1419" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="800" height="500" fill="url(#orb1)"/>
+
+  <!-- Left: Branding -->
+  <text x="60" y="80" fill="#F59E0B" font-size="11" font-weight="700" letter-spacing="3" opacity="0.9">DELIVERIQ · REACT NATIVE</text>
+  <text x="60" y="130" fill="white" font-size="36" font-weight="800" letter-spacing="-1">Deliver Faster,</text>
+  <text x="60" y="172" fill="white" font-size="36" font-weight="800" letter-spacing="-1">Pay <tspan fill="#F59E0B">Instantly.</tspan></text>
+  <text x="60" y="215" fill="#6B7280" font-size="13" font-weight="400">React Native · Stripe Connect · iOS · Android</text>
+
+  <!-- Stat pills -->
+  <rect x="60" y="245" width="100" height="34" rx="17" fill="#F59E0B" opacity="0.15"/>
+  <text x="110" y="267" fill="#F59E0B" font-size="12" font-weight="700" text-anchor="middle">−45% Costs</text>
+  <rect x="170" y="245" width="115" height="34" rx="17" fill="#1E2028"/>
+  <text x="227" y="267" fill="#FCD34D" font-size="12" font-weight="600" text-anchor="middle">500+ Couriers</text>
+  <rect x="295" y="245" width="110" height="34" rx="17" fill="#1E2028"/>
+  <text x="350" y="267" fill="#FCD34D" font-size="12" font-weight="600" text-anchor="middle">Auto Payouts</text>
+
+  <!-- Phone mockup -->
+  <rect x="468" y="20" width="200" height="410" rx="32" fill="#161B22" stroke="#21262D" stroke-width="2"/>
+  <!-- Notch -->
+  <rect x="530" y="20" width="76" height="24" rx="12" fill="#0F1419"/>
+  <!-- Screen -->
+  <rect x="476" y="50" width="184" height="372" rx="8" fill="#0D1117"/>
+
+  <!-- Status bar -->
+  <text x="490" y="70" fill="white" font-size="9" font-weight="600">9:41</text>
+  <rect x="628" y="62" width="24" height="10" rx="2" fill="#21262D"/>
+  <rect x="629" y="63" width="18" height="8" rx="1" fill="#F59E0B"/>
+
+  <!-- Map background simulation -->
+  <rect x="476" y="76" width="184" height="130" rx="4" fill="#1C2526"/>
+  <!-- Map grid lines -->
+  <line x1="476" y1="100" x2="660" y2="100" stroke="#253030" stroke-width="1"/>
+  <line x1="476" y1="125" x2="660" y2="125" stroke="#253030" stroke-width="1"/>
+  <line x1="476" y1="150" x2="660" y2="150" stroke="#253030" stroke-width="1"/>
+  <line x1="476" y1="175" x2="660" y2="175" stroke="#253030" stroke-width="1"/>
+  <line x1="510" y1="76" x2="510" y2="206" stroke="#253030" stroke-width="1"/>
+  <line x1="550" y1="76" x2="550" y2="206" stroke="#253030" stroke-width="1"/>
+  <line x1="590" y1="76" x2="590" y2="206" stroke="#253030" stroke-width="1"/>
+  <line x1="630" y1="76" x2="630" y2="206" stroke="#253030" stroke-width="1"/>
+  <!-- Route line -->
+  <polyline points="510,195 530,160 560,140 600,120 635,100" fill="none" stroke="#F59E0B" stroke-width="2" stroke-dasharray="4,3"/>
+  <!-- Start marker -->
+  <circle cx="510" cy="195" r="6" fill="#10B981"/>
+  <circle cx="510" cy="195" r="3" fill="white"/>
+  <!-- End marker -->
+  <circle cx="635" cy="100" r="6" fill="#F59E0B"/>
+  <text x="635" y="104" fill="white" font-size="7" text-anchor="middle">📦</text>
+  <!-- Driver pin -->
+  <circle cx="580" cy="132" r="10" fill="#F59E0B"/>
+  <text x="580" y="136" fill="white" font-size="8" text-anchor="middle">🛵</text>
+  <!-- Map label -->
+  <rect x="484" y="80" width="58" height="14" rx="4" fill="#0F1419" opacity="0.8"/>
+  <text x="513" y="90" fill="#F59E0B" font-size="7" text-anchor="middle" font-weight="700">LIVE MAP</text>
+
+  <!-- Order status card -->
+  <rect x="484" y="214" width="168" height="56" rx="12" fill="#1E2028"/>
+  <text x="496" y="230" fill="#9CA3AF" font-size="8">Order #DQ-8821</text>
+  <text x="496" y="244" fill="white" font-size="10" font-weight="700">En Route · 8 min away</text>
+  <rect x="496" y="251" width="100" height="6" rx="3" fill="#253030"/>
+  <rect x="496" y="251" width="72" height="6" rx="3" fill="#F59E0B"/>
+  <text x="640" y="244" fill="#F59E0B" font-size="9" font-weight="700" text-anchor="end">🛵</text>
+
+  <!-- Driver info -->
+  <rect x="484" y="278" width="168" height="34" rx="10" fill="#161B22"/>
+  <circle cx="498" cy="295" r="10" fill="#21262D"/>
+  <text x="498" y="299" fill="#F59E0B" font-size="10" text-anchor="middle">👤</text>
+  <text x="515" y="291" fill="white" font-size="9" font-weight="600">Marcus K.</text>
+  <text x="515" y="302" fill="#6B7280" font-size="7">4.92★ · 2,341 deliveries</text>
+  <text x="644" y="294" fill="#10B981" font-size="9" text-anchor="end">📞</text>
+  <text x="644" y="306" fill="#10B981" font-size="9" text-anchor="end">💬</text>
+
+  <!-- Payment row -->
+  <rect x="484" y="320" width="168" height="28" rx="8" fill="#1E2028"/>
+  <text x="496" y="332" fill="#9CA3AF" font-size="7">Payment</text>
+  <text x="496" y="343" fill="white" font-size="9" font-weight="700">Stripe Connect</text>
+  <text x="644" y="338" fill="#10B981" font-size="8" font-weight="700" text-anchor="end">Split ✓</text>
+
+  <!-- Payout strip -->
+  <rect x="484" y="356" width="168" height="28" rx="8" fill="#1A1500"/>
+  <text x="496" y="368" fill="#9CA3AF" font-size="7">Courier Payout</text>
+  <text x="496" y="379" fill="#F59E0B" font-size="9" font-weight="700">$18.40 → Instant</text>
+  <text x="644" y="374" fill="#6B7280" font-size="7" text-anchor="end">via Stripe</text>
+
+  <!-- Rating prompt -->
+  <rect x="484" y="390" width="168" height="28" rx="8" fill="#161B22" stroke="#21262D" stroke-width="1"/>
+  <text x="568" y="402" fill="#9CA3AF" font-size="7" text-anchor="middle">Rate your experience</text>
+  <text x="530" y="413" fill="#F59E0B" font-size="10" text-anchor="middle">★★★★★</text>
+  <text x="620" y="413" fill="#374151" font-size="10" text-anchor="middle">★★★★★</text>
+
+  <!-- Nav bar -->
+  <rect x="476" y="406" width="184" height="16" rx="0" fill="#0D1117"/>
+  <text x="508" y="418" fill="#F59E0B" font-size="9" text-anchor="middle">⊞</text>
+  <text x="540" y="418" fill="#374151" font-size="9" text-anchor="middle">📦</text>
+  <text x="572" y="418" fill="#374151" font-size="9" text-anchor="middle">💰</text>
+  <text x="604" y="418" fill="#374151" font-size="9" text-anchor="middle">👤</text>
+
+  <!-- Second phone (partial — courier view) -->
+  <rect x="390" y="60" width="90" height="180" rx="16" fill="#161B22" stroke="#21262D" stroke-width="1" opacity="0.8"/>
+  <rect x="396" y="80" width="78" height="152" rx="6" fill="#0D1117" opacity="0.9"/>
+  <text x="435" y="104" fill="#F59E0B" font-size="7" text-anchor="middle" font-weight="700">COURIER APP</text>
+  <rect x="403" y="110" width="64" height="24" rx="6" fill="#1A1500" opacity="0.8"/>
+  <text x="435" y="121" fill="#FCD34D" font-size="6" text-anchor="middle" font-weight="700">Active Orders: 2</text>
+  <text x="435" y="131" fill="#F59E0B" font-size="6" text-anchor="middle">Earnings: $94.20</text>
+  <rect x="403" y="140" width="64" height="14" rx="7" fill="#10B981" opacity="0.6"/>
+  <text x="435" y="150" fill="white" font-size="6" text-anchor="middle">Accept New Order</text>
+  <text x="435" y="170" fill="#6B7280" font-size="6" text-anchor="middle">Stripe Connect</text>
+  <text x="435" y="180" fill="#6B7280" font-size="6" text-anchor="middle">instant payouts</text>
+  <rect x="403" y="188" width="64" height="14" rx="7" fill="#F59E0B" opacity="0.5"/>
+  <text x="435" y="198" fill="white" font-size="6" text-anchor="middle">Cash Out Now →</text>
+  <text x="435" y="216" fill="#374151" font-size="6" text-anchor="middle">500+ couriers live</text>
+
+  <!-- Bottom label -->
+  <text x="60" y="460" fill="#21262D" font-size="11">SOLYIO · REACT NATIVE · STRIPE CONNECT · SPLIT PAYMENTS · AUTO PAYOUTS</text>
+</svg>

@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="system-ui,-apple-system,sans-serif">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#F8F5FF"/>
+  <!-- Gradient orb -->
+  <radialGradient id="orb1" cx="80%" cy="30%" r="50%">
+    <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.12"/>
+    <stop offset="100%" stop-color="#F8F5FF" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="800" height="500" fill="url(#orb1)"/>
+
+  <!-- Left: Branding -->
+  <text x="60" y="80" fill="#7C3AED" font-size="11" font-weight="700" letter-spacing="3" opacity="0.9">ZENCART · FLUTTER</text>
+  <text x="60" y="130" fill="#1A1033" font-size="36" font-weight="800" letter-spacing="-1">Shop Smarter,</text>
+  <text x="60" y="172" fill="#1A1033" font-size="36" font-weight="800" letter-spacing="-1">Convert <tspan fill="#7C3AED">Faster.</tspan></text>
+  <text x="60" y="215" fill="#6B7280" font-size="13" font-weight="400">Flutter · Stripe Checkout · Apple Pay · Google Pay</text>
+
+  <!-- Stat pills -->
+  <rect x="60" y="245" width="115" height="34" rx="17" fill="#7C3AED" opacity="0.12"/>
+  <text x="117" y="267" fill="#7C3AED" font-size="12" font-weight="700" text-anchor="middle">+185% CVR</text>
+  <rect x="185" y="245" width="110" height="34" rx="17" fill="#EDE9FE"/>
+  <text x="240" y="267" fill="#5B21B6" font-size="12" font-weight="600" text-anchor="middle">$2M+ Revenue</text>
+  <rect x="305" y="245" width="90" height="34" rx="17" fill="#EDE9FE"/>
+  <text x="350" y="267" fill="#5B21B6" font-size="12" font-weight="600" text-anchor="middle">4.9★ Rating</text>
+
+  <!-- Phone mockup -->
+  <rect x="468" y="20" width="200" height="410" rx="32" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+  <!-- Notch -->
+  <rect x="530" y="20" width="76" height="24" rx="12" fill="#F3F4F6"/>
+  <!-- Screen -->
+  <rect x="476" y="50" width="184" height="372" rx="8" fill="#F9FAFB"/>
+
+  <!-- Status bar -->
+  <text x="490" y="70" fill="#374151" font-size="9" font-weight="600">9:41</text>
+  <rect x="628" y="62" width="24" height="10" rx="2" fill="#D1D5DB"/>
+  <rect x="629" y="63" width="20" height="8" rx="1" fill="#7C3AED"/>
+
+  <!-- Header -->
+  <text x="490" y="96" fill="#6B7280" font-size="9">Discover</text>
+  <text x="490" y="110" fill="#1A1033" font-size="12" font-weight="700">ZenCart</text>
+  <circle cx="646" cy="100" r="14" fill="#EDE9FE"/>
+  <text x="646" y="105" fill="#7C3AED" font-size="11" text-anchor="middle">🛍</text>
+
+  <!-- Search bar -->
+  <rect x="484" y="120" width="168" height="26" rx="13" fill="#F3F4F6"/>
+  <text x="568" y="137" fill="#9CA3AF" font-size="9" text-anchor="middle">Search products...</text>
+
+  <!-- Category chips -->
+  <rect x="484" y="155" width="42" height="18" rx="9" fill="#7C3AED"/>
+  <text x="505" y="167" fill="white" font-size="7" font-weight="700" text-anchor="middle">All</text>
+  <rect x="532" y="155" width="48" height="18" rx="9" fill="#EDE9FE"/>
+  <text x="556" y="167" fill="#7C3AED" font-size="7" font-weight="600" text-anchor="middle">Fashion</text>
+  <rect x="586" y="155" width="46" height="18" rx="9" fill="#EDE9FE"/>
+  <text x="609" y="167" fill="#7C3AED" font-size="7" font-weight="600" text-anchor="middle">Beauty</text>
+
+  <!-- Featured product card -->
+  <rect x="484" y="180" width="168" height="100" rx="14" fill="#7C3AED"/>
+  <text x="496" y="202" fill="rgba(255,255,255,0.7)" font-size="8">Featured Drop</text>
+  <text x="496" y="218" fill="white" font-size="13" font-weight="800">Air Pro Max</text>
+  <text x="496" y="232" fill="rgba(255,255,255,0.8)" font-size="9">Wireless Headphones</text>
+  <text x="496" y="248" fill="white" font-size="14" font-weight="900">$249</text>
+  <rect x="614" y="255" width="30" height="16" rx="8" fill="white"/>
+  <text x="629" y="266" fill="#7C3AED" font-size="8" font-weight="800" text-anchor="middle">Buy</text>
+  <!-- Product image placeholder -->
+  <circle cx="635" cy="212" r="22" fill="rgba(255,255,255,0.15)"/>
+  <text x="635" y="217" fill="white" font-size="18" text-anchor="middle">🎧</text>
+
+  <!-- Product grid label -->
+  <text x="490" y="298" fill="#1A1033" font-size="10" font-weight="700">Popular Now</text>
+
+  <!-- Product item 1 -->
+  <rect x="484" y="306" width="78" height="80" rx="10" fill="white" stroke="#F3F4F6" stroke-width="1"/>
+  <text x="523" y="335" fill="#374151" font-size="18" text-anchor="middle">👟</text>
+  <text x="523" y="350" fill="#1A1033" font-size="7" font-weight="700" text-anchor="middle">Air Zoom</text>
+  <text x="523" y="362" fill="#7C3AED" font-size="8" font-weight="900" text-anchor="middle">$89</text>
+  <rect x="549" y="372" width="14" height="14" rx="7" fill="#7C3AED"/>
+  <text x="556" y="382" fill="white" font-size="9" text-anchor="middle">+</text>
+
+  <!-- Product item 2 -->
+  <rect x="570" y="306" width="78" height="80" rx="10" fill="white" stroke="#F3F4F6" stroke-width="1"/>
+  <text x="609" y="335" fill="#374151" font-size="18" text-anchor="middle">👜</text>
+  <text x="609" y="350" fill="#1A1033" font-size="7" font-weight="700" text-anchor="middle">Lux Bag</text>
+  <text x="609" y="362" fill="#7C3AED" font-size="8" font-weight="900" text-anchor="middle">$149</text>
+  <rect x="635" y="372" width="14" height="14" rx="7" fill="#7C3AED"/>
+  <text x="642" y="382" fill="white" font-size="9" text-anchor="middle">+</text>
+
+  <!-- Apple Pay / Google Pay strip -->
+  <rect x="484" y="396" width="168" height="26" rx="8" fill="#1A1033"/>
+  <text x="533" y="413" fill="white" font-size="8" font-weight="700" text-anchor="middle"> Pay</text>
+  <text x="568" y="413" fill="#6B7280" font-size="9" text-anchor="middle">|</text>
+  <text x="610" y="413" fill="white" font-size="8" font-weight="700" text-anchor="middle">G Pay</text>
+
+  <!-- Nav bar -->
+  <rect x="476" y="406" width="184" height="16" rx="0" fill="white"/>
+  <text x="508" y="418" fill="#7C3AED" font-size="9" text-anchor="middle">⊞</text>
+  <text x="540" y="418" fill="#D1D5DB" font-size="9" text-anchor="middle">🔍</text>
+  <text x="572" y="418" fill="#D1D5DB" font-size="9" text-anchor="middle">♡</text>
+  <text x="604" y="418" fill="#D1D5DB" font-size="9" text-anchor="middle">👤</text>
+
+  <!-- Second phone (partial) -->
+  <rect x="390" y="60" width="90" height="180" rx="16" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" opacity="0.8"/>
+  <rect x="396" y="80" width="78" height="152" rx="6" fill="#F9FAFB" opacity="0.9"/>
+  <text x="435" y="104" fill="#7C3AED" font-size="7" text-anchor="middle" font-weight="700">CHECKOUT</text>
+  <rect x="403" y="110" width="64" height="18" rx="4" fill="#EDE9FE" opacity="0.8"/>
+  <text x="435" y="123" fill="#5B21B6" font-size="7" text-anchor="middle">2 items · $338</text>
+  <rect x="403" y="135" width="64" height="14" rx="7" fill="#7C3AED" opacity="0.6"/>
+  <text x="435" y="145" fill="white" font-size="6" text-anchor="middle">Pay with Apple Pay</text>
+  <rect x="403" y="155" width="64" height="14" rx="7" fill="#1A1033" opacity="0.5"/>
+  <text x="435" y="165" fill="white" font-size="6" text-anchor="middle">Pay with Google Pay</text>
+  <rect x="403" y="175" width="64" height="14" rx="7" fill="#7C3AED" opacity="0.7"/>
+  <text x="435" y="185" fill="white" font-size="6" text-anchor="middle">Stripe Checkout →</text>
+  <text x="435" y="202" fill="#9CA3AF" font-size="6" text-anchor="middle">256-bit SSL secured</text>
+  <text x="435" y="212" fill="#9CA3AF" font-size="6" text-anchor="middle">powered by stripe</text>
+
+  <!-- Bottom label -->
+  <text x="60" y="460" fill="#C4B5FD" font-size="11">SOLYIO · FLUTTER · STRIPE CHECKOUT · APPLE PAY · GOOGLE PAY</text>
+</svg>

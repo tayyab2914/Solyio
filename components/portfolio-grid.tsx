@@ -3,7 +3,16 @@
 import Link from "next/link"
 import { useState } from "react"
 
-const PROJECTS = [
+const PROJECTS: {
+  slug: string
+  name: string
+  category: string
+  thumbnail: string
+  metric: string
+  description: string
+  detailHref: string
+  tags?: string[]
+}[] = [
   {
     slug: "expertaiq",
     name: "ExpertAIQ",
@@ -54,9 +63,53 @@ const PROJECTS = [
       "Intelligent growth platform accelerating user retention through AI-driven personalization and predictive engagement automation at scale.",
     detailHref: "/portfolio/upgrr",
   },
+  {
+    slug: "novapay",
+    name: "NovaPay",
+    category: "Mobile",
+    thumbnail: "/novapay-ui.svg",
+    metric: "+220%",
+    description:
+      "Cross-platform React Native fintech app with full Stripe integration — subscriptions, one-time payments, and Connect marketplace payouts for 50k+ active users.",
+    detailHref: "/portfolio/novapay",
+    tags: ["React Native", "Stripe", "iOS", "Android"],
+  },
+  {
+    slug: "zencart",
+    name: "ZenCart",
+    category: "Mobile",
+    thumbnail: "/zencart-ui.svg",
+    metric: "+185%",
+    description:
+      "AI-powered Flutter e-commerce app with Stripe Checkout, Apple Pay, and Google Pay — achieving 185% higher conversion vs the client's previous native app.",
+    detailHref: "/portfolio/zencart",
+    tags: ["Flutter", "Stripe", "Apple Pay", "Google Pay"],
+  },
+  {
+    slug: "trackrpro",
+    name: "TrackrPro",
+    category: "Mobile",
+    thumbnail: "/trackrpro-ui.svg",
+    metric: "40k+",
+    description:
+      "iOS-native fitness and wellness app with Stripe subscription billing, free trial management, and StoreKit 2 — scaling to 40,000 paying subscribers in 8 months.",
+    detailHref: "/portfolio/trackrpro",
+    tags: ["iOS", "Swift", "Stripe", "StoreKit 2"],
+  },
+  {
+    slug: "deliveriq",
+    name: "DeliverIQ",
+    category: "Mobile",
+    thumbnail: "/deliveriq-ui.svg",
+    metric: "−45%",
+    description:
+      "React Native on-demand delivery marketplace with Stripe Connect split payments, real-time driver tracking, and automated payouts to 500+ courier partners.",
+    detailHref: "/portfolio/deliveriq",
+    tags: ["React Native", "Stripe Connect", "iOS", "Android"],
+  },
 ]
 
-const CATEGORIES = ["All", "SaaS", "Marketing", "Advertising", "Healthcare"]
+const CATEGORIES = ["All", "SaaS", "Marketing", "Advertising", "Healthcare", "Mobile"]
 
 /* ─── Single card ─────────────────────────────────────────────────── */
 
@@ -105,6 +158,15 @@ function ProjectCard({
           <p className="text-[#5e3f3e] text-lg leading-relaxed max-w-lg">
             {project.description}
           </p>
+          {project.tags && (
+            <div className="flex flex-wrap gap-2 mt-1">
+              {project.tags.map((tag) => (
+                <span key={tag} className="px-3 py-1 rounded-full bg-[#f0eded] text-[10px] font-bold uppercase tracking-widest text-[#5e3f3e]">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
           <div className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#1c1b1b] group-hover:text-[#bb0029] transition-colors mt-2">
             View Case Study
             <span className="w-8 h-px bg-[#e8bcbb] group-hover:bg-[#bb0029] group-hover:w-12 transition-all inline-block" />
