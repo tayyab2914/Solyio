@@ -4,9 +4,9 @@ import { SiteNavbar } from "@/components/site-navbar"
 import { SiteFooter } from "@/components/site-footer"
 
 export const metadata: Metadata = {
-  title: "Services | Solyio",
+  title: "Services | Solyio — Web, Mobile, Cloud & AI",
   description:
-    "Strategic AI services for a digital world. We engineer intelligent systems that drive 2x Profit and market dominance through kinetic intelligence.",
+    "Solyio builds web platforms, mobile apps, cloud infrastructure, and AI automation. We help businesses operate smarter and scale faster.",
   alternates: { canonical: "https://solyio.com/services" },
 }
 
@@ -28,21 +28,19 @@ function HeroSection() {
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#eae7e7] rounded-full mb-6">
             <span className="w-2 h-2 rounded-full bg-[#FF1E41] animate-pulse" />
             <span className="text-xs font-bold tracking-widest uppercase text-[#5e3f3e] font-label">
-              Exponential Growth Engine
+              Everything Your Business Needs
             </span>
           </div>
 
           <h1 className="font-headline text-6xl md:text-8xl font-bold tracking-tighter leading-[0.9] text-[#1c1b1b] mb-8">
-            Strategic{" "}
-            <span className="text-[#FF1E41] italic">Services</span> for a
-            Digital World.
+            Services Built{" "}
+            <span className="text-[#FF1E41] italic">to Grow</span> Your
+            Business.
           </h1>
 
           <p className="text-xl text-[#5e3f3e] max-w-xl mb-10 leading-relaxed">
-            We don&apos;t just build software. We engineer intelligent systems
-            that drive{" "}
-            <span className="text-[#FF1E41] font-bold">2x Profit</span> and
-            market dominance through kinetic intelligence.
+            We build web platforms, mobile apps, cloud infrastructure, and
+            AI automation — so your business runs faster with less manual effort.
           </p>
 
           <div className="flex flex-wrap gap-4">
@@ -50,13 +48,13 @@ function HeroSection() {
               href="/book"
               className="kinetic-gradient text-white px-8 py-4 rounded-full font-headline font-black text-lg tracking-tight hover:shadow-[0_0_30px_rgba(255,30,65,0.3)] transition-all"
             >
-              Partner With Us
+              Book a Free Call
             </Link>
             <Link
               href="/portfolio"
               className="bg-[#e5e2e1] text-[#1c1b1b] px-8 py-4 rounded-full font-headline font-bold text-lg border-b-2 border-[#d8c2c1]/30 hover:bg-[#f0eded] transition-all"
             >
-              Our Portfolio
+              See Our Work
             </Link>
           </div>
         </div>
@@ -76,10 +74,10 @@ function HeroSection() {
                 </span>
                 <div className="text-right">
                   <div className="text-4xl font-headline font-black text-[#1c1b1b]">
-                    99.9%
+                    5x
                   </div>
                   <div className="text-xs uppercase tracking-widest text-[#5e3f3e]">
-                    Efficiency Gain
+                    Avg Ops Speed-up
                   </div>
                 </div>
               </div>
@@ -103,7 +101,7 @@ function HeroSection() {
                   analytics
                 </span>
                 <span className="font-headline font-bold text-sm tracking-tight text-[#1c1b1b]">
-                  AI PREDICTIVE SCALING ACTIVE
+                  AI AUTOMATION READY
                 </span>
               </div>
             </div>
@@ -147,25 +145,25 @@ function CapabilitiesSection() {
                 memory
               </span>
               <h3 className="font-headline text-3xl font-bold text-[#1c1b1b] mb-4">
-                AI Integration
+                AI Automation
               </h3>
               <p className="text-[#5e3f3e] leading-relaxed text-lg mb-8">
-                Deploy bespoke Large Language Models and predictive neural
-                networks into your existing stack. We move you from automation
-                to autonomous intelligence.
+                We automate the workflows slowing your business down. From
+                customer support and lead handling to internal ops and reporting
+                — custom AI that fits how you actually work.
               </p>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center gap-3 text-sm font-bold text-[#1c1b1b]">
                   <span className="material-symbols-outlined text-[#FF1E41] text-lg">
                     check_circle
                   </span>
-                  Custom LLM Fine-tuning
+                  AI Chatbots & Virtual Agents
                 </li>
                 <li className="flex items-center gap-3 text-sm font-bold text-[#1c1b1b]">
                   <span className="material-symbols-outlined text-[#FF1E41] text-lg">
                     check_circle
                   </span>
-                  Computer Vision Solutions
+                  Workflow & Process Automation
                 </li>
               </ul>
               <Link
@@ -190,8 +188,9 @@ function CapabilitiesSection() {
                 Web Development
               </h3>
               <p className="text-[#5e3f3e] text-sm leading-relaxed">
-                High-performance, SEO-optimized web architectures built for
-                global scale. Next-gen frameworks for next-gen results.
+                Fast, SEO-optimised websites and full-stack web platforms.
+                From marketing sites to SaaS products — built to perform and
+                built to scale.
               </p>
             </div>
             <div className="mt-8 pt-6 border-t border-[#d8c2c1]/30 flex justify-between items-center">
@@ -218,8 +217,9 @@ function CapabilitiesSection() {
                 Mobile Apps
               </h3>
               <p className="text-[#5e3f3e] text-sm leading-relaxed">
-                Intuitive iOS and Android experiences designed with kinetic
-                motion principles and seamless performance.
+                Cross-platform iOS and Android apps with smooth UX and solid
+                performance. React Native and Flutter — whichever fits your
+                project best.
               </p>
             </div>
             <div className="mt-8 pt-6 border-t border-[#d8c2c1]/30">
@@ -234,18 +234,18 @@ function CapabilitiesSection() {
             <div className="flex flex-col md:flex-row gap-10 items-center">
               <div className="w-full md:w-1/2">
                 <h3 className="font-headline text-3xl font-bold text-[#1c1b1b] mb-4">
-                  Enterprise Tech Solutions
+                  Cloud Infrastructure
                 </h3>
                 <p className="text-[#5e3f3e] leading-relaxed mb-6">
-                  Modernizing legacy infrastructure with cloud-native
-                  architectures and secure data pipelines for Fortune 500
-                  standards.
+                  Secure, reliable cloud environments on AWS, GCP or Azure.
+                  We set up, manage and optimise your infrastructure so it
+                  scales with your business without unnecessary costs.
                 </p>
                 <Link
                   href="/book"
                   className="bg-[#1c1b1b] text-[#fcf9f8] px-6 py-3 rounded-full font-headline font-bold text-sm hover:bg-[#FF1E41] transition-colors inline-block"
                 >
-                  Request Tech Audit
+                  Discuss Your Setup
                 </Link>
               </div>
 
@@ -283,23 +283,23 @@ function CapabilitiesSection() {
 const steps = [
   {
     num: "01",
-    title: "Diagnostic",
-    desc: "We analyze your current tech stack and identify performance bottlenecks.",
+    title: "Discovery",
+    desc: "We learn your business, your goals, and exactly what needs to be built or automated.",
   },
   {
     num: "02",
-    title: "Blueprint",
-    desc: "Architectural mapping of AI-integrated systems for 2x scalability.",
+    title: "Plan",
+    desc: "We define the scope, choose the right technology, and give you a clear timeline.",
   },
   {
     num: "03",
-    title: "Deployment",
-    desc: "Agile development cycles with continuous integration and testing.",
+    title: "Build",
+    desc: "Fast development cycles with constant communication — no black boxes, no surprises.",
   },
   {
     num: "04",
-    title: "Optimization",
-    desc: "Iterative AI refinement to ensure maximum ROI and market speed.",
+    title: "Launch & Support",
+    desc: "We ship, monitor, and stay available to iterate as your business grows.",
   },
 ]
 
@@ -309,11 +309,11 @@ function ProcessSection() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-24">
           <h2 className="font-headline text-5xl md:text-6xl font-bold tracking-tight text-[#1c1b1b] mb-6">
-            How We Scale Your Business.
+            How We Work With You.
           </h2>
           <p className="text-[#5e3f3e] max-w-2xl mx-auto text-lg">
-            A systematic approach to digital dominance, from initial friction to
-            exponential kinetic energy.
+            A straightforward process from first call to live product — built
+            around clear communication and real results.
           </p>
         </div>
 
@@ -353,18 +353,18 @@ function CTASection() {
           <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(circle_at_center,_#FF1E41_0%,_transparent_70%)]" />
           <div className="relative z-10">
             <h2 className="font-headline text-4xl md:text-6xl font-bold text-[#1c1b1b] mb-8 tracking-tighter">
-              Ready for{" "}
-              <span className="text-[#FF1E41] italic">Exponential</span> Growth?
+              Ready to{" "}
+              <span className="text-[#FF1E41] italic">Simplify</span> & Scale?
             </h2>
             <p className="text-[#5e3f3e] text-lg mb-12 max-w-2xl mx-auto">
-              Join the ranks of market leaders who have scaled their operations
-              using Solyio&apos;s kinetic intelligence engine.
+              Let's talk about what you need — web, mobile, cloud, or AI.
+              We'll figure out the fastest way to get it built and running.
             </p>
             <Link
               href="/book"
               className="bg-[#1c1b1b] text-white px-10 py-5 rounded-full font-headline font-black text-xl hover:bg-[#FF1E41] hover:scale-105 transition-all inline-block"
             >
-              Start Your Briefing
+              Book a Free Call
             </Link>
           </div>
         </div>

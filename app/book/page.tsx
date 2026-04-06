@@ -4,9 +4,9 @@ import { ContactForm } from "@/components/contact-form"
 import { SiteFooter } from "@/components/site-footer"
 
 export const metadata: Metadata = {
-  title: "Contact Solyio | Let's Build the Future",
+  title: "Contact Solyio | Book a Free Call",
   description:
-    "Start your kinetic growth journey. We engineer the neural infrastructure that scales intelligence and accelerates your roadmap by 10x.",
+    "Tell us what you need — web, mobile, cloud or AI. We'll get back to you within 2 hours and figure out the best way to build it together.",
   alternates: { canonical: "https://solyio.com/book" },
 }
 
@@ -18,22 +18,22 @@ function HeroSection() {
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
         <div className="md:col-span-8">
           <span className="text-[10px] uppercase tracking-[0.2em] text-[#bb0029] font-bold mb-4 block">
-            Communication Portal
+            Get In Touch
           </span>
           <h1 className="text-6xl md:text-8xl font-headline font-bold tracking-[-0.04em] leading-[0.9] text-[#1c1b1b] mb-8">
-            Let&apos;s Build the{" "}
+            Let&apos;s Build{" "}
             <br />
             <span
               className="text-transparent bg-clip-text"
               style={{ backgroundImage: "linear-gradient(135deg, #bb0029 0%, #e90035 100%)" }}
             >
-              Future.
+              Something Great.
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-[#5e3f3e] max-w-2xl leading-relaxed">
-            Start your kinetic growth journey today. We engineer the neural
-            infrastructure that scales intelligence and accelerates your roadmap
-            by 10x.
+            Tell us what you need — web platform, mobile app, cloud setup, or
+            AI automation. We&apos;ll get back to you within 2 hours and map
+            out exactly how to build it.
           </p>
         </div>
 
@@ -97,7 +97,7 @@ function ContactSection() {
               </h4>
               <p className="text-xl font-bold text-[#1c1b1b]">info@solyio.ai</p>
               <p className="text-sm text-[#5e3f3e]">
-                Response within 4 neural cycles (2 hours)
+                Response within 2 hours on business days
               </p>
             </div>
           </div>
@@ -125,13 +125,13 @@ function ContactSection() {
         <div className="bg-[#1c1b1b] text-[#fcf9f8] rounded-2xl p-10 relative overflow-hidden group">
           <div className="relative z-10">
             <h3 className="text-2xl font-headline font-bold mb-4">
-              Fast-Track Engagement
+              Prefer a Direct Call?
             </h3>
             <p className="text-[#e5e2e1] mb-8 text-sm leading-relaxed">
-              Skip the inbox. Schedule a direct technical consultation to discuss
-              how Solyio can deliver{" "}
-              <span className="text-[#bb0029] font-bold">2x profit efficiency</span>{" "}
-              within 6 months.
+              Skip the form. Email us directly and we&apos;ll schedule a
+              call to discuss your project — web, mobile, cloud or{" "}
+              <span className="text-[#bb0029] font-bold">AI automation</span>{" "}
+              — and figure out the best approach together.
             </p>
             <a
               href="mailto:info@solyio.ai"

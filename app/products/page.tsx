@@ -5,9 +5,9 @@ import { PortfolioGallerySection } from "@/components/portfolio-gallery-section"
 import { SiteFooter } from "@/components/site-footer"
 
 export const metadata: Metadata = {
-  title: "Products | Solyio — Technologies Designed for Impact",
+  title: "Solutions | Solyio — AI Tools We Build",
   description:
-    "High-performance AI engines that translate complex data into exponential profitability. Predictive Analytics, Custom AI Chatbots, and the Profit Optimizer Framework.",
+    "Solyio builds custom AI solutions for businesses — workflow automation, intelligent chatbots, and business intelligence dashboards tailored to your operations.",
   alternates: { canonical: "https://solyio.com/products" },
 }
 
@@ -30,21 +30,21 @@ function HeroSection() {
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#f0eded] rounded-full">
             <span className="w-2 h-2 rounded-full bg-[#FF1E41] animate-pulse" />
             <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#FF1E41]">
-              Intelligence in Motion
+              AI Solutions We Build
             </span>
           </div>
 
           <h1 className="text-6xl md:text-8xl font-headline font-bold leading-[0.9] tracking-tighter text-[#1c1b1b]">
-            Technologies
+            AI Tools
             <br />
-            Designed for{" "}
-            <span className="text-[#FF1E41]">Impact.</span>
+            Built for{" "}
+            <span className="text-[#FF1E41]">Your Business.</span>
           </h1>
 
           <p className="text-xl text-[#5e3f3e] max-w-lg leading-relaxed">
-            We build high-performance AI engines that translate complex data
-            into exponential profitability. Your growth is our primary
-            algorithm.
+            We build custom AI solutions that automate repetitive work, surface
+            business insights, and handle customer interactions — so your team
+            can focus on what actually matters.
           </p>
 
           <div className="flex flex-wrap gap-4 pt-4">
@@ -52,13 +52,13 @@ function HeroSection() {
               href="#forge"
               className="kinetic-gradient text-white font-headline font-bold px-8 py-4 rounded-full text-lg shadow-2xl shadow-[#FF1E41]/20 hover:scale-105 transition-transform"
             >
-              Explore Frameworks
+              See What We Build
             </Link>
             <Link
               href="/book"
               className="bg-[#e5e0e0] text-[#1c1b1b] border border-[#d5c2c1]/30 font-headline font-bold px-8 py-4 rounded-full text-lg hover:bg-[#f0eded] transition-colors"
             >
-              Book a Briefing
+              Book a Free Call
             </Link>
           </div>
         </div>
@@ -100,18 +100,18 @@ function HeroSection() {
               <div className="flex justify-between items-end">
                 <div>
                   <p className="text-[10px] text-[#5e3f3e] uppercase">
-                    Profit Projection
+                    Avg Time Saved
                   </p>
                   <p className="text-3xl font-headline font-bold text-[#FF1E41]">
-                    +214%
+                    40h/wk
                   </p>
                 </div>
                 <div className="text-right">
                   <p className="text-[10px] text-[#5e3f3e] uppercase">
-                    Confidence Score
+                    Automation Rate
                   </p>
                   <p className="text-xl font-headline font-bold text-[#006a66]">
-                    98.2%
+                    80%+
                   </p>
                 </div>
               </div>
@@ -136,11 +136,11 @@ function ForgeSection() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8 border-b border-[#d5c2c1] pb-8">
           <div className="max-w-2xl">
             <h2 className="text-4xl md:text-5xl font-headline font-bold text-[#1c1b1b] mb-4 italic">
-              The Forge
+              What We Build
             </h2>
             <p className="text-[#5e3f3e] text-lg">
-              Proprietary frameworks engineered for rapid deployment and
-              immediate competitive advantage.
+              Three core AI solutions we deploy for businesses — each
+              customised to your industry and workflow.
             </p>
           </div>
           <div className="text-right">
@@ -165,25 +165,26 @@ function ForgeSection() {
                     </span>
                   </div>
                   <h3 className="text-3xl font-headline font-bold text-[#1c1b1b] mb-4">
-                    Predictive Analytics Engine
+                    Business Intelligence Dashboard
                   </h3>
                   <p className="text-[#5e3f3e] mb-6 leading-relaxed">
-                    A high-velocity processing layer that identifies market
-                    anomalies and consumer behavior shifts before they manifest
-                    in standard reports.
+                    An AI layer on top of your existing data — pulling from
+                    multiple sources and turning it into plain-English answers,
+                    auto-generated reports, and real-time alerts. Like ExpertAIQ
+                    — 80% faster research for a data firm with 15+ sources.
                   </p>
                   <ul className="space-y-3">
                     <li className="flex items-center gap-3 text-sm text-[#5e3f3e] font-medium">
                       <span className="material-symbols-outlined text-[#FF1E41] text-sm">
                         check_circle
                       </span>
-                      Real-time stream processing
+                      Multi-source data unification
                     </li>
                     <li className="flex items-center gap-3 text-sm text-[#5e3f3e] font-medium">
                       <span className="material-symbols-outlined text-[#FF1E41] text-sm">
                         check_circle
                       </span>
-                      Autonomous bias correction
+                      Natural language querying
                     </li>
                   </ul>
                 </div>
@@ -218,8 +219,9 @@ function ForgeSection() {
                 Custom AI Chatbots
               </h3>
               <p className="text-[#5e3f3e] leading-relaxed">
-                Enterprise-grade LLM implementations that handle complex
-                customer reasoning while maintaining your exact brand voice.
+                AI agents that handle customer enquiries, qualify leads, answer
+                FAQs, and escalate when needed — in your brand's tone, available
+                24/7. Like PriceSmurf — 60% fewer no-shows for a healthcare clinic.
               </p>
             </div>
 
@@ -244,31 +246,32 @@ function ForgeSection() {
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
               <div className="lg:col-span-2">
                 <div className="inline-block px-4 py-1 bg-[#FF1E41] text-white text-[10px] font-black uppercase tracking-[0.2em] mb-6 rounded-full">
-                  Flagship Framework
+                  Most Popular
                 </div>
                 <h3 className="text-4xl md:text-5xl font-headline font-bold text-[#1c1b1b] mb-6">
-                  Profit Optimizer Framework
+                  Workflow Automation Suite
                 </h3>
                 <p className="text-[#5e3f3e] text-xl leading-relaxed">
-                  The ultimate mathematical engine for resource allocation. Our
-                  optimizer balances operational costs against market
-                  opportunities to automate the path to 2x profit.
+                  A fully custom AI system that automates the manual work
+                  eating your team's time — lead follow-ups, scheduling,
+                  invoicing, reporting, tenant management, and more. Like
+                  Upgrr — one AI agent doing the work of 3 staff across 500+ units.
                 </p>
                 <div className="flex gap-12 mt-10">
                   <div>
                     <p className="text-[#FF1E41] text-4xl font-headline font-bold">
-                      40%
+                      80%
                     </p>
                     <p className="text-xs uppercase font-bold tracking-widest text-[#5e3f3e] mt-1">
-                      Efficiency Gain
+                      Tasks Auto-Resolved
                     </p>
                   </div>
                   <div>
                     <p className="text-[#006a66] text-4xl font-headline font-bold">
-                      12x
+                      40h
                     </p>
                     <p className="text-xs uppercase font-bold tracking-widest text-[#5e3f3e] mt-1">
-                      ROI Multiplier
+                      Weekly Hours Saved
                     </p>
                   </div>
                 </div>
@@ -308,27 +311,27 @@ function ForgeSection() {
 const testimonials = [
   {
     quote:
-      "Solyio didn't just build us a tool; they redefined our entire delivery logic. Our predictive accuracy tripled within the first quarter.",
-    name: "Marcus Thorne",
-    role: "CTO, Vertex Capital",
+      "RoboMarketer gave us superpowers. We publish 10x more content with the same headcount — and every piece performs beyond expectations.",
+    name: "Sarah Mitchell",
+    role: "Marketing Director — RoboMarketer Client",
     accentColor: "#FF1E41",
     roleColor: "text-[#FF1E41]",
     logo: "https://lh3.googleusercontent.com/aida-public/AB6AXuDpfEO692i8mMlyRuZqWY-5NZO7NVdQpz-9OV3QQtiHjBkyeQq_9TL87QkV1u_Wf5dyJd8ghpxPDSo8EJTz5JiIMswNZyNpwIYM-e2XB5EFzabUWx6xLuRkNnZ1ZrPiaKWW0Jiql5BJZjIrxMxgIsxjEQo052MBo76GKCX8PUPxrQleEv6gh90I2D7OuPdeUSvXktNmAcdAAMY5gymnPVmJiqfynFOqtHo_Mg2qHeswy2bKaDLqxPNPEVQRm9yk8fKZA51Mgc6lOO40",
   },
   {
     quote:
-      "The Custom AI Chatbot integration handles 85% of our tier-1 support with zero human intervention. The cost savings were immediate.",
-    name: "Elena Rodriguez",
-    role: "Head of CX, Aura Retail",
+      "PriceSmurf eliminated the chaos in our scheduling completely. No-shows dropped 60% in the first month and patient satisfaction hit an all-time high.",
+    name: "Dr. Elena Torres",
+    role: "Clinical Operations Director — PriceSmurf Client",
     accentColor: "#006a66",
     roleColor: "text-[#006a66]",
     logo: "https://lh3.googleusercontent.com/aida-public/AB6AXuCQwv9re5C09oOzpw6UZJNJ2EOF7r2LLEpv-W_qcOTarCoqHnZvwwefawt_9_AkH5pluZAT9QRm3nTTnrYMr-8XX8JCEGYU79-xa-1_THjur_5Pxl0yg5HxBOFxej0m20GDwNf9qPZPRRtpklGNUwLX2N4GNAehAkNOoipkdxg9gjdtYXUdyKNGE6Ko8Hps6wxnRpBVAsQs_2cmBSq0pBbJp1zpd28U22l8tJY3QQ7GVzHTQ_mRYWFMZEaxpF7L78A1fbG4TB6I9Sao",
   },
   {
     quote:
-      "The Profit Optimizer Framework identified $4.2M in hidden operational waste. Solyio is the engine behind our Series B growth.",
-    name: "David Chen",
-    role: "Founder, NexaFlow",
+      "Upgrr transformed our entire operations. What used to require 3 staff members is now handled by a single AI agent — and it does it better.",
+    name: "Michael Brennan",
+    role: "Director of Operations — Upgrr Client",
     accentColor: "#1c1b1b",
     roleColor: "text-[#5e3f3e]",
     logo: "https://lh3.googleusercontent.com/aida-public/AB6AXuCbROVfk79kvj3O2slEgtuSQ2Z5WNficL6wLS8x405X2TGR7kI0jm9aQ4Ajbmz8S1kEZrFS2xWIO9qpgO_EJj0oaUYAxEBaEUsGLFGD4uJXzi8-P0Fak7jkpD4F7nEtlB4dyq0faPpQeSkmjoT5CBWVZjeZoxTVMrk7ggksasnkjBDPRPJb-5e_ROyhQVRYqQFw8VqUp2NYltrL3fvgEYA5PXP3Xbm6OgPY_K15x2CZhdx7K5fC6bsXZdLYsCfTiWS87bQwSOKbDl3I",
@@ -341,7 +344,7 @@ function TestimonialsSection() {
       <div className="max-w-7xl mx-auto">
         <div className="mb-20 text-center">
           <h2 className="text-5xl md:text-6xl font-headline font-bold text-[#1c1b1b] mb-6">
-            Proven Velocity.
+            From Our Clients.
           </h2>
           <div className="w-24 h-1.5 kinetic-gradient mx-auto rounded-full" />
         </div>
@@ -389,24 +392,24 @@ function CTASection() {
         <div className="absolute inset-0 bg-white/5 backdrop-blur-[1px]" />
         <div className="relative z-10">
           <h2 className="text-4xl md:text-7xl font-headline font-bold text-white mb-8 tracking-tighter">
-            Ready to Scale to 2x?
+            Let's Build Your AI Solution.
           </h2>
           <p className="text-white/90 text-xl mb-12 max-w-2xl mx-auto font-medium">
-            Your industry is moving fast. Our technologies are designed to make
-            you move faster. Let&apos;s engineer your competitive edge.
+            Tell us what's slowing your business down and we'll show you
+            exactly how to automate it.
           </p>
           <div className="flex flex-wrap justify-center gap-6">
             <Link
               href="/book"
               className="bg-white text-[#FF1E41] font-headline font-bold px-10 py-5 rounded-full text-xl shadow-xl hover:scale-105 transition-transform"
             >
-              Initialize Project
+              Book a Free Call
             </Link>
             <Link
               href="/portfolio"
               className="bg-transparent border-2 border-white text-white font-headline font-bold px-10 py-5 rounded-full text-xl hover:bg-white hover:text-[#FF1E41] transition-colors"
             >
-              View Roadmap
+              See Our Work
             </Link>
           </div>
         </div>

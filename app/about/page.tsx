@@ -4,9 +4,9 @@ import { SiteNavbar } from "@/components/site-navbar"
 import { SiteFooter } from "@/components/site-footer"
 
 export const metadata: Metadata = {
-  title: "About Solyio | Kinetic Intelligence",
+  title: "About Solyio | Web, Mobile, Cloud & AI",
   description:
-    "We don't just build software. We architect living systems that evolve, learn, and accelerate human potential through precise AI integration.",
+    "Solyio is a software agency that builds web platforms, mobile apps, cloud infrastructure, and AI automation to help businesses operate smarter and grow faster.",
   alternates: { canonical: "https://solyio.com/about" },
 }
 
@@ -18,15 +18,16 @@ function HeroSection() {
       <div className="grid grid-cols-12 gap-6 items-center">
         <div className="col-span-12 md:col-span-8">
           <span className="text-[#FF1E41] font-label text-sm tracking-[0.2em] uppercase mb-6 block">
-            Our Manifesto
+            Who We Are
           </span>
           <h1 className="text-5xl md:text-8xl font-headline font-bold tracking-tighter leading-[0.9] mb-8 text-[#1c1b1b]">
-            Engineering the Next Era of{" "}
-            <span className="text-[#FF1E41]">Kinetic Intelligence.</span>
+            We Build Software That{" "}
+            <span className="text-[#FF1E41]">Works for Your Business.</span>
           </h1>
           <p className="text-xl md:text-2xl text-[#5e3f3e] max-w-2xl leading-relaxed">
-            We don't just build software. We architect living systems that evolve,
-            learn, and accelerate human potential through precise AI integration.
+            Solyio is a software agency specialising in web development, mobile
+            apps, cloud infrastructure, and AI automation — built to simplify
+            how businesses operate and grow.
           </p>
         </div>
 
@@ -60,37 +61,39 @@ function StorySection() {
             </h2>
             <div className="space-y-6 text-[#5e3f3e] leading-relaxed text-lg">
               <p>
-                Solyio began as a high-performance software house, dedicated to
-                crafting the world's most resilient web architectures. We obsessed
-                over every line of code, every millisecond of latency.
+                Solyio started with one goal — build software that actually
+                solves business problems. Not overcomplicated, not overpriced.
+                Just clean, fast, effective digital products.
               </p>
               <p>
-                As the neural revolution dawned, we pivoted. We realized that
-                static software was no longer enough. The world needed kinetic
-                intelligence — software that breathes, adapts, and anticipates.
+                As AI became a real business tool, we expanded into automation.
+                We saw how much time businesses were wasting on manual work
+                that could be handled by well-designed AI systems — and we built
+                those systems.
               </p>
               <p>
-                Today, we stand as an AI powerhouse, merging technical rigor with
-                visionary data science to create tools that feel like extensions of
-                the human mind.
+                Today we combine web development, mobile apps, cloud
+                infrastructure, and AI automation under one roof — so our
+                clients get everything they need to operate and grow without
+                juggling multiple vendors.
               </p>
             </div>
 
             <div className="mt-12 flex gap-4">
               <div className="bg-[#e5e2e1] p-6 rounded-2xl flex-1">
                 <span className="text-3xl font-headline font-bold text-[#FF1E41] block mb-2">
-                  2014
+                  9+
                 </span>
                 <span className="text-sm uppercase tracking-widest font-bold text-[#5e3f3e]">
-                  The Blueprint
+                  Live Projects
                 </span>
               </div>
               <div className="bg-[#FF1E41] p-6 rounded-2xl flex-1">
                 <span className="text-3xl font-headline font-bold text-white block mb-2">
-                  2024
+                  6+
                 </span>
                 <span className="text-sm uppercase tracking-widest font-bold text-white/80">
-                  AI Synthesis
+                  Industries Served
                 </span>
               </div>
             </div>
@@ -130,10 +133,10 @@ function StackSection() {
     <section className="py-32 px-8 md:px-16 max-w-[1440px] mx-auto">
       <div className="text-center mb-20">
         <span className="text-[#FF1E41] text-sm tracking-[0.2em] uppercase mb-4 block font-bold">
-          The Neural Engine
+          What We Build
         </span>
         <h2 className="text-4xl md:text-5xl font-headline font-bold tracking-tight text-[#1c1b1b]">
-          Our Core Stack
+          Our Core Services
         </h2>
       </div>
 
@@ -146,19 +149,20 @@ function StackSection() {
                 psychology
               </span>
               <h3 className="text-3xl font-headline font-bold mb-4 text-[#1c1b1b]">
-                Advanced LLM Orchestration
+                AI Automation
               </h3>
               <p className="text-[#5e3f3e] max-w-md">
-                Deploying custom-tuned Large Language Models for enterprise
-                automation and creative reasoning.
+                We automate the workflows slowing your business down — lead
+                handling, customer support, reporting, scheduling, and more.
+                Custom-built AI that fits your exact operations.
               </p>
             </div>
             <span className="text-xs font-bold uppercase tracking-widest text-[#5e3f3e] bg-[#f0eded] px-4 py-2 rounded-full shrink-0 ml-4">
-              Primary Node
+              Core Service
             </span>
           </div>
           <div className="flex flex-wrap gap-3">
-            {["Fine-Tuning", "RAG Architectures", "Context Optimization"].map((tag) => (
+            {["Workflow Automation", "AI Chatbots", "Custom AI Agents"].map((tag) => (
               <span
                 key={tag}
                 className="bg-[#f0eded] px-6 py-2 rounded-full text-sm font-medium text-[#1c1b1b]"
@@ -173,13 +177,14 @@ function StackSection() {
         <div className="bg-[#FF1E41] text-white p-12 rounded-3xl flex flex-col justify-between">
           <div>
             <span className="material-symbols-outlined text-4xl mb-6 block">
-              visibility
+              campaign
             </span>
             <h3 className="text-2xl font-headline font-bold mb-4">
-              Computer Vision
+              Marketing Services
             </h3>
             <p className="text-white/80">
-              Real-time spatial awareness and object detection for edge computing.
+              SEO, paid ads, social media and content strategy — we help
+              businesses get found, build trust, and convert.
             </p>
           </div>
           <div className="h-24 w-full bg-white/10 rounded-xl overflow-hidden mt-8">
@@ -197,11 +202,12 @@ function StackSection() {
               Web &amp; Mobile
             </h3>
             <p className="text-[#5e3f3e]">
-              High-performance React &amp; Flutter ecosystems with AI-first UX.
+              Fast, scalable websites and cross-platform iOS & Android apps
+              built for growth from day one.
             </p>
           </div>
           <ul className="mt-8 space-y-3 font-medium text-[#1c1b1b]">
-            {["Next.js Expertise", "Cross-platform Native", "Real-time Sync"].map((item) => (
+            {["Next.js & React", "React Native & Flutter", "iOS & Android"].map((item) => (
               <li key={item} className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 bg-[#FF1E41] rounded-full" />
                 {item}
@@ -218,11 +224,11 @@ function StackSection() {
                 query_stats
               </span>
               <h3 className="text-3xl font-headline font-bold mb-4 text-[#1c1b1b]">
-                Predictive Analytics
+                Cloud Infrastructure
               </h3>
               <p className="text-[#5e3f3e]">
-                Transforming historical data into actionable foresight with custom
-                forecasting engines.
+                Reliable, secure cloud setups on AWS, GCP or Azure — designed
+                to scale with your business without complexity or hidden costs.
               </p>
             </div>
             <div className="flex-1 w-full grid grid-cols-6 gap-2 items-end h-32">
@@ -249,20 +255,20 @@ function StackSection() {
 const TEAM = [
   {
     name: "Dr. Aris Vane",
-    role: "Chief AI Architect",
-    bio: "Pioneer in neural decentralization and formerly lead of speculative research at Nexus Labs.",
+    role: "Lead AI Engineer",
+    bio: "Leads all AI automation and agent development. Specialises in building custom workflows that eliminate manual bottlenecks for clients across industries.",
     img: "https://lh3.googleusercontent.com/aida-public/AB6AXuB8ZOpJmKC-7Y_gOQGZ9IwkVxmkSgOX2wj-b4ss_8jS-EZpsndk2CvfpKJO_O2gSNzzdrFyECMQ9AdIbHv-TnvewuMyoIqSKuJLteWGjmD4HeQsr4A58J4a7kiX1FL_RmcSRQIlgOhnBZmlr9YCCgjVtkUNbSf5_INvlBgiouJ7JoFH5EiLZx2QjUIz8mlr4IoSMMUnvjS7HxtX9e31kCBBd-AjhcOg--RaJoOu9uBWhKUbTxMOJN8tp6GgX0NiR6mmmB1lgg3_LVb2",
   },
   {
     name: "Elena Moretti",
-    role: "Head of Kinetic Strategy",
-    bio: "Ex-product lead at global fintechs, focusing on the bridge between machine logic and human utility.",
+    role: "Head of Product & Strategy",
+    bio: "Works directly with clients to define scope, prioritise features, and ensure every project ships on time and solves the right problem.",
     img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBj_F3zj0BMmCKdWjvkcwK_XtCyhSC5Jh_k6ygyWn1k7psoRnbURnCTDrwNAfLK6y7i9uQwz9_sj-K_uyhs74MsB-wxU9HUJ0FPioFhfvn3J4V9xBoY374dCr0sGBIXM0o1H3mnsasFGF9ShF6TtcQ7zzcNEboIfkOv_58NtV60DD7jtDsk_DWX0H_1Alc6Ppk66sCTTedBkYFfuyiIy2mNvR3lXPtBPuHJMSiaZUZOa9d0rejPsPPR9RUJzjfZ-9gTVyFbOAHGEPzB",
   },
   {
     name: "Marcus Thorne",
-    role: "VP of Infrastructure",
-    bio: "Veteran systems engineer obsessed with creating 'Ghost-in-the-Machine' level zero-latency architectures.",
+    role: "Head of Engineering",
+    bio: "Oversees web, mobile and cloud development. Obsessed with performance, reliability, and making sure every system we ship can scale.",
     img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDQla7UqaYsWIJJ-sz7AHr7LSly9-W0j_88gJbFnzdLOnWahv_rjMeSd1hirUvsxDmvbBZl5sKxC--FaWYP0Agt1CFwqpuFTgRYzwq6eBZr7y0Yy4jB3YkAA7NXj5Io7_Plv8M0i0KRXPITq2knL0FKpBCQUd00_fh8uxCIzSpuuUm0Q50x6q_W4UMPNw1lYzdorx3VEsIA119HK_Sl503SHrxqo8QITbX34If9LRNKWnfGWnlz2Egp3hhLKDlJvd4DuSYGN4xO8qoB",
   },
 ]
@@ -274,14 +280,14 @@ function TeamSection() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
           <div className="max-w-xl">
             <span className="text-[#FF1E41] text-sm tracking-[0.2em] uppercase mb-4 block font-bold">
-              The Architects
+              The Team
             </span>
             <h2 className="text-4xl md:text-5xl font-headline font-bold tracking-tight text-[#1c1b1b]">
-              Visionary Engineering
+              People Behind the Work
             </h2>
           </div>
           <p className="text-[#5e3f3e] text-lg">
-            Led by explorers at the intersection of Silicon and Soul.
+            Engineers, designers, and strategists who care about shipping great products.
           </p>
         </div>
 
@@ -323,23 +329,24 @@ function CTASection() {
         <div className="absolute -top-24 -left-24 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
         <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
         <h2 className="text-4xl md:text-6xl font-headline font-bold text-white tracking-tighter mb-8 relative z-10">
-          Ready to build the future?
+          Ready to build something great?
         </h2>
         <p className="text-white/80 text-xl mb-12 max-w-xl mx-auto relative z-10">
-          Start your transformation today with a comprehensive AI strategy session.
+          Tell us what you need — web, mobile, cloud, or AI. We'll figure out
+          the best way to build it together.
         </p>
         <div className="flex flex-col md:flex-row gap-4 justify-center items-center relative z-10">
           <Link
             href="/book"
             className="bg-white text-[#FF1E41] px-12 py-5 rounded-full font-bold text-lg hover:bg-[#fcf9f8] transition-colors shadow-xl"
           >
-            Initialize Your Strategy
+            Book a Free Call
           </Link>
           <Link
-            href="/book"
+            href="/portfolio"
             className="border-2 border-white/30 text-white px-12 py-5 rounded-full font-bold text-lg hover:bg-white hover:text-[#FF1E41] transition-all"
           >
-            Book a Call
+            See Our Work
           </Link>
         </div>
       </div>

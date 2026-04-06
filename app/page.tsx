@@ -6,9 +6,9 @@ import { HeroVisual } from "@/components/hero-visual"
 import { SiteFooter } from "@/components/site-footer"
 
 export const metadata: Metadata = {
-  title: "Solyio | AI-Driven Exponential Growth",
+  title: "Solyio | Web, Mobile, Cloud & AI Solutions",
   description:
-    "Next-generation AI orchestration. 2x your profit with custom intelligence architectures engineered for scale.",
+    "Solyio builds web platforms, mobile apps, cloud infrastructure, and AI automation that simplify your business and accelerate growth.",
   alternates: { canonical: "https://solyio.com" },
 }
 
@@ -32,7 +32,7 @@ function HeroSection() {
           <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-[#FF1E41]/20 mb-10 w-fit bg-white/50 backdrop-blur-md shadow-sm">
             <span className="w-2 h-2 rounded-full bg-[#FF1E41] animate-ping" />
             <span className="text-[10px] font-black tracking-[0.25em] uppercase text-[#FF1E41]">
-              Kinetic Intelligence v2.0
+              Web · Mobile · Cloud · AI
             </span>
           </div>
 
@@ -46,11 +46,11 @@ function HeroSection() {
 
           {/* Subtext */}
           <p className="text-xl md:text-2xl text-[#5e3f3e] max-w-xl mb-14 leading-relaxed font-light">
-            Next-generation AI orchestration.{" "}
+            From web & mobile to cloud and{" "}
             <span className="text-[#FF1E41] font-bold border-b-4 border-[#FF1E41]/10 px-1 inline-block">
-              2x your profit
+              AI automation
             </span>{" "}
-            with custom intelligence architectures engineered for scale.
+            — we build the digital foundation your business needs to scale effortlessly.
           </p>
 
           {/* CTAs */}
@@ -59,13 +59,13 @@ function HeroSection() {
               href="/book"
               className="kinetic-gradient text-white font-headline font-bold py-5 px-14 rounded-full text-lg shadow-2xl shadow-[#FF1E41]/25 hover:-translate-y-0.5 hover:shadow-[#FF1E41]/40 active:translate-y-0 transition-all"
             >
-              Initialize Engine
+              Get Started
             </Link>
             <Link
               href="/portfolio"
               className="bg-white border border-[#e8bcbb]/40 text-[#1c1b1b] font-headline font-bold py-5 px-14 rounded-full text-lg hover:bg-[#f7f4f3] hover:border-[#e8bcbb] transition-all"
             >
-              Case Studies
+              Our Work
             </Link>
           </div>
         </div>
@@ -84,23 +84,23 @@ function HeroSection() {
 const services = [
   {
     icon: "psychology",
-    title: "Applied AI Architecture",
-    desc: "Predictive analytics and custom LLM fine-tuning that automates complex decision cycles and maximizes margin.",
+    title: "AI Workflow Automation",
+    desc: "We automate repetitive business processes with custom AI — from lead handling and invoicing to customer support and internal ops.",
   },
   {
     icon: "language",
-    title: "High-Velocity Platforms",
-    desc: "Enterprise-grade web ecosystems optimized for sub-second performance and massive concurrent global scale.",
+    title: "Web Development",
+    desc: "Fast, scalable web platforms built for growth. From landing pages to full-stack SaaS products, we ship clean and performant.",
   },
   {
     icon: "smartphone",
-    title: "Native Ecosystems",
-    desc: "High-fidelity mobile experiences that turn users into evangelists, powered by real-time neural data sync.",
+    title: "Mobile Development",
+    desc: "Cross-platform iOS & Android apps with smooth UX. We turn your idea into a polished app your users will love.",
   },
   {
-    icon: "trending_up",
-    title: "Revenue Optimization",
-    desc: "Proprietary algorithms designed specifically to identify leakages and amplify revenue streams across your stack.",
+    icon: "cloud",
+    title: "Cloud Infrastructure",
+    desc: "Reliable, secure, and cost-efficient cloud setups on AWS, GCP, or Azure — built to scale with your business without the overhead.",
   },
 ]
 
@@ -113,15 +113,15 @@ function ValuePropSection() {
           <div className="md:col-span-1 sticky top-32">
             <div className="mb-12">
               <h2 className="text-6xl font-headline font-bold text-[#1c1b1b] mb-8 tracking-tighter leading-[0.9]">
-                The Power of{" "}
+                Everything Your{" "}
                 <br />
                 <span className="text-[#FF1E41] italic underline decoration-4 underline-offset-8">
-                  2x Profit
+                  Business Needs
                 </span>
               </h2>
               <p className="text-[#5e3f3e] text-xl leading-relaxed opacity-80">
-                We don&apos;t build features. We build growth engines. Every
-                line of code is measured by its impact on your bottom line.
+                We don&apos;t just build software. We build systems that run,
+                scale, and work for your business — day and night.
               </p>
             </div>
 
@@ -164,11 +164,11 @@ function ValuePropSection() {
 
 function SpecializationSection() {
   return (
-    <section className="py-40 bg-white">
-      <div className="max-w-7xl mx-auto px-12">
+    <section className="py-20 md:py-32 lg:py-40 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-12">
         {/* Heading */}
-        <div className="mb-24 flex flex-col items-center text-center">
-          <h2 className="text-6xl md:text-7xl font-headline font-bold text-[#1c1b1b] mb-8 tracking-tighter uppercase italic leading-none">
+        <div className="mb-12 md:mb-20 lg:mb-24 flex flex-col items-center text-center">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-headline font-bold text-[#1c1b1b] mb-8 tracking-tighter uppercase italic leading-none">
             Our Specialization
           </h2>
           <div className="h-2 w-48 bg-[#FF1E41] rounded-full relative overflow-hidden">
@@ -177,9 +177,9 @@ function SpecializationSection() {
         </div>
 
         {/* Bento grid */}
-        <div className="grid grid-cols-12 grid-rows-2 gap-8 h-auto lg:h-[800px]">
+        <div className="grid grid-cols-12 gap-4 md:gap-6 lg:gap-8 h-auto lg:h-[800px]">
           {/* Enterprise Architecture – wide top-left */}
-          <div className="col-span-12 lg:col-span-8 row-span-1 bg-[#f7f4f3] rounded-[3rem] p-16 flex flex-col justify-end relative overflow-hidden group border border-[#e8bcbb]/20 hover:shadow-2xl transition-all duration-500">
+          <div className="col-span-12 lg:col-span-8 bg-[#f7f4f3] rounded-[2rem] lg:rounded-[3rem] p-8 sm:p-10 md:p-12 lg:p-16 flex flex-col justify-end relative overflow-hidden group border border-[#e8bcbb]/20 hover:shadow-2xl transition-all duration-500 min-h-[280px] md:min-h-[340px] lg:min-h-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUj7sEBoM30ylGv_4gX0IYg8M5Zm14YJnQLhWkIvh7RKNgQJf2XiUDR3k_hQfUjSiTwJ815CsLDmXYwxloOiGDLWYkVPSIhsPDsB3k81MVrnYtQoj94pFhAE7jvVdpDBlZS_4fX4TWW_kcqUk2vlgentDWUH_7FPwwmQMWJrT7AI9UrTOGCHFzFGvNT9NXfTcK-9Curyr-ZZYCdhYdNIIyWPY9dCxhmdX_7F7l7aSfp0OHfTb_lcUrQALNyqQlAePcwuvRr4hwrd-o"
@@ -187,59 +187,58 @@ function SpecializationSection() {
               className="absolute inset-0 w-full h-full object-cover opacity-[0.03] group-hover:opacity-[0.08] transition-opacity duration-1000"
             />
             <div className="relative z-10">
-              <h4 className="text-[#FF1E41] text-[11px] font-black uppercase tracking-[0.4em] mb-8">
-                Core Competency
+              <h4 className="text-[#FF1E41] text-[11px] font-black uppercase tracking-[0.4em] mb-4 md:mb-8">
+                Our Core Service
               </h4>
-              <h3 className="text-5xl md:text-6xl font-headline font-bold text-[#1c1b1b] mb-8 tracking-tighter">
-                Enterprise
+              <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-headline font-bold text-[#1c1b1b] mb-4 md:mb-8 tracking-tighter">
+                AI-Powered
                 <br />
-                Intelligence Architecture
+                Business Automation
               </h3>
-              <p className="max-w-xl text-[#5e3f3e] text-xl leading-relaxed font-light">
-                We architect the backbone of digital titans. Our engineering
-                lifecycle is rooted in security, massive scale, and elite
-                speed-to-market.
+              <p className="max-w-xl text-[#5e3f3e] text-base md:text-xl leading-relaxed font-light">
+                We automate the workflows slowing you down — from sales pipelines
+                and support to reporting and ops. Less manual work, more growth.
               </p>
             </div>
           </div>
 
           {/* Venture Acceleration – top-right */}
-          <div className="col-span-12 md:col-span-6 lg:col-span-4 row-span-1 bg-[#ebe8e7] rounded-[3rem] p-16 flex flex-col justify-between border border-[#FF1E41]/5 hover:border-[#FF1E41]/30 transition-all duration-500 group shadow-sm hover:shadow-xl">
-            <span className="material-symbols-outlined text-[#FF1E41] text-7xl group-hover:translate-x-4 transition-transform duration-500">
-              rocket_launch
+          <div className="col-span-12 md:col-span-6 lg:col-span-4 bg-[#ebe8e7] rounded-[2rem] lg:rounded-[3rem] p-8 sm:p-10 md:p-12 lg:p-16 flex flex-col justify-between border border-[#FF1E41]/5 hover:border-[#FF1E41]/30 transition-all duration-500 group shadow-sm hover:shadow-xl min-h-[260px] md:min-h-0">
+            <span className="material-symbols-outlined text-[#FF1E41] text-5xl md:text-7xl group-hover:translate-x-4 transition-transform duration-500">
+              campaign
             </span>
             <div>
-              <h3 className="text-3xl font-headline font-bold text-[#1c1b1b] mb-6 tracking-tight">
-                Venture Acceleration
+              <h3 className="text-2xl md:text-3xl font-headline font-bold text-[#1c1b1b] mb-4 md:mb-6 tracking-tight">
+                Marketing Services
               </h3>
-              <p className="text-[#5e3f3e] text-lg leading-relaxed opacity-90">
-                Elite prototyping and MVP engineering for series-A funded
-                startups looking to achieve market dominance.
+              <p className="text-[#5e3f3e] text-base md:text-lg leading-relaxed opacity-90">
+                SEO, social media, paid ads, and content strategy — we help
+                you get found, build trust, and convert visitors into customers.
               </p>
             </div>
           </div>
 
           {/* 2X red stat – bottom-left */}
-          <div className="col-span-12 md:col-span-6 lg:col-span-4 row-span-1 bg-[#FF1E41] rounded-[3rem] p-16 flex flex-col justify-between text-white shadow-[0_40px_80px_-20px_rgba(255,30,65,0.4)] relative overflow-hidden group">
+          <div className="col-span-12 md:col-span-6 lg:col-span-4 bg-[#FF1E41] rounded-[2rem] lg:rounded-[3rem] p-8 sm:p-10 md:p-12 lg:p-16 flex flex-col justify-between text-white shadow-[0_40px_80px_-20px_rgba(255,30,65,0.4)] relative overflow-hidden group min-h-[260px] md:min-h-0">
             <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-700" />
-            <div className="text-8xl font-headline font-black tracking-tighter relative z-10 leading-none">
-              2X
+            <div className="text-6xl sm:text-7xl md:text-8xl font-headline font-black tracking-tighter relative z-10 leading-none">
+              5×
             </div>
-            <p className="font-bold text-2xl leading-tight relative z-10">
-              Average annual profit increase reported by our partners after
-              neural stack integration.
+            <p className="font-bold text-lg md:text-2xl leading-tight relative z-10">
+              Faster operations on average after clients automate workflows
+              with our AI solutions.
             </p>
           </div>
 
           {/* AI-First Engineering – bottom-right wide */}
-          <div className="col-span-12 lg:col-span-8 row-span-1 glass-panel rounded-[3rem] p-16 flex items-center justify-between border border-[#e8bcbb]/30 shadow-xl hover:shadow-2xl transition-all duration-500 group">
-            <div className="flex-1 pr-12">
-              <h3 className="text-4xl md:text-5xl font-headline font-bold text-[#1c1b1b] mb-8 tracking-tighter">
-                AI-First Engineering
+          <div className="col-span-12 lg:col-span-8 glass-panel rounded-[2rem] lg:rounded-[3rem] p-8 sm:p-10 md:p-12 lg:p-16 flex flex-col sm:flex-row items-start sm:items-center justify-between border border-[#e8bcbb]/30 shadow-xl hover:shadow-2xl transition-all duration-500 group gap-6 sm:gap-8">
+            <div className="flex-1 sm:pr-8 lg:pr-12">
+              <h3 className="text-3xl sm:text-4xl md:text-5xl font-headline font-bold text-[#1c1b1b] mb-4 md:mb-8 tracking-tighter">
+                Cloud Infrastructure
               </h3>
-              <p className="text-[#5e3f3e] text-xl max-w-lg leading-relaxed font-light">
-                Our elite squad consists of PhD researchers and top 1% engineers
-                focused exclusively on autonomous agent orchestration.
+              <p className="text-[#5e3f3e] text-base md:text-xl max-w-lg leading-relaxed font-light">
+                We design and manage your cloud environment so it's secure,
+                fast, and ready to scale — without the complexity or hidden costs.
               </p>
             </div>
             <div className="hidden lg:block w-52 h-52 rotate-12 slash-mask bg-[#e5e2e1] overflow-hidden relative shadow-inner">
@@ -268,19 +267,19 @@ function CTASection() {
         <h2 className="text-4xl sm:text-5xl md:text-7xl font-headline font-bold text-[#1c1b1b] mb-8 md:mb-12 tracking-tighter leading-none">
           Ready to{" "}
           <span className="italic text-[#FF1E41] block sm:inline">
-            Exponentially
+            Simplify
           </span>{" "}
-          Grow?
+          & Scale?
         </h2>
         <p className="text-lg sm:text-xl md:text-3xl text-[#5e3f3e] mb-10 md:mb-16 max-w-3xl mx-auto font-light leading-relaxed opacity-80">
-          Join the world&apos;s most aggressive market leaders using Kinetic
-          Intelligence to redefine industry profit floors.
+          Let&apos;s build the web, mobile, cloud, or AI solution your
+          business needs — and make it work from day one.
         </p>
         <Link
           href="/book"
           className="kinetic-gradient text-white font-headline font-bold py-4 px-10 md:py-7 md:px-20 rounded-full text-lg md:text-2xl shadow-[0_25px_60px_rgba(255,30,65,0.35)] hover:scale-105 hover:shadow-[0_30px_70px_rgba(255,30,65,0.5)] active:scale-95 transition-all inline-block"
         >
-          Initialize Strategy
+          Book a Free Call
         </Link>
       </div>
     </section>
