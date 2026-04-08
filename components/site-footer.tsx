@@ -67,11 +67,10 @@ export function SiteFooter() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500" />
               </span>
-              Neural Nodes Active
-            </div>
+100% Operational            </div>
           </div>
           <div className="font-headline text-[11px] tracking-[0.1em] text-[#5e3f3e] mt-16 md:mt-0 opacity-60 uppercase font-bold">
-            © 2024 Solyio. Engineered with Kinetic Intelligence.
+            © 2026 Solyio. Engineered with Kinetic Intelligence.
           </div>
         </div>
       </div>
