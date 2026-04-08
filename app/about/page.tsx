@@ -250,75 +250,7 @@ function StackSection() {
   )
 }
 
-/* ─── TEAM ───────────────────────────────────────────────────────── */
 
-const TEAM = [
-  {
-    name: "Dr. Aris Vane",
-    role: "Lead AI Engineer",
-    bio: "Leads all AI automation and agent development. Specialises in building custom workflows that eliminate manual bottlenecks for clients across industries.",
-    img: "https://lh3.googleusercontent.com/aida-public/AB6AXuB8ZOpJmKC-7Y_gOQGZ9IwkVxmkSgOX2wj-b4ss_8jS-EZpsndk2CvfpKJO_O2gSNzzdrFyECMQ9AdIbHv-TnvewuMyoIqSKuJLteWGjmD4HeQsr4A58J4a7kiX1FL_RmcSRQIlgOhnBZmlr9YCCgjVtkUNbSf5_INvlBgiouJ7JoFH5EiLZx2QjUIz8mlr4IoSMMUnvjS7HxtX9e31kCBBd-AjhcOg--RaJoOu9uBWhKUbTxMOJN8tp6GgX0NiR6mmmB1lgg3_LVb2",
-  },
-  {
-    name: "Elena Moretti",
-    role: "Head of Product & Strategy",
-    bio: "Works directly with clients to define scope, prioritise features, and ensure every project ships on time and solves the right problem.",
-    img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBj_F3zj0BMmCKdWjvkcwK_XtCyhSC5Jh_k6ygyWn1k7psoRnbURnCTDrwNAfLK6y7i9uQwz9_sj-K_uyhs74MsB-wxU9HUJ0FPioFhfvn3J4V9xBoY374dCr0sGBIXM0o1H3mnsasFGF9ShF6TtcQ7zzcNEboIfkOv_58NtV60DD7jtDsk_DWX0H_1Alc6Ppk66sCTTedBkYFfuyiIy2mNvR3lXPtBPuHJMSiaZUZOa9d0rejPsPPR9RUJzjfZ-9gTVyFbOAHGEPzB",
-  },
-  {
-    name: "Marcus Thorne",
-    role: "Head of Engineering",
-    bio: "Oversees web, mobile and cloud development. Obsessed with performance, reliability, and making sure every system we ship can scale.",
-    img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDQla7UqaYsWIJJ-sz7AHr7LSly9-W0j_88gJbFnzdLOnWahv_rjMeSd1hirUvsxDmvbBZl5sKxC--FaWYP0Agt1CFwqpuFTgRYzwq6eBZr7y0Yy4jB3YkAA7NXj5Io7_Plv8M0i0KRXPITq2knL0FKpBCQUd00_fh8uxCIzSpuuUm0Q50x6q_W4UMPNw1lYzdorx3VEsIA119HK_Sl503SHrxqo8QITbX34If9LRNKWnfGWnlz2Egp3hhLKDlJvd4DuSYGN4xO8qoB",
-  },
-]
-
-function TeamSection() {
-  return (
-    <section className="py-32 bg-[#f6f3f2]">
-      <div className="max-w-[1440px] mx-auto px-8 md:px-16">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-          <div className="max-w-xl">
-            <span className="text-[#FF1E41] text-sm tracking-[0.2em] uppercase mb-4 block font-bold">
-              The Team
-            </span>
-            <h2 className="text-4xl md:text-5xl font-headline font-bold tracking-tight text-[#1c1b1b]">
-              People Behind the Work
-            </h2>
-          </div>
-          <p className="text-[#5e3f3e] text-lg">
-            Engineers, designers, and strategists who care about shipping great products.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {TEAM.map((member) => (
-            <div key={member.name} className="group">
-              <div className="aspect-[4/5] bg-white rounded-2xl overflow-hidden mb-6 relative">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={member.img}
-                  alt={member.name}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
-                />
-                <div className="absolute bottom-6 right-6 bg-white p-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span className="material-symbols-outlined text-[#FF1E41]">link</span>
-                </div>
-              </div>
-              <h4 className="text-2xl font-headline font-bold mb-1 text-[#1c1b1b]">
-                {member.name}
-              </h4>
-              <p className="text-[#FF1E41] text-xs uppercase tracking-widest mb-4 font-bold">
-                {member.role}
-              </p>
-              <p className="text-[#5e3f3e] text-sm leading-relaxed">{member.bio}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
 
 /* ─── CTA ────────────────────────────────────────────────────────── */
 
@@ -364,7 +296,6 @@ export default function AboutPage() {
         <HeroSection />
         <StorySection />
         <StackSection />
-        <TeamSection />
         <CTASection />
       </main>
       <SiteFooter />
