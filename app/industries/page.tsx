@@ -5,8 +5,7 @@ import { SiteFooter } from "@/components/site-footer"
 
 export const metadata: Metadata = {
   title: "Industries | Solyio — Real Results Across Every Sector",
-  description:
-    "See how Solyio helps businesses in marketing, e-commerce, healthcare, real estate, logistics and more scale with web, mobile, cloud and AI solutions.",
+description: "See how Solyio helps businesses in marketing, e-commerce, pricing intelligence, financial analysis, logistics and more scale with web, mobile, cloud and AI solutions.",
   alternates: { canonical: "https://solyio.com/industries" },
 }
 
@@ -40,11 +39,11 @@ function HeroSection() {
           </div>
 
           <div className="lg:col-span-4 pb-4">
-            <p className="text-xl text-[#534342] font-light leading-relaxed mb-8 border-l-2 border-[#FF1E41]/20 pl-6">
-              From marketing agencies to healthcare clinics to property managers
-              — we build the web, mobile, cloud and AI systems that make your
-              business faster, leaner, and ready to grow.
-            </p>
+           <p className="text-xl text-[#534342] font-light leading-relaxed mb-8 border-l-2 border-[#FF1E41]/20 pl-6">
+  From marketing agencies to pricing teams to sales consultants
+  — we build the web, mobile, cloud and AI systems that make your
+  business faster, leaner, and ready to grow.
+</p>
             <div className="flex items-center gap-6">
               <div className="flex flex-col">
                 <span className="font-headline text-3xl font-black text-[#FF1E41]">6+</span>
@@ -142,53 +141,52 @@ function IndustrySection() {
             </div>
           </div>
 
-          {/* Healthcare */}
-          <div className="md:col-span-4 group bg-[#1c1b1b] rounded-3xl p-10 flex flex-col justify-between text-white overflow-hidden relative shadow-[0_40px_100px_-20px_rgba(28,27,27,0.08)] transition-transform duration-500 hover:-translate-y-2">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[#FF1E41]/20 blur-[60px] pointer-events-none" />
-            <div className="relative z-10">
-              <div className="w-12 h-12 bg-[#FF1E41] text-white rounded-xl flex items-center justify-center mb-10 group-hover:rotate-12 transition-transform">
-                <span
-                  className="material-symbols-outlined text-2xl"
-                  style={{ fontVariationSettings: "'FILL' 1" }}
-                >
-                  health_and_safety
-                </span>
-              </div>
-              <h3 className="font-headline text-3xl font-black mb-4">
-                Healthcare Clinics
-              </h3>
-              <p className="text-white/60 text-sm leading-relaxed mb-6">
-                We built <strong className="text-white/80">PriceSmurf</strong> — an
-                AI patient engagement platform that eliminated scheduling chaos
-                for a multi-location clinic losing revenue to no-shows.
-              </p>
-              <p className="text-white/60 text-sm leading-relaxed mb-10">
-                The AI handles appointment reminders, smart rescheduling,
-                symptom triage, and EHR sync — all automated.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-[#FF1E41]">
-                  <span className="material-symbols-outlined text-sm">check_circle</span>
-                  60% Fewer No-Shows
-                </div>
-                <div className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-[#FF1E41]">
-                  <span className="material-symbols-outlined text-sm">check_circle</span>
-                  3x Patient Engagement
-                </div>
-              </div>
-            </div>
-            <div className="relative z-10 mt-12 pt-8 border-t border-white/10">
-              <div className="text-[10px] uppercase tracking-widest font-bold opacity-40 mb-1 text-white">
-                Project Result
-              </div>
-              <div className="text-5xl font-headline font-black text-[#FF1E41]">
-                −60%{" "}
-                <span className="text-xs font-normal text-white uppercase tracking-tighter">
-                  No-Shows
-                </span>
-              </div>
-            </div>
-          </div>
+        {/* Replace the entire dark card (md:col-span-4) */}
+<div className="md:col-span-4 group bg-[#1c1b1b] rounded-3xl p-10 flex flex-col justify-between text-white overflow-hidden relative shadow-[0_40px_100px_-20px_rgba(28,27,27,0.08)] transition-transform duration-500 hover:-translate-y-2">
+  <div className="absolute top-0 right-0 w-32 h-32 bg-[#FF1E41]/20 blur-[60px] pointer-events-none" />
+  <div className="relative z-10">
+    <div className="w-12 h-12 bg-[#FF1E41] text-white rounded-xl flex items-center justify-center mb-10 group-hover:rotate-12 transition-transform">
+      <span className="material-symbols-outlined text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>
+        query_stats
+      </span>
+    </div>
+    <h3 className="font-headline text-3xl font-black mb-4">
+      Pricing Intelligence
+    </h3>
+    <p className="text-white/60 text-sm leading-relaxed mb-6">
+      We built <strong className="text-white/80">PriceSmurf</strong> — a
+      multi-tenant AI pricing intelligence SaaS for enterprises drowning
+      in spreadsheets, with no visibility into margin leakage or deal
+      win/loss patterns.
+    </p>
+    <p className="text-white/60 text-sm leading-relaxed mb-10">
+      5 specialized Gemini AI agents analyze uploaded sales data and
+      produce structured reports — margin leakage, opportunity gaps,
+      win/loss patterns, and value analysis — all from a raw Excel upload.
+    </p>
+    <div className="space-y-4">
+      <div className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-[#FF1E41]">
+        <span className="material-symbols-outlined text-sm">check_circle</span>
+        5 Specialized AI Agents
+      </div>
+      <div className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-[#FF1E41]">
+        <span className="material-symbols-outlined text-sm">check_circle</span>
+        Margin Leakage Quantified in Seconds
+      </div>
+    </div>
+  </div>
+  <div className="relative z-10 mt-12 pt-8 border-t border-white/10">
+    <div className="text-[10px] uppercase tracking-widest font-bold opacity-40 mb-1 text-white">
+      Project Result
+    </div>
+    <div className="text-5xl font-headline font-black text-[#FF1E41]">
+      45+{" "}
+      <span className="text-xs font-normal text-white uppercase tracking-tighter">
+        API Routes
+      </span>
+    </div>
+  </div>
+</div>
         </div>
 
         {/* Row 2: E-commerce (4) + Real Estate (4) + Logistics (4) */}
@@ -235,37 +233,38 @@ function IndustrySection() {
             </div>
           </div>
 
-          {/* Real Estate */}
-          <div className="md:col-span-4 group bg-white border border-[#d8c2c1]/20 rounded-3xl p-10 overflow-hidden relative transition-transform duration-500 hover:-translate-y-2 shadow-[0_40px_100px_-20px_rgba(28,27,27,0.08)] [&::after]:content-[''] [&::after]:absolute [&::after]:left-0 [&::after]:top-0 [&::after]:w-[2px] [&::after]:h-full [&::after]:bg-[#FF1E41] [&::after]:scale-y-0 [&::after]:origin-top [&::after]:transition-transform [&::after]:duration-400 hover:[&::after]:scale-y-100">
-            <div className="flex justify-between items-start mb-10">
-              <div className="w-12 h-12 bg-[#1c1b1b]/5 rounded-full flex items-center justify-center text-[#FF1E41]">
-                <span className="material-symbols-outlined text-2xl">apartment</span>
-              </div>
-            </div>
-            <h3 className="font-headline text-2xl font-black mb-4 text-[#1c1b1b]">
-              Real Estate & PropTech
-            </h3>
-            <p className="text-[#534342] text-sm mb-4">
-              <strong>Upgrr</strong> — an AI operations layer for a property
-              management company handling 500+ units. Tenant communication,
-              maintenance routing and rent collection — all automated.
-            </p>
-            <p className="text-[#534342] text-sm mb-auto">
-              What used to require 3 staff members is now handled by a single
-              AI agent with 80% auto-resolution rate.
-            </p>
-            <div className="mt-12 pt-8 border-t border-[#d8c2c1]/30">
-              <div className="text-[10px] uppercase tracking-widest font-bold text-[#FF1E41] mb-1">
-                Project Result
-              </div>
-              <div className="text-4xl font-headline font-black text-[#1c1b1b]">
-                80%{" "}
-                <span className="text-xs font-normal opacity-60 uppercase tracking-tighter">
-                  Auto-Resolved
-                </span>
-              </div>
-            </div>
-          </div>
+<div className="md:col-span-4 group bg-white border border-[#d8c2c1]/20 rounded-3xl p-10 overflow-hidden relative transition-transform duration-500 hover:-translate-y-2 shadow-[0_40px_100px_-20px_rgba(28,27,27,0.08)] [&::after]:content-[''] [&::after]:absolute [&::after]:left-0 [&::after]:top-0 [&::after]:w-[2px] [&::after]:h-full [&::after]:bg-[#FF1E41] [&::after]:scale-y-0 [&::after]:origin-top [&::after]:transition-transform [&::after]:duration-400 hover:[&::after]:scale-y-100">
+  <div className="flex justify-between items-start mb-10">
+    <div className="w-12 h-12 bg-[#1c1b1b]/5 rounded-full flex items-center justify-center text-[#FF1E41]">
+      <span className="material-symbols-outlined text-2xl">calculate</span>
+    </div>
+  </div>
+  <h3 className="font-headline text-2xl font-black mb-4 text-[#1c1b1b]">
+    Financial Analysis & SaaS
+  </h3>
+  <p className="text-[#534342] text-sm mb-4">
+    <strong>Upgrr</strong> — a purpose-built financial analysis platform
+    for the printing equipment industry. Sales consultants were doing
+    complex lease upgrade analysis manually in Excel, losing deals to
+    unclear numbers.
+  </p>
+  <p className="text-[#534342] text-sm mb-auto">
+    Now 100+ consultants generate boardroom-ready NPV lease comparison
+    reports in 5 seconds — 2,000+ reports generated, $400K+ in monthly
+    deals influenced.
+  </p>
+  <div className="mt-12 pt-8 border-t border-[#d8c2c1]/30">
+    <div className="text-[10px] uppercase tracking-widest font-bold text-[#FF1E41] mb-1">
+      Project Result
+    </div>
+    <div className="text-4xl font-headline font-black text-[#1c1b1b]">
+      2000+{" "}
+      <span className="text-xs font-normal opacity-60 uppercase tracking-tighter">
+        Reports Generated
+      </span>
+    </div>
+  </div>
+</div>
 
           {/* Logistics */}
           <div className="md:col-span-4 group bg-[#FF1E41] rounded-3xl p-10 text-white overflow-hidden relative transition-transform duration-500 hover:-translate-y-2 shadow-[0_40px_100px_-20px_rgba(255,30,65,0.25)]">
@@ -305,42 +304,42 @@ function IndustrySection() {
         <div className="grid grid-cols-1 gap-8">
           <div className="group bg-[#1c1b1b] rounded-3xl overflow-hidden shadow-[0_40px_100px_-20px_rgba(28,27,27,0.15)] transition-transform duration-500 hover:-translate-y-2">
             <div className="grid md:grid-cols-2 h-full">
-              <div className="p-12 flex flex-col justify-between">
-                <div>
-                  <div className="inline-block px-3 py-1 bg-[#FF1E41]/20 text-[#FF1E41] text-[10px] font-bold tracking-widest uppercase rounded-full mb-6">
-                    SaaS & Business Intelligence
-                  </div>
-                  <h3 className="font-headline text-4xl font-black mb-4 leading-none text-white">
-                    Turn Your Data Into Decisions
-                  </h3>
-                  <p className="text-white/60 text-sm leading-relaxed mb-4">
-                    We built <strong className="text-white/80">ExpertAIQ</strong>{" "}
-                    for a research firm with petabytes of data spread across 15+
-                    sources. Their analysts were spending 80% of their time just
-                    preparing data — with insights already stale by the time they
-                    arrived.
-                  </p>
-                  <p className="text-white/60 text-sm leading-relaxed mb-8">
-                    We built an AI intelligence layer on top of their entire
-                    data infrastructure. Analysts now ask questions in plain
-                    English and get structured answers, auto-generated reports,
-                    and anomaly alerts — in seconds, not weeks.
-                  </p>
-                  <div className="grid grid-cols-2 gap-4">
-                    {[
-                      { val: "80%", label: "Faster Research" },
-                      { val: "15+", label: "Data Sources" },
-                      { val: "500+", label: "Reports/Month" },
-                      { val: "92%", label: "Decision Accuracy" },
-                    ].map((s) => (
-                      <div key={s.label} className="bg-white/5 rounded-2xl p-4">
-                        <div className="text-[#FF1E41] font-headline font-black text-2xl">{s.val}</div>
-                        <div className="text-[10px] uppercase text-white/40 font-bold mt-1">{s.label}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+             {/* Replace the text side of the dark full-width card */}
+<div className="p-12 flex flex-col justify-between">
+  <div>
+    <div className="inline-block px-3 py-1 bg-[#FF1E41]/20 text-[#FF1E41] text-[10px] font-bold tracking-widest uppercase rounded-full mb-6">
+      SaaS & AI Coaching
+    </div>
+    <h3 className="font-headline text-4xl font-black mb-4 leading-none text-white">
+      Scale Your Expertise with AI
+    </h3>
+    <p className="text-white/60 text-sm leading-relaxed mb-4">
+      We built <strong className="text-white/80">ExpertAIQ</strong> for
+      coaches and consultants whose knowledge was locked inside their heads
+      and 1-on-1 sessions — with no scalable way to serve more clients
+      without working more hours.
+    </p>
+    <p className="text-white/60 text-sm leading-relaxed mb-8">
+      Coaches upload their full knowledge base — documents, frameworks,
+      course material — and ExpertAIQ's RAG engine builds a white-label
+      AI persona that answers student questions in the coach's own voice,
+      24/7, at unlimited scale.
+    </p>
+    <div className="grid grid-cols-2 gap-4">
+      {[
+        { val: "25+", label: "Coaches Onboarded" },
+        { val: "20GB+", label: "Knowledge per Coach" },
+        { val: "1M+", label: "AI Interactions" },
+        { val: "<5s", label: "Response Time" },
+      ].map((s) => (
+        <div key={s.label} className="bg-white/5 rounded-2xl p-4">
+          <div className="text-[#FF1E41] font-headline font-black text-2xl">{s.val}</div>
+          <div className="text-[10px] uppercase text-white/40 font-bold mt-1">{s.label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
               <div className="relative min-h-[300px] overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
