@@ -937,16 +937,16 @@ export default async function CaseStudyPage({
   if (!cs) notFound()
 
   return (
-    <div className="font-body bg-white text-black antialiased">
+    <div className="font-body bg-white text-black antialiased overflow-x-hidden">
       <SiteNavbar />
 
       <main>
         {/* ── HERO ───────────────────────────────────────────────── */}
-        <section className="relative pt-40 pb-32 px-8 md:px-12 max-w-screen-2xl mx-auto">
+        <section className="relative pt-28 md:pt-40 pb-16 md:pb-32 px-6 md:px-12 max-w-screen-2xl mx-auto overflow-hidden">
           {/* Radial glow */}
           <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(circle at 70% 30%, rgba(255,30,65,0.08) 0%, rgba(255,255,255,0) 70%)" }} />
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-center relative z-10">
             {/* Left */}
             <div className="lg:col-span-6 mb-16 lg:mb-0">
               <div className="inline-flex items-center gap-3 mb-8">
@@ -956,7 +956,7 @@ export default async function CaseStudyPage({
                 </span>
               </div>
 
-              <h1 className="text-7xl md:text-9xl font-bold tracking-tighter leading-[0.85] mb-10 text-black">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tighter leading-[0.85] mb-8 md:mb-10 text-black">
                 {cs.name.includes(" ") ? (
                   <>
                     {cs.name.split(" ")[0]} <br />
@@ -967,14 +967,14 @@ export default async function CaseStudyPage({
                 )}
               </h1>
 
-              <p className="text-xl md:text-2xl text-zinc-500 max-w-xl leading-relaxed font-light mb-12">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-zinc-500 max-w-xl leading-relaxed font-light mb-8 md:mb-12">
                 {cs.tagline}
               </p>
 
-              <div className="flex flex-wrap gap-12">
+              <div className="flex flex-wrap gap-6 md:gap-12">
                 {cs.heroMetrics.map((m) => (
                   <div key={m.label}>
-                    <div className="text-5xl font-bold text-black mb-2">{m.value}</div>
+                    <div className="text-3xl md:text-5xl font-bold text-black mb-2">{m.value}</div>
                     <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FF1E41]">
                       {m.label}
                     </div>
@@ -984,10 +984,10 @@ export default async function CaseStudyPage({
             </div>
 
             {/* Right: circular image + spinning rings + quote */}
-            <div className="lg:col-span-6 relative flex justify-center">
-              <div className="relative w-full max-w-[500px]">
+            <div className="lg:col-span-6 relative flex justify-center px-4 md:px-0">
+              <div className="relative w-full max-w-[320px] sm:max-w-[420px] md:max-w-[500px]">
                 {/* Circular image */}
-                <div className="aspect-square rounded-full overflow-hidden border-[16px] border-white shadow-2xl relative z-10">
+                <div className="aspect-square rounded-full overflow-hidden border-[8px] md:border-[16px] border-white shadow-2xl relative z-10">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={cs.thumbnail}
@@ -999,14 +999,14 @@ export default async function CaseStudyPage({
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border border-[#FF1E41]/10 rounded-full animate-[spin_20s_linear_infinite]" />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] border border-[#FF1E41]/5 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
                 {/* Quote card */}
-                <div className="absolute -bottom-10 -right-4 md:right-0 bg-white p-8 rounded-[2rem] shadow-2xl max-w-[260px] z-20 border border-zinc-50">
+                <div className="absolute -bottom-10 right-0 md:-right-4 bg-white p-5 md:p-8 rounded-[1.5rem] md:rounded-[2rem] shadow-2xl max-w-[200px] sm:max-w-[240px] md:max-w-[260px] z-20 border border-zinc-50">
                   <span
-                    className="material-symbols-outlined text-[#FF1E41] mb-4 text-3xl block"
+                    className="material-symbols-outlined text-[#FF1E41] mb-3 text-2xl md:text-3xl block"
                     style={{ fontVariationSettings: "'FILL' 0" }}
                   >
                     format_quote
                   </span>
-                  <p className="font-medium italic text-xl leading-tight mb-6">
+                  <p className="font-medium italic text-sm md:text-xl leading-tight mb-4 md:mb-6 line-clamp-4">
                     &ldquo;{cs.quote.text}&rdquo;
                   </p>
                   <p className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-40">
@@ -1019,16 +1019,16 @@ export default async function CaseStudyPage({
         </section>
 
         {/* ── CHALLENGE ──────────────────────────────────────────── */}
-        <section className="py-40 px-8 md:px-12 bg-zinc-50">
+        <section className="py-16 md:py-28 lg:py-40 px-6 md:px-12 bg-zinc-50">
           <div className="max-w-screen-2xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-16">
               {/* Sticky sidebar */}
               <div className="lg:col-span-4 lg:pr-20">
                 <div className="lg:sticky lg:top-40">
                   <span className="text-[#FF1E41] font-bold tracking-widest text-xs uppercase mb-6 block">
                     01 / CONTEXT
                   </span>
-                  <h2 className="text-5xl md:text-6xl font-bold tracking-tighter leading-tight mb-8 text-black">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-tight mb-6 md:mb-8 text-black">
                     {cs.challenge.title}
                   </h2>
                   <p className="text-zinc-500 font-light text-lg leading-relaxed">
@@ -1038,8 +1038,8 @@ export default async function CaseStudyPage({
               </div>
 
               {/* Content */}
-              <div className="lg:col-span-8 space-y-32">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+              <div className="lg:col-span-8 space-y-12 md:space-y-20 lg:space-y-32">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
                   {cs.challenge.cards.map((card) => (
                     <div key={card.title} className="space-y-6">
                       <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm border border-zinc-100">

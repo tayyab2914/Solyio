@@ -3,7 +3,7 @@ import Link from "next/link"
 export function SiteFooter() {
   return (
     <footer className="w-full pt-28 pb-14 bg-[#f0eded] border-t border-[#e8bcbb]/20">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-20 px-12 max-w-screen-2xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 lg:gap-16 px-6 md:px-10 lg:px-12 max-w-screen-2xl mx-auto">
         {/* Brand */}
         <div className="col-span-1">
           <div className="mb-8 flex items-center">
@@ -55,8 +55,8 @@ AI-powered digital foundations for effortless business growth — web, mobile, c
         </div>
 
         {/* Status + copyright */}
-        <div className="flex flex-col justify-between items-start md:items-end">
-          <div className="bg-white/50 backdrop-blur-md p-8 rounded-3xl border border-[#e8bcbb]/30 text-left shadow-lg w-full md:w-auto">
+        <div className="flex flex-col justify-between items-start lg:items-end">
+          <div className="bg-white/50 backdrop-blur-md p-6 md:p-8 rounded-3xl border border-[#e8bcbb]/30 text-left shadow-lg w-full lg:w-auto">
             <div className="text-[10px] font-black text-[#bb0029] mb-3 uppercase tracking-[0.3em]">
               System Status
             </div>
@@ -67,7 +67,7 @@ AI-powered digital foundations for effortless business growth — web, mobile, c
               </span>
 100% Operational            </div>
           </div>
-          <div className="font-headline text-[11px] tracking-[0.1em] text-[#5e3f3e] mt-16 md:mt-0 opacity-60 uppercase font-bold">
+          <div className="font-headline text-[11px] tracking-[0.1em] text-[#5e3f3e] mt-8 lg:mt-0 opacity-60 uppercase font-bold">
             © 2026 Solyio. Engineered with Kinetic Intelligence.
           </div>
         </div>
