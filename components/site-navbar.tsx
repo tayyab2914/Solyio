@@ -29,6 +29,7 @@ export function SiteNavbar({ variant = "light" }: SiteNavbarProps) {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
+  const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   const dark = variant === "dark"
 
@@ -42,16 +43,18 @@ export function SiteNavbar({ variant = "light" }: SiteNavbarProps) {
     return false
   }
 
-  // Close dropdown on outside click
-  useEffect(() => {
-    function handleClickOutside(e: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setServicesOpen(false)
-      }
+  const handleMouseLeave = () => {
+    closeTimeoutRef.current = setTimeout(() => {
+      setServicesOpen(false)
+    }, 100)
+  }
+
+  const handleMouseEnter = () => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current)
     }
-    document.addEventListener("mousedown", handleClickOutside)
-    return () => document.removeEventListener("mousedown", handleClickOutside)
-  }, [])
+    setServicesOpen(true)
+  }
 
   // Close mobile menu on route change
   useEffect(() => {
@@ -91,9 +94,13 @@ export function SiteNavbar({ variant = "light" }: SiteNavbarProps) {
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-10">
             {/* Services dropdown */}
-            <div className="relative" ref={dropdownRef}>
+            <div 
+              className="relative" 
+              ref={dropdownRef}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
               <button
-                onClick={() => setServicesOpen((v) => !v)}
                 className={`font-headline text-sm tracking-widest uppercase transition-all duration-300 flex items-center gap-1 ${
                   isServicesActive ? linkActive : linkBase
                 }`}
@@ -112,6 +119,8 @@ export function SiteNavbar({ variant = "light" }: SiteNavbarProps) {
               {/* Dropdown panel */}
               {servicesOpen && (
                 <div
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
                   className={`absolute top-full left-1/2 -translate-x-1/2 mt-4 w-72 rounded-2xl shadow-2xl border overflow-hidden z-50 ${
                     dark
                       ? "bg-[#1c1b1b] border-white/10"
