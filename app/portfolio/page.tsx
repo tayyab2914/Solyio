@@ -34,7 +34,7 @@ function HeroSection() {
         <div className="flex flex-col items-start md:items-end gap-4">
           <div className="h-20 w-px bg-[#e8bcbb]/30 hidden md:block mr-12 mb-4" />
           <a
-            href="/Portfolio.pdf"
+            href="/"
             download
             className="kinetic-gradient text-white px-8 py-4 rounded-full font-bold flex items-center gap-3 hover:-translate-y-0.5 transition-all shadow-lg shadow-[#FF1E41]/20 group"
           >

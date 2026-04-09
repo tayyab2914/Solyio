@@ -67,7 +67,7 @@ function HeroSection() {
                 Start a Project
               </Link>
               <a
-                href="/Portfolio.pdf"
+                href="/"
                 download
                 className="bg-white border border-[#e8bcbb]/40 text-[#1c1b1b] font-headline font-bold py-4 px-10 rounded-full text-lg hover:bg-[#f7f4f3] transition-all text-center flex items-center justify-center gap-2 group"
               >
@@ -228,7 +228,7 @@ function WorkShowcaseSection() {
             </p>
           </div>
           <a
-            href="/Portfolio.pdf"
+            href="/"
             download
             className="kinetic-gradient text-white font-headline font-bold py-4 px-8 rounded-full text-base shadow-xl shadow-[#FF1E41]/20 hover:-translate-y-0.5 transition-all flex items-center gap-2 shrink-0 group"
           >
