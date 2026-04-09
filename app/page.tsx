@@ -55,7 +55,7 @@ function HeroSection() {
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-8">
+          <div className="flex flex-col sm:flex-row gap-4 mb-8">
             <Link
               href="/book"
               className="kinetic-gradient text-white font-headline font-bold py-5 px-14 rounded-full text-lg shadow-2xl shadow-[#FF1E41]/25 hover:-translate-y-0.5 hover:shadow-[#FF1E41]/40 active:translate-y-0 transition-all"
@@ -68,6 +68,33 @@ function HeroSection() {
             >
               Our Work
             </Link>
+          </div>
+
+          {/* Upwork trust badge */}
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3 bg-white border border-[#e8bcbb]/30 rounded-2xl px-4 py-3 shadow-sm hover:shadow-md transition-shadow">
+              {/* Upwork logomark */}
+              <svg xmlns="http://www.w3.org/2000/svg" aria-label="Upwork" role="img" viewBox="0 0 512 512" width="28" height="28">
+                <rect width="512" height="512" rx="15%" fill="#6fda44"/>
+                <path fill="#ffffff" d="M357.2,296.9c-17,0-33-7.2-47.4-18.9l3.5-16.6l0.1-.6c3.2-17.6,13.1-47.2,43.8-47.2c23,0,41.7,18.7,41.7,41.7S380.2,296.9,357.2,296.9L357.2,296.9z M357.2,171.4c-39.2,0-69.5,25.4-81.9,67.3c-18.8-28.3-33.1-62.2-41.4-90.8h-42.2v109.7c0,21.7-17.6,39.3-39.3,39.3s-39.3-17.6-39.3-39.3V147.8H71v109.7c0,44.9,36.5,81.8,81.4,81.8s81.4-36.9,81.4-81.8v-18.4c8.2,17.1,18.2,34.4,30.4,49.6l-25.8,121.4h43.1l18.7-88c16.4,10.5,35.2,17.1,56.8,17.1c46.2,0,83.8-37.8,83.8-84.1C440.9,209,403.4,171.4,357.2,171.4"/>
+              </svg>
+              <div>
+                <p className="text-[11px] font-black text-[#1c1b1b] leading-none">Top Rated on Upwork</p>
+                <div className="flex items-center gap-1 mt-0.5">
+                  {[1,2,3,4,5].map((s) => (
+                    <svg key={s} width="10" height="10" viewBox="0 0 12 12" fill="#14a800">
+                      <path d="M6 0l1.5 4.5H12L8.3 7.3l1.4 4.4L6 9l-3.7 2.7 1.4-4.4L0 4.5h4.5z"/>
+                    </svg>
+                  ))}
+                  <span className="text-[10px] text-[#5e3f3e]/60 ml-1 font-medium">5.0</span>
+                </div>
+              </div>
+              <div className="w-px h-8 bg-[#e8bcbb]/40 mx-1" />
+              <div>
+                <p className="text-[10px] text-[#5e3f3e]/50 leading-none">Job Success</p>
+                <p className="text-sm font-black text-[#14a800] leading-none mt-0.5">100%</p>
+              </div>
+            </div>
           </div>
         </div>
 

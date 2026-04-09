@@ -32,7 +32,7 @@ const allProjects = [
     year: "2024",
   },
   {
-    slug: "healthtrack-ai",
+    slug: "pricing-intelligence",
     name: "PriceSmurf",
     thumbnail: "/PriceSmurf.png",
     category: "Healthcare",

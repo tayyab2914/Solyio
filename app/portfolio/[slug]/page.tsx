@@ -335,7 +335,7 @@ robomarketer: {
   },
 },
 
-  "healthtrack-ai": {
+  "pricing-intelligence": {
   name: "PriceSmurf",
   category: "SaaS · Pricing Intelligence",
   tagline:

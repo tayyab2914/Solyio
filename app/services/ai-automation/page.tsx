@@ -390,7 +390,7 @@ function CaseStudiesSection() {
               </div>
 
               <Link
-                href="/portfolio/healthtrack-ai"
+                href="/portfolio/pricing-intelligence"
                 className="mt-auto inline-flex items-center gap-2 text-[#FF1E41] font-headline font-bold text-sm group-hover:gap-3 transition-all"
               >
                 Read Full Case Study

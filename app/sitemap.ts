@@ -32,7 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ]
 
   // Portfolio project pages
-  const projectSlugs = ["robomarketer", "expertaiq", "cashads", "healthtrack-ai", "learnmate", "propwise"]
+  const projectSlugs = ["robomarketer", "expertaiq", "cashads", "pricing-intelligence", "learnmate", "propwise"]
 
   const projectPages = projectSlugs.map((slug) => ({
     url: `${baseUrl}/portfolio/${slug}`,
