@@ -135,7 +135,7 @@ function IndustrySection() {
                 <img
                   alt="Marketing automation"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxatwIPCTLKa3p7LMX4hUUmGWpz83kDhLHSx68PVWyDaC0POc298nq9X--UGd55dYKQtFyEhZjwAdUQVq2dy6mWd4DVQmpe7F_q0fzPkx9xlKqzKh79O0sFWtceASrYioGLznGPew5C8gH7g5nKML7dyzOtfyg9StctyB58RvpeC56RCLnk0uu24aL1HxU3FFLHmXM013kFiyWkzF8xdm1A7oV2bzQL_Z4VHe9t4EyyT6RshHIJYahC6txJ-LSk1l_Hd6CAIEDO380"
+                  src="/industries.png"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent" />
               </div>
@@ -198,7 +198,7 @@ function IndustrySection() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               alt="E-commerce"
-              className="absolute inset-0 w-full h-full object-cover opacity-5 grayscale group-hover:grayscale-0 transition-all duration-700"
+              className="absolute inset-0 w-full h-full object-cover opacity-5 0 group-hover:0-0 transition-all duration-700"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDw-xX1f1MGAOxiehVT8hFYOFc1HXVcPXvVqbGagEAmOnOzxzISQ6uLNO9YT8IJJ5Z8LiKijFQqYd5tLk7YhTbREQ90dJRySxzC-JAaRx6zBNifQHCcWrPpvWJ87nUTeVFxvNz_QtF1D5yfcb3ZJ81dufujA9YF1zfF_GKjXi_i_EwlhE9xdvC4xXc-BeSJdtMSX5CG9UB3yBwVjAs7DNEBM5emKZWaHpiCNvTLzPZA39pwTAapmohHJUU45xNeAYshjnpk"
             />
             <div className="relative z-10 flex flex-col h-full">
@@ -346,7 +346,7 @@ function IndustrySection() {
                 <img
                   alt="Data analytics"
                   className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-700 group-hover:scale-105"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr9fnTW_6E-Y2bV4Kr_g3FBVcPc_oWjazgYVtcrL2g8a2eachaPcPHEoCneE62ZIIAQm_QR0K85jTmvkWu6Cb0ro7kuGKxnXlicgioW0KzSbiOyRwwrrifI4rE125N9M56f5sr-LHA__QM89RPWcXXI-V03aN_LIwTio-se2sDknXG5rLLEEWi-SLof1LJGR6oAn4T9bxaqvWtVonQL2i2OlM7VYIUjMGGDHpBVcNjZH1ks_Sz48N1H74_Cka7jIYVj99oTGiy-U1v"
+                  src="/ind2.png"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#1c1b1b] via-transparent to-transparent" />
               </div>

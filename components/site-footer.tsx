@@ -11,9 +11,7 @@ export function SiteFooter() {
             <img src="/logo.svg" alt="Solyio" className="h-20 w-auto mr-3" />
           </div>
           <p className="font-body text-base text-[#5e3f3e] leading-relaxed mb-10 opacity-80">
-            Kinetic Intelligence for Exponential Growth. We architect the future
-            of human-machine orchestration through AI-first principles.
-          </p>
+AI-powered digital foundations for effortless business growth — web, mobile, cloud, and automation built to scale.          </p>
         </div>
 
         {/* Platform */}

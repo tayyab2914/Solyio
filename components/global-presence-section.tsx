@@ -38,18 +38,102 @@ interface Reviewer {
 }
 
 const REVIEWERS: Reviewer[] = [
-  { name: "Marcus Thorne",    role: "CTO, Vertex Capital",    city: "New York",     avatar: "https://randomuser.me/api/portraits/men/32.jpg",    quote: "Predictive accuracy tripled in the first quarter. Solyio rewired our entire delivery logic.",       stars: 5 },
-  { name: "Elena Rodriguez",  role: "Head of CX, Aura Retail",city: "London",       avatar: "https://randomuser.me/api/portraits/women/44.jpg",  quote: "85% of tier-1 support handled with zero human intervention. Cost savings were immediate.",           stars: 5 },
-  { name: "Kenji Watanabe",   role: "VP Eng, NovaTech",       city: "Tokyo",        avatar: "https://randomuser.me/api/portraits/men/15.jpg",    quote: "From blueprint to deployment in 10 days. The speed without sacrificing quality is unmatched.",        stars: 5 },
-  { name: "Sophie Laurent",   role: "CMO, LuminaGroup",       city: "Paris",        avatar: "https://randomuser.me/api/portraits/women/28.jpg",  quote: "Our content velocity went 10x overnight. ROI was visible within the first campaign cycle.",           stars: 5 },
-  { name: "David Chen",       role: "Founder, NexaFlow",      city: "Singapore",    avatar: "https://randomuser.me/api/portraits/men/62.jpg",    quote: "The Profit Optimizer identified $4.2M in hidden waste. Solyio powers our Series B trajectory.",       stars: 5 },
-  { name: "Priya Nair",       role: "VP Product, ShopKinetic",city: "New Delhi",    avatar: "https://randomuser.me/api/portraits/women/68.jpg",  quote: "Cart abandonment dropped from 22% to under 8% in 60 days. Their intent layer is extraordinary.",     stars: 5 },
-  { name: "James Hartley",    role: "CEO, Pulsar Labs",        city: "Sydney",       avatar: "https://randomuser.me/api/portraits/men/77.jpg",    quote: "CAC dropped 40% and LTV doubled in 6 months. Solyio's AI is the most important stack we own.",       stars: 5 },
-  { name: "Aisha Al-Farsi",   role: "COO, AlphaEdge",         city: "Dubai",        avatar: "https://randomuser.me/api/portraits/women/55.jpg",  quote: "Risk mitigation improved 2.4x and our compliance overhead nearly vanished. Transformational.",        stars: 5 },
-  { name: "Tom Eriksen",      role: "CTO, SwiftRoute",        city: "Stockholm",    avatar: "https://randomuser.me/api/portraits/men/45.jpg",    quote: "Fuel consumption down 40%, delivery density tripled in urban hubs. Neural routing is the future.",    stars: 5 },
-  { name: "Mia Johnson",      role: "Head of Growth, Zenlify",city: "Toronto",      avatar: "https://randomuser.me/api/portraits/women/33.jpg",  quote: "User retention tripled and churn became predictable. The AI caught signals we never knew existed.",   stars: 5 },
-  { name: "Rafael Moreno",    role: "Founder, BrightAI",      city: "São Paulo",    avatar: "https://randomuser.me/api/portraits/men/88.jpg",    quote: "Their team delivered a production-ready AI platform in under two weeks. Absolutely exceptional.",      stars: 5 },
-  { name: "Yuki Tanaka",      role: "CTO, Zenrith",           city: "Osaka",        avatar: "https://randomuser.me/api/portraits/women/72.jpg",  quote: "The Custom AI Chatbot reduced our support load by 80%. Customers actually prefer it to human agents.", stars: 5 },
+  {
+    name: "Marcus Thorne",
+    role: "Head of Pricing, PriceSmurf",
+    city: "New York",
+    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+    quote: "PriceSmurf surfaced margin leaks we had no idea existed — hidden in plain sight inside our own Excel files. The ROI was immediate.",
+    stars: 5,
+  },
+  {
+    name: "Elena Rodriguez",
+    role: "CMO, RoboMarketer",
+    city: "London",
+    avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+    quote: "Our content velocity went 10x overnight. RoboMarketer's AI employees run every channel while our team focuses purely on strategy.",
+    stars: 5,
+  },
+  {
+    name: "Kenji Watanabe",
+    role: "Coach, ExpertAIQ Platform",
+    city: "Tokyo",
+    avatar: "https://randomuser.me/api/portraits/men/15.jpg",
+    quote: "ExpertAIQ let me turn my entire consulting methodology into an AI that works for my clients 24/7 — without writing a single line of code.",
+    stars: 5,
+  },
+  {
+    name: "Sophie Laurent",
+    role: "Growth Director, CashAds",
+    city: "Paris",
+    avatar: "https://randomuser.me/api/portraits/women/28.jpg",
+    quote: "CashAds let me earn $450 a day selling ads I generated in seconds. No clients, no portfolio, no design experience needed.",
+    stars: 5,
+  },
+  {
+    name: "David Chen",
+    role: "CEO, NovaPay",
+    city: "Singapore",
+    avatar: "https://randomuser.me/api/portraits/men/62.jpg",
+    quote: "Solyio delivered a Stripe integration so seamless our finance team thought it was built in-house. The app handles millions in transactions without a single failure.",
+    stars: 5,
+  },
+  {
+    name: "Priya Nair",
+    role: "CTO, ZenCart",
+    city: "New Delhi",
+    avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+    quote: "We went from a 2.1-star app to a 4.9-star app in a single release. The Flutter rebuild completely changed how our customers feel about buying from us.",
+    stars: 5,
+  },
+  {
+    name: "James Hartley",
+    role: "Founder, TrackrPro",
+    city: "Sydney",
+    avatar: "https://randomuser.me/api/portraits/men/77.jpg",
+    quote: "The subscription architecture handles everything — trials, upgrades, downgrades, and failed payments — without us touching a line of code. It just works.",
+    stars: 5,
+  },
+  {
+    name: "Aisha Al-Farsi",
+    role: "COO, DeliverIQ",
+    city: "Dubai",
+    avatar: "https://randomuser.me/api/portraits/women/55.jpg",
+    quote: "The Stripe Connect implementation alone saved us 3 full-time ops roles. Payouts that took 5 days of manual work now happen automatically within minutes.",
+    stars: 5,
+  },
+  {
+    name: "Tom Eriksen",
+    role: "Sales Consultant, Upgrr",
+    city: "Stockholm",
+    avatar: "https://randomuser.me/api/portraits/men/45.jpg",
+    quote: "Upgrr gave us the credibility to close — clients finally understood the numbers and said yes with confidence. Deals that used to take weeks now close in one meeting.",
+    stars: 5,
+  },
+  {
+    name: "Mia Johnson",
+    role: "Agency Director, RoboMarketer",
+    city: "Toronto",
+    avatar: "https://randomuser.me/api/portraits/women/33.jpg",
+    quote: "RoboMarketer replaced the work of an entire marketing team without a single new hire. 72 hours saved every week — that's time we reinvest into landing bigger clients.",
+    stars: 5,
+  },
+  {
+    name: "Rafael Moreno",
+    role: "Creator, CashAds Marketplace",
+    city: "São Paulo",
+    avatar: "https://randomuser.me/api/portraits/men/88.jpg",
+    quote: "I went from zero design experience to generating and selling professional ads the same day I signed up. CashAds is the most frictionless income stream I've ever had.",
+    stars: 5,
+  },
+  {
+    name: "Yuki Tanaka",
+    role: "Head of Research, ExpertAIQ",
+    city: "Osaka",
+    avatar: "https://randomuser.me/api/portraits/women/72.jpg",
+    quote: "The most significant leap in our team's intelligence capability. ExpertAIQ's RAG engine answers student questions exactly the way I would — at any hour, at any scale.",
+    stars: 5,
+  },
 ]
 
 /* ─── Single photo/review card ────────────────────────────────────── */
@@ -65,7 +149,7 @@ function ReviewCard({ reviewer, size = "md" }: { reviewer: Reviewer; size?: "sm"
         <img
           src={reviewer.avatar}
           alt={reviewer.name}
-          className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+          className="w-full h-full object-cover 0-[30%] group-hover:0-0 group-hover:scale-105 transition-all duration-700"
         />
       </div>
 
@@ -77,8 +161,8 @@ function ReviewCard({ reviewer, size = "md" }: { reviewer: Reviewer; size?: "sm"
             <span key={i} className="text-[#FF1E41] text-xs">★</span>
           ))}
         </div>
-        {/* Quote — truncated, expands to 2 lines on hover */}
-        <p className="text-[11px] text-[#5e3f3e] leading-snug line-clamp-1 group-hover:line-clamp-2 transition-all duration-300">
+        {/* Quote — truncated, expands to full text on hover */}
+        <p className="text-[11px] text-[#5e3f3e] leading-snug line-clamp-1 group-hover:line-clamp-none transition-all duration-300">
           &ldquo;{reviewer.quote}&rdquo;
         </p>
         {/* Name */}
@@ -160,7 +244,7 @@ export function GlobalPresenceSection() {
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-headline font-black tracking-tighter leading-[0.9] text-[#1c1b1b] mb-4 max-w-2xl">
             Trusted by leaders
             <br />
-            <span className="text-[#d5c2c1]">from various industries</span>
+            <span className="text-[#ff0039]">from various industries</span>
           </h2>
 
           {/* Sub */}

@@ -20,11 +20,11 @@ function HeroSection() {
           <span className="text-[#FF1E41] font-label text-sm tracking-[0.2em] uppercase mb-6 block">
             Who We Are
           </span>
-          <h1 className="text-5xl md:text-8xl font-headline font-bold tracking-tighter leading-[0.9] mb-8 text-[#1c1b1b]">
+          <h1 className="text-5xl md:text-5xl xl:text-8xl font-headline font-bold tracking-tighter leading-[0.9] mb-8 text-[#1c1b1b]">
             We Build Software That{" "}
             <span className="text-[#FF1E41]">Works for Your Business.</span>
           </h1>
-          <p className="text-xl md:text-2xl text-[#5e3f3e] max-w-2xl leading-relaxed">
+          <p className="text-xl lg:text-2xl text-[#5e3f3e] max-w-2xl leading-relaxed">
             Solyio is a software agency specialising in web development, mobile
             apps, cloud infrastructure, and AI automation — built to simplify
             how businesses operate and grow.
@@ -34,12 +34,11 @@ function HeroSection() {
         <div className="col-span-12 md:col-span-4 self-end mt-12 md:mt-0">
           <div className="aspect-square bg-[#f0eded] rounded-2xl overflow-hidden relative group">
             <div className="absolute inset-0 bg-gradient-to-tr from-[#FF1E41]/20 to-transparent z-10" />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIfX9biaAE_BfPBlqUR0QHaA7EId2EpD27_asPG0MpftRBKJcsD0Kk4aj7FeHnMJmJQXKde9IcFY2ea6_OgjWWbWB0-CybiGB3YcDc2VB6zybZbbwQySH26bl-zZcc1ytQvBjCLq4I_R9X8uq__PhydXmX2Bltq-peCOka0iHK_ZToSOZ9ADd8bYnV8v2BFA6vqF78v08V2p9dbQn7g8p8pFMmrweRKj5g2lRXXufrMwFpXzKDG6_EtyFKK93k97oXO4dJQZlMDPml"
-              alt="Neural network visualization"
-              className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-            />
+  src="/service.png"
+  alt="Neural network visualization"
+  className="w-full h-full object-cover  hover:0-0 transition-all duration-700"
+/>
           </div>
         </div>
       </div>
@@ -105,7 +104,7 @@ function StorySection() {
               <div className="aspect-[3/4] bg-white rounded-3xl overflow-hidden mt-12">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhTrbcf0DfWyHXhLy0SA4uCp1i9d4KVoLMjM9jy82ZKzTNcpx1bk_feXL_0doFJgfLNygqBOlZKceh_SBRDkKsPBRtNMOX1dHjXETGtip4vgCzPBCX4tQVKig58knfYfqEma9sGRxekA0X7CP-ICL_i67pmbpHpe-cV956Ya01RniOZjk96K9PtsjGjzfzwAvYyvZ_E_Hpid1c3guVVkndmT05mbcuGmUl4ZroNUZlQYMywhnCYxPYDtFQo-9bfkXi-Xzfqy_TLX2b"
+                  src="/story1.png"
                   alt="Server infrastructure"
                   className="w-full h-full object-cover"
                 />
@@ -113,7 +112,7 @@ function StorySection() {
               <div className="aspect-[3/4] bg-white rounded-3xl overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxtCFFSiXx7OBvKpaImjKRBTcGE4q9HbMW2QaTt2i9Gf3YmY6OxqARZa3Lko5ncwtHlzCayr5ndSeCuiUcmJ1kdCxUS47LiqALvh6GF9MMVeckciT7JKZSfHtrUYt8eqywvLf3yYDDTbL-Jv9slXX6r-bVPXc9WELQTVRXRdTzIYarUSfZ-yykzVGRKgEynExXQ3A-9aroXcXMV4PHijYExge7rdAE_PrDf_e2H10SDd1WqW-mPIYbTSNTL4EsgSk_JOs1UzQ-Bc3o"
+                  src="/story2.png"
                   alt="Robot arm in lab"
                   className="w-full h-full object-cover"
                 />
@@ -292,7 +291,7 @@ export default function AboutPage() {
   return (
     <div className="font-body bg-[#fcf9f8] text-[#1c1b1b] leading-relaxed selection:bg-[#FF1E41]/20 selection:text-[#FF1E41]">
       <SiteNavbar />
-      <main className="pt-24">
+      <main className="pt-24 md:pt-0 lg:pt-5">
         <HeroSection />
         <StorySection />
         <StackSection />

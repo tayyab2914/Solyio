@@ -49,486 +49,484 @@ interface CaseStudy {
 }
 
 const caseStudies: Record<string, CaseStudy> = {
-  expertaiq: {
-    name: "ExpertAIQ",
-    category: "SaaS · Analytics",
-    tagline:
-      "How we built an AI research engine that eliminates manual data analysis — cutting research time by 80% and unlocking instant business intelligence.",
-    thumbnail: "/ExpertAIQ.png",
-    images: {
-      challenge: CHALLENGE_IMG,
-      gallery1: GALLERY_IMG_1,
-      gallery2: GALLERY_IMG_2,
-    },
-    heroMetrics: [
-      { value: "+80%", label: "Research Efficiency" },
-      { value: "15+", label: "Integrated Sources" },
-    ],
-    quote: {
-      text: "The most significant leap in our team's intelligence capability.",
-      author: "Head of Research, ExpertAIQ",
-    },
-    challenge: {
-      title: "The Challenge",
-      tagline:
-        "Manual research pipelines were consuming 80% of analyst time on low-value aggregation tasks.",
-      cards: [
-        {
-          icon: "manage_search",
-          title: "Data Fragmentation",
-          description:
-            "Research teams spent 12+ hours weekly aggregating data from 15 disconnected platforms with no unified intelligence layer or single source of truth.",
-        },
-        {
-          icon: "trending_down",
-          title: "Delayed Decisions",
-          description:
-            "Critical business decisions were delayed by days while analysts manually processed and cross-referenced reports, creating costly strategic blind spots.",
-        },
-      ],
-    },
-    solution: {
-      title: "The AI Implementation",
-      tagline:
-        "We deployed a multi-source neural aggregation layer that transforms raw data into instant, actionable business intelligence.",
-      cards: [
-        {
-          n: "01",
-          title: "Neural Analysis Layer",
-          description:
-            "Proprietary AI engine that ingests 15+ data sources simultaneously and generates natural-language insights in under 2 seconds.",
-          cta: "Explore Engine",
-        },
-        {
-          n: "02",
-          title: "Data Mesh Connector",
-          description:
-            "Distributed integration fabric that unifies fragmented data pipelines into a single, coherent intelligence network accessible in real-time.",
-          cta: "System Design",
-        },
-        {
-          n: "03",
-          title: "Report Automation",
-          description:
-            "Automated reporting suite that generates comprehensive analysis reports and delivers them via Slack and email on a custom schedule.",
-          cta: "View Demo",
-        },
-      ],
-    },
-    outcomes: {
-      title: "Business Impact",
-      description:
-        "The deployment of ExpertAIQ fundamentally shifted research workflows from reactive data collection to proactive predictive intelligence.",
-      bullets: [
-        {
-          title: "80% Time Reclaimed",
-          description:
-            "Analysts redirected from manual data collection to high-value strategic interpretation and decision-making.",
-        },
-        {
-          title: "Real-time Intelligence",
-          description:
-            "Decision-makers now receive live data insights instead of 48-hour-delayed static reports.",
-        },
-      ],
-      tiles: [
-        { value: "+80%", label: "Time Saved", bg: "bg-zinc-50", valueCls: "text-[#FF1E41]", labelCls: "text-zinc-400" },
-        { value: "500+", label: "Monthly Reports", bg: "bg-black", valueCls: "text-white", labelCls: "text-[#FF1E41]" },
-        { value: "15+", label: "Data Sources", bg: "bg-[#FF1E41]", valueCls: "text-white", labelCls: "text-white/60" },
-        { value: "2s", label: "Query Response", bg: "bg-zinc-100", valueCls: "text-black", labelCls: "text-zinc-400" },
-      ],
-    },
-    gallery: {
-      title: "Designed for Tomorrow",
-      description:
-        "ExpertAIQ isn't just a dashboard; it's the foundation for the next decade of intelligent business analytics and strategic foresight.",
-    },
+expertaiq: {
+  name: "ExpertAIQ",
+  category: "SaaS · AI Coaching",
+  tagline:
+    "How we built a white-label AI consulting platform where coaches upload their knowledge base, build a personalized AI persona, and monetize their expertise — serving 105+ coaches and 1M+ interactions.",
+  thumbnail: "/ExpertAIQ.png",
+  images: {
+    challenge: "/ExpertAIQ.png",
+    gallery1: "https://plus.unsplash.com/premium_photo-1683121723970-b7a354d62e18?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    gallery2: "https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
+  heroMetrics: [
+    { value: "105+", label: "Coaches Onboarded" },
+  ],
+  quote: {
+    text: "ExpertAIQ let me turn my entire consulting methodology into an AI that works for my clients 24/7.",
+    author: "Coach, ExpertAIQ Platform",
+  },
+  challenge: {
+    title: "The Challenge",
+    tagline:
+      "Expert consultants and coaches had no scalable way to deliver personalized guidance — their knowledge was locked inside their heads and 1-on-1 sessions.",
+    cards: [
+      {
+        icon: "person_off",
+        title: "Knowledge Locked to the Coach",
+        description:
+          "Coaches could only serve clients in live sessions — their frameworks, methodologies, and expertise had no scalable delivery mechanism, capping revenue and reach.",
+      },
+      {
+        icon: "manage_search",
+        title: "Generic AI Gives Generic Answers",
+        description:
+          "Off-the-shelf AI tools couldn't reflect a coach's unique voice, knowledge base, or methodology — students got generic responses that didn't reflect the coach's actual expertise.",
+      },
+    ],
+  },
+  solution: {
+    title: "The AI Implementation",
+    tagline:
+      "We built a full white-label SaaS platform where coaches create their AI persona, upload their knowledge base for RAG, and deploy a personalized AI consultant their students can interact with 24/7.",
+    cards: [
+      {
+        n: "01",
+        title: "RAG-Powered AI Persona",
+        description:
+          "Coaches upload up to 20GB of their own material — documents, frameworks, course content — which powers a Retrieval-Augmented Generation engine that answers student questions in the coach's own voice.",
+        cta: "Explore RAG Engine",
+      },
+      {
+        n: "02",
+        title: "White-Label Coach Platform",
+        description:
+          "Every coach gets a fully branded, isolated workspace — their own AI persona, student roster, knowledge base, and monetisation setup. No shared generic AI.",
+        cta: "Platform Architecture",
+      },
+      {
+        n: "03",
+        title: "Monetisation & Admin Layer",
+        description:
+          "Built-in subscription and payment tooling lets coaches gate access, set pricing, and manage students — turning their expertise into a scalable, recurring revenue stream.",
+        cta: "View Demo",
+      },
+    ],
+  },
+  outcomes: {
+    title: "Business Impact",
+    description:
+      "ExpertAIQ transformed how consultants deliver expertise — from time-capped 1-on-1 sessions to an always-on AI that scales their knowledge to unlimited students simultaneously.",
+    bullets: [
+      {
+        title: "25+ Coaches Monetising Their Expertise",
+        description:
+          "Coaches onboarded their full knowledge base and launched personalized AI consulting services without writing a single line of code.",
+      },
+      {
+        title: "1M+ Student Interactions Served",
+        description:
+          "RAG-powered AI responses grounded in each coach's own material delivered personalised guidance at a scale no human consultant could match alone.",
+      },
+    ],
+    tiles: [
+      { value: "105+", label: "Coaches", bg: "bg-zinc-50", valueCls: "text-[#FF1E41]", labelCls: "text-zinc-400" },
+      { value: "10+", label: "AI Interactions", bg: "bg-black", valueCls: "text-white", labelCls: "text-[#FF1E41]" },
+      { value: "20GB+", label: "Knowledge per Coach", bg: "bg-[#FF1E41]", valueCls: "text-white", labelCls: "text-white/60" },
+      { value: "<2s", label: "AI Response Time", bg: "bg-zinc-100", valueCls: "text-black", labelCls: "text-zinc-400" },
+    ],
+  },
+  gallery: {
+    title: "Your Expertise. Scaled by AI.",
+    description:
+      "ExpertAIQ isn't a chatbot — it's a full coaching intelligence platform that lets any consultant clone their knowledge, serve unlimited students, and earn while they sleep.",
+  },
+},
+robomarketer: {
+  name: "RoboMarketer",
+  category: "SaaS · Marketing Automation",
+  tagline:
+    "How we built an AI marketing automation platform with 12 pre-trained AI employees that run paid ads, SEO, email, and content on autopilot — saving 72+ hours weekly and managing $500K+ in monthly revenue for agencies.",
+  thumbnail: "/RoboMarketer.png",
+  images: {
+    challenge: "/RoboMarketer.png",
+    gallery1: "https://plus.unsplash.com/premium_photo-1682308239835-6b4d3ee79e4d?q=80&w=1584&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    gallery2: "https://images.unsplash.com/photo-1699973008199-c10140850a11?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  heroMetrics: [
+    { value: "72+", label: "Hours Saved Weekly" },
+    { value: "12", label: "AI Employees" },
+  ],
+  quote: {
+    text: "RoboMarketer replaced the work of an entire marketing team — without a single new hire.",
+    author: "Agency Director, RoboMarketer Client",
+  },
+  challenge: {
+    title: "The Challenge",
+    tagline:
+      "Marketing agencies were burning hours on repetitive execution tasks — leaving no capacity for strategy, growth, or new client acquisition.",
+    cards: [
+      {
+        icon: "hourglass_empty",
+        title: "Execution Killing Capacity",
+        description:
+          "Agency teams spent 70%+ of their week on repeatable tasks — writing ad copy, scheduling posts, pulling reports, sending emails — with no time left for high-value strategic work.",
+      },
+      {
+        icon: "group_off",
+        title: "Scaling Meant Hiring",
+        description:
+          "Every new client added headcount pressure. Agencies couldn't take on more clients without proportionally growing their team, capping revenue growth and compressing margins.",
+      },
+    ],
+  },
+  solution: {
+    title: "The AI Implementation",
+    tagline:
+      "We built a full-stack AI automation platform where agencies onboard in 90 seconds, deploy 12 pre-trained AI employees, and run every marketing channel on autopilot — with human managers overseeing strategy.",
+    cards: [
+      {
+        n: "01",
+        title: "12 Pre-Trained AI Employees",
+        description:
+          "A marketplace of specialized AI agents — each handling a distinct marketing function: paid ads, SEO, social media, email, content, competitor analysis, and more — deployable instantly from a single dashboard.",
+        cta: "Explore Agents",
+      },
+      {
+        n: "02",
+        title: "90-Second Onboarding",
+        description:
+          "Agencies feed in company data, KPIs, funnels, and competitor insights once — RoboMarketer ingests this context and all 12 AI employees immediately produce brand-accurate, strategy-aligned outputs.",
+        cta: "Onboarding Flow",
+      },
+      {
+        n: "03",
+        title: "10+ Automated Workflows",
+        description:
+          "End-to-end marketing workflows run autonomously — from content ideation to publishing, ad creation to optimization, report generation to delivery — across all channels simultaneously.",
+        cta: "View Demo",
+      },
+    ],
+  },
+  outcomes: {
+    title: "Business Impact",
+    description:
+      "RoboMarketer transformed marketing agencies from execution-heavy teams into lean, strategy-led operations — scaling client capacity without scaling headcount.",
+    bullets: [
+      {
+        title: "72+ Hours Saved Every Week",
+        description:
+          "Agencies reclaimed over 72 hours weekly by automating repetitive execution tasks across paid, organic, email, and content channels simultaneously.",
+      },
+      {
+        title: "$500K+ Monthly Revenue Managed",
+        description:
+          "Enterprise agency clients use RoboMarketer to manage over $500K in monthly marketing output — with greater consistency and speed than any human team could deliver.",
+      },
+    ],
+    tiles: [
+      { value: "12", label: "AI Employees", bg: "bg-zinc-50", valueCls: "text-[#FF1E41]", labelCls: "text-zinc-400" },
+      { value: "72+", label: "Hours Saved/Week", bg: "bg-black", valueCls: "text-white", labelCls: "text-[#FF1E41]" },
+      { value: "50+", label: "Agencies Onboarded", bg: "bg-[#FF1E41]", valueCls: "text-white", labelCls: "text-white/60" },
+      { value: "10+", label: "Auto Workflows", bg: "bg-zinc-100", valueCls: "text-black", labelCls: "text-zinc-400" },
+    ],
+  },
+  gallery: {
+    title: "Your Agency. Multiplied by AI.",
+    description:
+      "RoboMarketer isn't a scheduling tool — it's a full AI workforce that runs every marketing channel on autopilot, so your human team can focus entirely on strategy and growth.",
+  },
+},
 
-  robomarketer: {
-    name: "RoboMarketer",
-    category: "SaaS · Marketing",
-    tagline:
-      "How we engineered an autonomous marketing AI that 10x'd content output and drove 285% average ROAS — without adding a single headcount.",
-    thumbnail: "/RoboMarketer.png",
-    images: {
-      challenge: "https://images.unsplash.com/photo-1432888622747-4eb9a8f5a07b?auto=format&fit=crop&w=1200&q=80",
-      gallery1: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
-      gallery2: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80",
-    },
-    heroMetrics: [
-      { value: "10x", label: "Content Output" },
-      { value: "285%", label: "Campaign ROI" },
-    ],
-    quote: {
-      text: "Our content production multiplied while our team stayed the same size.",
-      author: "CMO, RoboMarketer",
-    },
-    challenge: {
-      title: "The Challenge",
-      tagline:
-        "Content bottlenecks were killing campaign velocity and capping growth at a fraction of potential.",
-      cards: [
-        {
-          icon: "hourglass_empty",
-          title: "Slow Content Pipeline",
-          description:
-            "Marketing teams spent 40+ hours weekly producing content manually, creating a severe bottleneck that delayed campaign launches and reduced competitive agility.",
-        },
-        {
-          icon: "analytics",
-          title: "Underperforming Campaigns",
-          description:
-            "Without predictive optimization, ad campaigns were adjusted reactively — days after wasted spend had already accumulated across channels.",
-        },
-      ],
-    },
-    solution: {
-      title: "The AI Implementation",
-      tagline:
-        "We built an autonomous content-to-campaign pipeline that creates, optimizes, and deploys marketing at machine speed.",
-      cards: [
-        {
-          n: "01",
-          title: "AI Content Engine",
-          description:
-            "GPT-4 powered generation layer that produces on-brand blogs, social posts, and email copy at 10x the speed of human writers, with A/B variant generation built in.",
-          cta: "Explore Engine",
-        },
-        {
-          n: "02",
-          title: "Campaign Optimizer",
-          description:
-            "Real-time bid management and creative testing engine that continuously reallocates budget toward top-performing ad variants across all major platforms.",
-          cta: "System Design",
-        },
-        {
-          n: "03",
-          title: "Multi-Channel Mesh",
-          description:
-            "Unified orchestration layer that synchronizes content and campaigns across email, social, paid, and SEO from a single intelligent control plane.",
-          cta: "View Demo",
-        },
-      ],
-    },
-    outcomes: {
-      title: "Business Impact",
-      description:
-        "RoboMarketer transformed marketing from a cost center into a predictable, scalable growth engine with measurable returns.",
-      bullets: [
-        {
-          title: "10x Content Velocity",
-          description:
-            "The team now publishes 10x more high-quality content with zero additional headcount or agency spend.",
-        },
-        {
-          title: "285% Average ROAS",
-          description:
-            "AI-optimized campaigns consistently outperform human-managed counterparts by 3x across every channel.",
-        },
-      ],
-      tiles: [
-        { value: "10x", label: "Content Output", bg: "bg-zinc-50", valueCls: "text-[#FF1E41]", labelCls: "text-zinc-400" },
-        { value: "285%", label: "Campaign ROI", bg: "bg-black", valueCls: "text-white", labelCls: "text-[#FF1E41]" },
-        { value: "40h", label: "Saved Weekly", bg: "bg-[#FF1E41]", valueCls: "text-white", labelCls: "text-white/60" },
-        { value: "94%", label: "Accuracy Rate", bg: "bg-zinc-100", valueCls: "text-black", labelCls: "text-zinc-400" },
-      ],
-    },
-    gallery: {
-      title: "Designed for Tomorrow",
-      description:
-        "RoboMarketer isn't just a content tool; it's the autonomous marketing intelligence layer that compounds competitive advantage over time.",
-    },
+ cashads: {
+  name: "CashAds",
+  category: "Advertising · AI Marketplace",
+  tagline:
+    "How we built an AI-powered ad creative marketplace where anyone can generate professional ads in seconds and sell them instantly — 80+ creators, 158 business buyers, and $500K in annual marketplace revenue.",
+  thumbnail: "/Cashads.png",
+  images: {
+    challenge: "/Cashads.png",
+    gallery1: "/cash1.png",
+    gallery2: "/cash2.png",
   },
-
-  cashads: {
-    name: "CashAds",
-    category: "Advertising · E-commerce",
-    tagline:
-      "How we deployed an AI-driven ad optimization engine that improved ROAS by 35% and cut cost per acquisition by 42% across $2M+ in monthly spend.",
-    thumbnail: "/Cashads.png",
-    images: {
-      challenge: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
-      gallery1: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=1200&q=80",
-      gallery2: "https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?auto=format&fit=crop&w=800&q=80",
-    },
-    heroMetrics: [
-      { value: "+35%", label: "ROAS Improvement" },
-      { value: "−42%", label: "CPA Reduction" },
-    ],
-    quote: {
-      text: "We recaptured millions in wasted ad spend within the first quarter.",
-      author: "Growth Director, CashAds",
-    },
-    challenge: {
-      title: "The Challenge",
-      tagline:
-        "Reactive bid management was silently burning budget while leaving high-intent conversions on the table.",
-      cards: [
-        {
-          icon: "money_off",
-          title: "Wasted Ad Spend",
-          description:
-            "Manual bid adjustments were made days after performance data arrived — by then, tens of thousands in budget had already been misallocated to underperforming audiences.",
-        },
-        {
-          icon: "image_not_supported",
-          title: "Creative Fatigue",
-          description:
-            "Ad creatives went stale without systematic testing, causing audience engagement to steadily decline and cost-per-click to surge across campaigns.",
-        },
-      ],
-    },
-    solution: {
-      title: "The AI Implementation",
-      tagline:
-        "We deployed a neural bidding and creative intelligence layer that optimizes every dollar in real-time, 24/7.",
-      cards: [
-        {
-          n: "01",
-          title: "AI Bidding Engine",
-          description:
-            "Real-time bid optimization engine that adjusts keyword and audience bids every 15 minutes using predictive signals — not lagging 7-day averages.",
-          cta: "Explore Engine",
-        },
-        {
-          n: "02",
-          title: "Creative Optimizer",
-          description:
-            "Automated creative testing framework that runs continuous multivariate experiments and retires underperforming variants before they drain budget.",
-          cta: "System Design",
-        },
-        {
-          n: "03",
-          title: "Budget Allocator",
-          description:
-            "Intelligent cross-channel budget reallocation system that shifts spend toward the highest-performing platforms in real-time based on live ROAS signals.",
-          cta: "View Demo",
-        },
-      ],
-    },
-    outcomes: {
-      title: "Business Impact",
-      description:
-        "CashAds transformed ad management from a manual guessing game into a precision-engineered profit machine with compounding returns.",
-      bullets: [
-        {
-          title: "$2M+ Monthly Spend Managed",
-          description:
-            "The AI engine now autonomously manages over $2M in monthly ad budget with greater accuracy than any human team.",
-        },
-        {
-          title: "42% CPA Reduction",
-          description:
-            "Cost per acquisition dropped dramatically as the system continuously eliminated inefficient spend pathways.",
-        },
-      ],
-      tiles: [
-        { value: "+35%", label: "ROAS Gain", bg: "bg-zinc-50", valueCls: "text-[#FF1E41]", labelCls: "text-zinc-400" },
-        { value: "−42%", label: "CPA Drop", bg: "bg-black", valueCls: "text-white", labelCls: "text-[#FF1E41]" },
-        { value: "$2M+", label: "Managed Monthly", bg: "bg-[#FF1E41]", valueCls: "text-white", labelCls: "text-white/60" },
-        { value: "15m", label: "Optimization Cycle", bg: "bg-zinc-100", valueCls: "text-black", labelCls: "text-zinc-400" },
-      ],
-    },
-    gallery: {
-      title: "Designed for Tomorrow",
-      description:
-        "CashAds isn't just an ad manager; it's the autonomous profit engine that makes every advertising dollar work harder than the last.",
-    },
+  heroMetrics: [
+    { value: "$500K", label: "Annual Marketplace Revenue" },
+    { value: "80+", label: "Active Creators" },
+  ],
+  quote: {
+    text: "CashAds let me earn $450 a day selling ads I generated in seconds — no clients, no portfolio, no design experience needed.",
+    author: "Creator, CashAds Marketplace",
   },
+  challenge: {
+    title: "The Challenge",
+    tagline:
+      "Businesses needed high-performing ad creatives fast. Designers needed clients and a portfolio just to get started. Neither side had a frictionless solution.",
+    cards: [
+      {
+        icon: "image_not_supported",
+        title: "Creatives Took Too Long",
+        description:
+          "Businesses waiting days for agencies or freelancers to deliver ad creatives missed campaign windows — by the time assets arrived, the opportunity had already passed.",
+      },
+      {
+        icon: "person_off",
+        title: "Designers Needed a Portfolio to Start",
+        description:
+          "Aspiring ad creators were locked out of earning — every platform required an established client base or portfolio before they could make a single sale.",
+      },
+    ],
+  },
+  solution: {
+    title: "The AI Implementation",
+    tagline:
+      "We built a two-sided AI marketplace — creators generate professional ad creatives in seconds using the AI AdMaker, and businesses purchase them instantly with no back-and-forth.",
+    cards: [
+      {
+        n: "01",
+        title: "AI AdMaker Engine",
+        description:
+          "LangChain and RAG-powered creative generation tool that produces professional, brand-accurate ad creatives in seconds — no design experience, software, or client brief required.",
+        cta: "Explore AdMaker",
+      },
+      {
+        n: "02",
+        title: "Built-in Creative Marketplace",
+        description:
+          "A frictionless two-sided marketplace where creators list AI-generated ad assets and businesses browse, preview, and purchase instantly — no negotiation, no waiting, no agency middleman.",
+        cta: "Marketplace Architecture",
+      },
+      {
+        n: "03",
+        title: "Instant Stripe Payouts",
+        description:
+          "Stripe-powered payment infrastructure handles instant creator payouts the moment a sale completes — no invoicing, no chasing, no delays.",
+        cta: "View Demo",
+      },
+    ],
+  },
+  outcomes: {
+    title: "Business Impact",
+    description:
+      "CashAds turned ad creative production from a slow, expensive agency process into an instant, democratized marketplace — giving creators a new income stream and businesses on-demand assets.",
+    bullets: [
+      {
+        title: "80+ Creators Earning Without a Portfolio",
+        description:
+          "Creators with zero design experience or client history started generating and selling professional ad creatives from day one — averaging $450 per day in earnings.",
+      },
+      {
+        title: "$500K Annual Marketplace Revenue",
+        description:
+          "158 business buyers purchasing ready-made AI ad creatives drove half a million dollars in annual marketplace transactions — with zero agency overhead.",
+      },
+    ],
+    tiles: [
+      { value: "80+", label: "Active Creators", bg: "bg-zinc-50", valueCls: "text-[#FF1E41]", labelCls: "text-zinc-400" },
+      { value: "158", label: "Business Buyers", bg: "bg-black", valueCls: "text-white", labelCls: "text-[#FF1E41]" },
+      { value: "$500K", label: "Annual Revenue", bg: "bg-[#FF1E41]", valueCls: "text-white", labelCls: "text-white/60" },
+      { value: "200+", label: "Ads Generated", bg: "bg-zinc-100", valueCls: "text-black", labelCls: "text-zinc-400" },
+    ],
+  },
+  gallery: {
+    title: "Anyone Can Sell Ads. Instantly.",
+    description:
+      "CashAds isn't just an ad tool — it's a fully functioning creative economy where AI closes the gap between inspiration and income, and between businesses and the assets they need right now.",
+  },
+},
 
   "healthtrack-ai": {
-    name: "PriceSmurf",
-    category: "Healthcare · SaaS",
-    tagline:
-      "How we built an AI patient engagement platform that reduced appointment no-shows by 60% and tripled patient interactions for a leading healthcare clinic.",
-    thumbnail: "/PriceSmurf.png",
-    images: {
-      challenge: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
-      gallery1: "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=1200&q=80",
-      gallery2: "https://images.unsplash.com/photo-1584982751601-97dthe70864d?auto=format&fit=crop&w=800&q=80",
-    },
-    heroMetrics: [
-      { value: "−60%", label: "No-show Rate" },
-      { value: "3x", label: "Patient Engagement" },
-    ],
-    quote: {
-      text: "This platform transformed how we connect with and retain our patients.",
-      author: "Operations Director, Healthcare Clinic",
-    },
-    challenge: {
-      title: "The Challenge",
-      tagline:
-        "Appointment no-shows and disengaged patients were costing the clinic tens of thousands in lost revenue weekly.",
-      cards: [
-        {
-          icon: "event_busy",
-          title: "High No-show Rate",
-          description:
-            "Without intelligent reminders, up to 30% of scheduled appointments went unattended — creating staffing waste and revenue gaps that compounded daily.",
-        },
-        {
-          icon: "person_off",
-          title: "Patient Disengagement",
-          description:
-            "Generic communication strategies failed to resonate with patients, leading to poor health outcomes and low retention that threatened long-term practice viability.",
-        },
-      ],
-    },
-    solution: {
-      title: "The AI Implementation",
-      tagline:
-        "We deployed a personalized patient intelligence layer that communicates with each patient at the right moment with the right message.",
-      cards: [
-        {
-          n: "01",
-          title: "Smart Scheduling AI",
-          description:
-            "Predictive appointment engine that analyzes patient history to identify high-risk no-show slots and automatically triggers personalized re-engagement sequences.",
-          cta: "Explore Engine",
-        },
-        {
-          n: "02",
-          title: "Reminder Intelligence",
-          description:
-            "Multi-channel reminder system (SMS, email, in-app) powered by behavioral AI that selects the optimal channel, timing, and message tone for each individual patient.",
-          cta: "System Design",
-        },
-        {
-          n: "03",
-          title: "EHR Integration Layer",
-          description:
-            "Secure integration fabric that connects with existing Electronic Health Record systems to provide seamless, context-aware patient communication.",
-          cta: "View Demo",
-        },
-      ],
-    },
-    outcomes: {
-      title: "Business Impact",
-      description:
-        "PriceSmurf transformed patient management from a reactive call-center operation into a proactive, AI-driven care engagement platform.",
-      bullets: [
-        {
-          title: "60% No-show Reduction",
-          description:
-            "Intelligent reminders and re-engagement sequences dramatically reduced wasted appointment slots and recovered lost revenue.",
-        },
-        {
-          title: "3x Patient Interactions",
-          description:
-            "Personalized AI communication tripled meaningful patient touchpoints, driving better health outcomes and retention.",
-        },
-      ],
-      tiles: [
-        { value: "−60%", label: "No-shows", bg: "bg-zinc-50", valueCls: "text-[#FF1E41]", labelCls: "text-zinc-400" },
-        { value: "3x", label: "Engagement", bg: "bg-black", valueCls: "text-white", labelCls: "text-[#FF1E41]" },
-        { value: "25h", label: "Saved Weekly", bg: "bg-[#FF1E41]", valueCls: "text-white", labelCls: "text-white/60" },
-        { value: "98%", label: "Msg Delivery", bg: "bg-zinc-100", valueCls: "text-black", labelCls: "text-zinc-400" },
-      ],
-    },
-    gallery: {
-      title: "Designed for Tomorrow",
-      description:
-        "PriceSmurf isn't just a scheduling tool; it's the patient intelligence layer that makes every clinic interaction more effective than the last.",
-    },
+  name: "PriceSmurf",
+  category: "SaaS · Pricing Intelligence",
+  tagline:
+    "How we built a multi-tenant AI pricing intelligence platform — 5 specialized agents that detect margin leakage, upsell gaps, and win/loss patterns directly from enterprise sales data.",
+  thumbnail: "/PriceSmurf.png",
+  images: {
+    challenge: "/PriceSmurf.png",
+    gallery1: "https://plus.unsplash.com/premium_photo-1677094310919-d0361465d3be?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0",
+    gallery2: "https://plus.unsplash.com/premium_photo-1725985758251-b49c6b581d17?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0",
   },
-
-  upgrr: {
-    name: "Upgrr",
-    category: "SaaS · Growth",
-    tagline:
-      "How we engineered a personalized growth platform that tripled user retention and automated the entire user upgrade journey through predictive AI.",
-    thumbnail: "/upgrr.png",
-    images: {
-      challenge: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80",
-      gallery1: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-      gallery2: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
-    },
-    heroMetrics: [
-      { value: "+3x", label: "User Retention" },
-      { value: "+50%", label: "Upgrade Velocity" },
-    ],
-    quote: {
-      text: "Upgrr turned our churn problem into our greatest growth advantage.",
-      author: "CEO, Upgrr",
-    },
-    challenge: {
-      title: "The Challenge",
-      tagline:
-        "High churn and low upgrade rates were silently eroding a promising SaaS product's growth trajectory.",
-      cards: [
-        {
-          icon: "person_remove",
-          title: "Invisible Churn",
-          description:
-            "Users were silently disengaging without triggering any alerts, and by the time manual follow-ups occurred, the window for re-engagement had already closed.",
-        },
-        {
-          icon: "upgrade",
-          title: "Stalled Upgrades",
-          description:
-            "Generic in-app messaging failed to connect the right premium features to the right users at the right moment, leaving a massive conversion gap unexploited.",
-        },
-      ],
-    },
-    solution: {
-      title: "The AI Implementation",
-      tagline:
-        "We deployed a behavioral prediction layer that identifies upgrade and churn signals before they materialize — and acts on them automatically.",
-      cards: [
-        {
-          n: "01",
-          title: "Churn Prediction Engine",
-          description:
-            "Real-time behavioral AI that scores every user's churn probability daily and automatically triggers personalized re-engagement sequences before they disengage.",
-          cta: "Explore Engine",
-        },
-        {
-          n: "02",
-          title: "Upgrade Intelligence",
-          description:
-            "Contextual upgrade prompt system that analyzes each user's usage patterns and surfaces the most relevant premium feature at the highest-intent moment.",
-          cta: "System Design",
-        },
-        {
-          n: "03",
-          title: "Growth Analytics",
-          description:
-            "Live dashboard providing product and growth teams with instant cohort-level retention insights, upgrade funnel analysis, and revenue impact forecasts.",
-          cta: "View Demo",
-        },
-      ],
-    },
-    outcomes: {
-      title: "Business Impact",
-      description:
-        "Upgrr's AI layer transformed user lifecycle management from a reactive support function into a proactive, revenue-compounding growth engine.",
-      bullets: [
-        {
-          title: "3x Retention Improvement",
-          description:
-            "Proactive AI intervention caught at-risk users weeks before they churned, tripling 90-day retention rates.",
-        },
-        {
-          title: "50% Faster Upgrades",
-          description:
-            "Contextual upgrade prompts accelerated the freemium-to-paid conversion journey by identifying and acting on intent signals in real-time.",
-        },
-      ],
-      tiles: [
-        { value: "+3x", label: "Retention", bg: "bg-zinc-50", valueCls: "text-[#FF1E41]", labelCls: "text-zinc-400" },
-        { value: "+50%", label: "Upgrade Speed", bg: "bg-black", valueCls: "text-white", labelCls: "text-[#FF1E41]" },
-        { value: "92%", label: "Prediction Acc.", bg: "bg-[#FF1E41]", valueCls: "text-white", labelCls: "text-white/60" },
-        { value: "0", label: "Manual Chases", bg: "bg-zinc-100", valueCls: "text-black", labelCls: "text-zinc-400" },
-      ],
-    },
-    gallery: {
-      title: "Designed for Tomorrow",
-      description:
-        "Upgrr isn't just a retention tool; it's the growth intelligence layer that turns every user interaction into a compounding revenue signal.",
-    },
+  heroMetrics: [
+    { value: "5", label: "AI Pricing Agents" },
+    { value: "3", label: "Role Based Access" },
+  ],
+  quote: {
+    text: "PriceSmurf surfaced margin leaks we had no idea existed — hidden in plain sight inside our own Excel files.",
+    author: "Head of Pricing, Enterprise Client",
   },
+  challenge: {
+    title: "The Challenge",
+    tagline:
+      "Enterprise pricing teams were drowning in spreadsheets — margin erosion, upsell gaps, and losing deals on price with no way to see why.",
+    cards: [
+      {
+        icon: "manage_search",
+        title: "Silent Margin Leakage",
+        description:
+          "Pricing teams had no systematic way to detect below-cost sales, discount violations, or margin erosion buried across thousands of rows of Excel data — leaks compounded silently for months.",
+      },
+      {
+        icon: "trending_down",
+        title: "No Win/Loss Visibility",
+        description:
+          "Deal outcomes sat in disconnected CRM exports and spreadsheets with no analysis layer — teams couldn't identify which pricing decisions were winning or losing deals.",
+      },
+    ],
+  },
+  solution: {
+    title: "The AI Implementation",
+    tagline:
+      "We built a full-stack SaaS platform powered by AI — users upload their sales data and five specialized agents produce structured, visual pricing intelligence reports.",
+    cards: [
+      {
+        n: "01",
+        title: "5 Pricing Agents",
+        description:
+          "Specialized AI agents for Data Quality, Margin Leakage, Opportunity Detection, Value Analysis, and Win/Loss — each running parallel sub-calls against uploaded Excel/CSV data.",
+        cta: "Explore Agents",
+      },
+      {
+        n: "02",
+        title: "Multi-Tenant Workspace Platform",
+        description:
+          "Full multi-tenant SaaS architecture with subdomain-based workspaces, role-based access (owner/admin/member/viewer), Stripe billing, and Clerk authentication.",
+        cta: "Platform Architecture",
+      },
+      {
+        n: "03",
+        title: "Structured Visual Reports",
+        description:
+          "Every agent produces a tabbed results page with interactive Recharts visualizations, sortable data tables, SQL audit queries, and one-click PDF export.",
+        cta: "View Demo",
+      },
+    ],
+  },
+  outcomes: {
+    title: "What We Built",
+    description:
+      "PriceSmurf is a production-grade, deployed SaaS platform running on Google Cloud Run — 45+ API routes, 18 MongoDB collections, 5 live AI agents, and full Stripe subscription billing.",
+    bullets: [
+      {
+        title: "Margin Leakage Quantified in Seconds",
+        description:
+          "The Margin Leakage Agent identifies below-cost sales, calculates exact revenue impact per product/customer/region, and generates corrective action recommendations — all from a raw Excel upload.",
+      },
+      {
+        title: "Win/Loss Intelligence from Raw Deal Data",
+        description:
+          "The Win-Loss Agent extracts deal patterns, pricing impact on win rate, and competitive intelligence directly from CRM exports — no manual tagging required.",
+      },
+    ],
+    tiles: [
+      { value: "5", label: "AI Agents", bg: "bg-zinc-50", valueCls: "text-[#FF1E41]", labelCls: "text-zinc-400" },
+      { value: "45+", label: "API Routes", bg: "bg-black", valueCls: "text-white", labelCls: "text-[#FF1E41]" },
+      { value: "18", label: "DB Collections", bg: "bg-[#FF1E41]", valueCls: "text-white", labelCls: "text-white/60" },
+      { value: "GCP", label: "Cloud Run Deploy", bg: "bg-zinc-100", valueCls: "text-black", labelCls: "text-zinc-400" },
+    ],
+  },
+  gallery: {
+    title: "Pricing Intelligence at Enterprise Scale",
+    description:
+      "PriceSmurf isn't a dashboard — it's a full AI-powered SaaS platform that turns raw pricing spreadsheets into strategic intelligence: margin visibility, deal patterns, and revenue opportunities, all in one place.",
+  },
+},
 
+
+ upgrr: {
+  name: "Upgrr",
+  category: "SaaS · Financial Analysis",
+  tagline:
+    "How we built a purpose-built financial analysis platform for the printing equipment industry — 100+ sales consultants generating NPV-based lease comparison reports in 5 seconds, influencing 60+ in monthly deals.",
+  thumbnail: "/upgrr.png",
+  images: {
+    challenge: "/upgrr.png",
+    gallery1: "/ug1.png",
+    gallery2: "/ug2.png",
+  },
+  heroMetrics: [
+    { value: "2000+", label: "Reports Generated" },
+    { value: "5s", label: "Report Generation" },
+  ],
+  quote: {
+    text: "Upgrr gave us the credibility to close — clients finally understood the numbers and said yes with confidence.",
+    author: "Sales Consultant, Upgrr User",
+  },
+  challenge: {
+    title: "The Challenge",
+    tagline:
+      "Printing equipment sales ran on long-term leases with complex financials — and every upgrade analysis was being done manually in Excel, inconsistently, slowly, and often incorrectly.",
+    cards: [
+      {
+        icon: "calculate",
+        title: "No Purpose-Built Tool Existed",
+        description:
+          "Sales consultants had no dedicated platform for lease upgrade analysis — settlement costs, NPV modelling, escalation clauses, and click charges were all calculated manually in spreadsheets, leading to errors that lost deals or damaged client trust.",
+      },
+      {
+        icon: "trending_down",
+        title: "Deals Lost to Unclear Numbers",
+        description:
+          "When clients asked 'can you show me the numbers?', consultants had no fast, credible answer. Complex 36–60 month lease structures with early exit penalties made financial justification nearly impossible to communicate clearly.",
+      },
+    ],
+  },
+  solution: {
+    title: "The Platform We Built",
+    tagline:
+      "We built a purpose-built financial analysis SaaS for printing equipment sales — consultants enter lease details, hit generate, and receive a boardroom-ready NPV comparison report in 5 seconds.",
+    cards: [
+      {
+        n: "01",
+        title: "NPV-Based Lease Modelling",
+        description:
+          "Upgrr compares the true lifetime cost of keeping versus upgrading equipment — discounted to today's money using Net Present Value modelling — giving clients a financially rigorous basis for every upgrade decision.",
+        cta: "Explore Modelling",
+      },
+      {
+        n: "02",
+        title: "Lease Settlement Calculator",
+        description:
+          "Instantly calculates the exact cost to exit any lease mid-contract — including whether a lessor's settlement quote is fair — eliminating the guesswork that stalls upgrade conversations.",
+        cta: "Settlement Engine",
+      },
+      {
+        n: "03",
+        title: "Boardroom-Ready PDF Reports",
+        description:
+          "Every analysis produces a clean, printable financial report in 5 seconds — professional enough to walk into any boardroom and credible enough to get a signature on the spot.",
+        cta: "View Demo",
+      },
+    ],
+  },
+  outcomes: {
+    title: "Business Impact",
+    description:
+      "Upgrr eliminated the industry's biggest sales bottleneck — replacing slow, error-prone Excel analysis with instant, accurate financial reports that give consultants the credibility to close.",
+    bullets: [
+      {
+        title: "2000+ Reports Generated",
+        description:
+          "100+ sales consultants across the printing equipment industry have used Upgrr to generate over 2,000 financial comparison reports — each one replacing hours of manual spreadsheet work.",
+      },
+      {
+        title: "60+ Monthly Deals Influenced",
+        description:
+          "Enterprise clients use Upgrr to justify and close large-scale fleet upgrade deals — with clear NPV and ROI analysis that gives business owners the confidence to commit.",
+      },
+    ],
+    tiles: [
+      { value: "2000+", label: "Reports Generated", bg: "bg-zinc-50", valueCls: "text-[#FF1E41]", labelCls: "text-zinc-400" },
+      { value: "100+", label: "Sales Consultants", bg: "bg-black", valueCls: "text-white", labelCls: "text-[#FF1E41]" },
+      { value: "5s", label: "Report Generation", bg: "bg-[#FF1E41]", valueCls: "text-white", labelCls: "text-white/60" },
+      { value: "60+", label: "Monthly Deals", bg: "bg-zinc-100", valueCls: "text-black", labelCls: "text-zinc-400" },
+    ],
+  },
+  gallery: {
+    title: "Stop Guessing. Start Proving.",
+    description:
+      "Upgrr isn't a generic financial tool — it's the only platform built specifically for the printing equipment industry, giving every sales consultant the analytical credibility to close deals that are good for everyone at the table.",
+  },
+},
   novapay: {
     name: "NovaPay",
     category: "Mobile · Fintech",
@@ -536,9 +534,9 @@ const caseStudies: Record<string, CaseStudy> = {
       "How we built a cross-platform React Native fintech app with full Stripe integration — subscriptions, one-time payments, and Connect payouts — scaling to 50,000 active users in under a year.",
     thumbnail: "/novapay-ui.svg",
     images: {
-      challenge: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1200&q=80",
+      challenge: "/novapay-ui.svg",
       gallery1: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=80",
-      gallery2: "https://images.unsplash.com/photo-1512941937669-84a2000f7bff?auto=format&fit=crop&w=800&q=80",
+      gallery2: "https://images.unsplash.com/photo-1643256599483-a28ba93d6ba2?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     heroMetrics: [
       { value: "+220%", label: "Transaction Volume" },
@@ -630,9 +628,9 @@ const caseStudies: Record<string, CaseStudy> = {
       "How we built a Flutter e-commerce app with AI-powered product discovery, Stripe Checkout, Apple Pay, and Google Pay — delivering a 185% higher conversion rate than the client's legacy native app.",
     thumbnail: "/zencart-ui.svg",
     images: {
-      challenge: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1200&q=80",
-      gallery1: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&w=1200&q=80",
-      gallery2: "https://images.unsplash.com/photo-1523206489230-c012df5cde1b?auto=format&fit=crop&w=800&q=80",
+      challenge: "/zencart-ui.svg",
+      gallery1: "https://images.unsplash.com/photo-1768987439370-bd60d3d0b28b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      gallery2: "https://plus.unsplash.com/premium_photo-1664201890376-b735362539bb?q=80&w=1503&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     heroMetrics: [
       { value: "+185%", label: "Conversion Rate" },
@@ -724,9 +722,9 @@ const caseStudies: Record<string, CaseStudy> = {
       "How we built a Swift-native iOS fitness app with Stripe subscription billing and StoreKit 2 — growing to 40,000 paying subscribers in 8 months with a 94% trial-to-paid conversion rate.",
     thumbnail: "/trackrpro-ui.svg",
     images: {
-      challenge: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=1200&q=80",
-      gallery1: "https://images.unsplash.com/photo-1434682881908-b43d0467b798?auto=format&fit=crop&w=1200&q=80",
-      gallery2: "https://images.unsplash.com/photo-1510440777527-f17fb63e60ca?auto=format&fit=crop&w=800&q=80",
+      challenge: "/trackrpro-ui.svg",
+      gallery1: "https://images.unsplash.com/photo-1580983693000-5654250f64d1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      gallery2: "https://images.unsplash.com/photo-1727432813810-cabde273e273?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     heroMetrics: [
       { value: "40k+", label: "Paying Subscribers" },
@@ -818,9 +816,9 @@ const caseStudies: Record<string, CaseStudy> = {
       "How we built a React Native on-demand delivery marketplace with Stripe Connect split payments, real-time GPS tracking, and automated payouts to 500+ courier partners — cutting delivery time by 45%.",
     thumbnail: "/deliveriq-ui.svg",
     images: {
-      challenge: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=1200&q=80",
-      gallery1: "https://images.unsplash.com/photo-1616400619175-5beda3a17896?auto=format&fit=crop&w=1200&q=80",
-      gallery2: "https://images.unsplash.com/photo-1501700493788-fa1a4fc9fe62?auto=format&fit=crop&w=800&q=80",
+      challenge: "/deliveriq-ui.svg",
+      gallery2: "https://images.unsplash.com/photo-1659353740197-4e43ab409ce1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      gallery1: "https://images.unsplash.com/photo-1702812650865-2c84572ffee2?q=80&w=949&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     heroMetrics: [
       { value: "−45%", label: "Delivery Time" },
@@ -994,7 +992,7 @@ export default async function CaseStudyPage({
                   <img
                     src={cs.thumbnail}
                     alt={cs.name}
-                    className="w-full h-full object-cover grayscale brightness-110 hover:grayscale-0 transition-all duration-1000"
+                    className="w-full h-full object-cover  brightness-110 hover:0-0 transition-all duration-1000"
                   />
                 </div>
                 {/* Spinning rings */}
@@ -1216,7 +1214,7 @@ export default async function CaseStudyPage({
                 <img
                   src={cs.images.gallery1}
                   alt="Gallery"
-                  className="w-full h-[600px] object-cover rounded-[3rem] grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl"
+                  className="w-full h-[600px] object-cover rounded-[3rem] 0 hover:0-0 transition-all duration-1000 shadow-2xl"
                 />
               </div>
 
@@ -1226,7 +1224,7 @@ export default async function CaseStudyPage({
                 <img
                   src={cs.images.gallery2}
                   alt="Gallery"
-                  className="w-full h-[280px] object-cover rounded-[3rem] grayscale hover:grayscale-0 transition-all duration-1000 shadow-xl"
+                  className="w-full h-[280px] object-cover rounded-[3rem] 0 hover:0-0 transition-all duration-1000 shadow-xl"
                 />
                 <div className="bg-white p-16 rounded-[3rem] flex flex-col justify-center min-h-[280px] border border-zinc-100">
                   <h3 className="text-3xl font-bold mb-6 tracking-tight text-black">

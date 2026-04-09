@@ -180,7 +180,7 @@ export function PortfolioGallerySection() {
                     <img
                       src={project.thumbnail}
                       alt={project.name}
-                      className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                      className="w-full h-full object-cover object-top 0 group-hover:0-0 group-hover:scale-105 transition-all duration-700"
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#f0eded] to-[#e5e0e0]">

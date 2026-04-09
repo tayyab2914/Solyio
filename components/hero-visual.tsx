@@ -97,7 +97,7 @@ export function HeroVisual() {
                 </span>
 
                 {/* Label */}
-                <span className="text-[12px] font-mono text-white/65 flex-1">
+                <span className="text-[12px] font-mono text-white flex-1">
                   {task.label}
                 </span>
 

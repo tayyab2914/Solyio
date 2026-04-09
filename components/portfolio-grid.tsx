@@ -14,61 +14,66 @@ const PROJECTS: {
   tags?: string[]
 }[] = [
   {
-    slug: "expertaiq",
-    name: "ExpertAIQ",
-    category: "SaaS",
-    thumbnail: "/ExpertAIQ.png",
-    metric: "+80%",
-    description:
-      "AI-powered insights platform that reduces manual research time by 80%, turning complex data into actionable business intelligence in seconds.",
-    detailHref: "/portfolio/expertaiq",
-  },
+  slug: "expertaiq",
+  name: "ExpertAIQ",
+  category: "SaaS",
+  thumbnail: "/ExpertAIQ.png",
+  metric: "105+ Coaches",
+  description:
+    "White-label AI coaching platform where consultants upload their knowledge base, build a personalized AI persona, and monetize their expertise — students learn directly from RAG-powered AI trained on the coach's own material.",
+  detailHref: "/portfolio/expertaiq",
+  tags: ["RAG", "White-label", "AI Agents", "Next.js"],
+},
   {
-    slug: "robomarketer",
-    name: "RoboMarketer",
-    category: "Marketing",
-    thumbnail: "/RoboMarketer.png",
-    metric: "10x",
-    description:
-      "AI marketing automation delivering 10x faster content creation with autonomous campaign scheduling and real-time performance optimization across channels.",
-    detailHref: "/portfolio/robomarketer",
-  },
+  slug: "robomarketer",
+  name: "RoboMarketer",
+  category: "Marketing",
+  thumbnail: "/RoboMarketer.png",
+  metric: "12 AI Agents",
+  description:
+    "AI marketing automation platform that deploys 12 pre-trained AI employees to run paid ads, social media, SEO, email, and content on autopilot — saving agencies 72+ hours weekly without adding headcount.",
+  detailHref: "/portfolio/robomarketer",
+  tags: ["Django", "Next.js", "AI Agents", "Stripe"],
+},
   {
-    slug: "cashads",
-    name: "CashAds",
-    category: "Advertising",
-    thumbnail: "/Cashads.png",
-    metric: "+35%",
-    description:
-      "Automated ad management platform with AI-driven bidding and creative optimization, managing $2M+ monthly ad spend with a 35% improvement in ROAS.",
-    detailHref: "/portfolio/cashads",
-  },
+  slug: "cashads",
+  name: "CashAds",
+  category: "Advertising",
+  thumbnail: "/Cashads.png",
+  metric: "AI Admaker",
+  description:
+    "AI-powered ad creative marketplace where anyone can generate professional ads in seconds and sell them instantly to businesses — 80+ creators, 158 buyers, and $500K in annual marketplace revenue.",
+  detailHref: "/portfolio/cashads",
+  tags: ["Next.js", "Django", "LangChain", "Stripe"],
+},
   {
-    slug: "healthtrack-ai",
-    name: "PriceSmurf",
-    category: "Healthcare",
-    thumbnail: "/PriceSmurf.png",
-    metric: "−60%",
-    description:
-      "AI-powered patient engagement platform reducing appointment no-shows by 60% through intelligent scheduling and personalized health alerts.",
-    detailHref: "/portfolio/healthtrack-ai",
-  },
+  slug: "pricing-intelligence",
+  name: "PriceSmurf",
+  category: "SaaS",
+  thumbnail: "/PriceSmurf.png",
+  metric: "Pricing Intellignece",
+  description:
+    "Multi-tenant AI pricing intelligence platform — 5 specialized agents that detect margin leakage, upsell gaps, and win/loss patterns directly from enterprise sales data.",
+  detailHref: "/portfolio/pricing-intelligence",
+  tags: ["Next.js", "Vertex AI", "Gemini", "Stripe" , "LangChain" , "RAG"],
+},
   {
-    slug: "upgrr",
-    name: "Upgrr",
-    category: "SaaS",
-    thumbnail: "/upgrr.png",
-    metric: "+3x",
-    description:
-      "Intelligent growth platform accelerating user retention through AI-driven personalization and predictive engagement automation at scale.",
-    detailHref: "/portfolio/upgrr",
-  },
+  slug: "upgrr",
+  name: "Upgrr",
+  category: "SaaS",
+  thumbnail: "/upgrr.png",
+  metric: "2000+ Reports Generated",
+  description:
+    "Financial analysis platform built for the printing equipment industry — sales consultants generate NPV-based lease comparison reports in 5 seconds, closing deals with boardroom-ready financial justification.",
+  detailHref: "/portfolio/upgrr",
+  tags: ["Next.js", "Financial Modelling", "SaaS", "PDF Reports"],
+},
   {
     slug: "novapay",
     name: "NovaPay",
     category: "Mobile",
     thumbnail: "/novapay-ui.svg",
-    metric: "+220%",
+    metric: "",
     description:
       "Cross-platform React Native fintech app with full Stripe integration — subscriptions, one-time payments, and Connect marketplace payouts for 50k+ active users.",
     detailHref: "/portfolio/novapay",
@@ -79,7 +84,7 @@ const PROJECTS: {
     name: "ZenCart",
     category: "Mobile",
     thumbnail: "/zencart-ui.svg",
-    metric: "+185%",
+    metric: "",
     description:
       "AI-powered Flutter e-commerce app with Stripe Checkout, Apple Pay, and Google Pay — achieving 185% higher conversion vs the client's previous native app.",
     detailHref: "/portfolio/zencart",
@@ -90,7 +95,7 @@ const PROJECTS: {
     name: "TrackrPro",
     category: "Mobile",
     thumbnail: "/trackrpro-ui.svg",
-    metric: "40k+",
+    metric: "",
     description:
       "iOS-native fitness and wellness app with Stripe subscription billing, free trial management, and StoreKit 2 — scaling to 40,000 paying subscribers in 8 months.",
     detailHref: "/portfolio/trackrpro",
@@ -101,7 +106,7 @@ const PROJECTS: {
     name: "DeliverIQ",
     category: "Mobile",
     thumbnail: "/deliveriq-ui.svg",
-    metric: "−45%",
+    metric: "",
     description:
       "React Native on-demand delivery marketplace with Stripe Connect split payments, real-time driver tracking, and automated payouts to 500+ courier partners.",
     detailHref: "/portfolio/deliveriq",
@@ -109,7 +114,7 @@ const PROJECTS: {
   },
 ]
 
-const CATEGORIES = ["All", "SaaS", "Marketing", "Advertising", "Healthcare", "Mobile"]
+const CATEGORIES = ["All", "SaaS", "Marketing", "Advertising", "Mobile"]
 
 /* ─── Single card ─────────────────────────────────────────────────── */
 
@@ -129,7 +134,7 @@ function ProjectCard({
           <img
             src={project.thumbnail}
             alt={project.name}
-            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
+            className="w-full h-full object-cover 0 group-hover:0-0 transition-all duration-700 scale-105 group-hover:scale-100"
           />
           {/* Category badge */}
           <div className="absolute top-6 left-6">

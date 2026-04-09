@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { SiteNavbar } from "@/components/site-navbar"
 import { GlobalPresenceSection } from "@/components/global-presence-section"
 import { HeroVisual } from "@/components/hero-visual"
+import { HeroHeadline } from "@/components/hero-headline"
 import { SiteFooter } from "@/components/site-footer"
 
 export const metadata: Metadata = {
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
 
 function HeroSection() {
   return (
-    <section className="relative pt-48 pb-32 px-12 overflow-hidden min-h-screen flex items-center bg-[#fcf9f8]">
+    <section className="relative pt-35 pb-32 px-12 overflow-hidden min-h-screen flex items-center bg-[#fcf9f8]">
       {/* Ambient glows */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-48 -right-48 w-[600px] h-[600px] bg-[#FF1E41]/5 rounded-full blur-[160px]" />
@@ -94,13 +95,11 @@ function ValuePropSection() {
               <span className="text-[10px] font-black tracking-[0.25em] uppercase text-[#5e3f3e]">6 Core Services</span>
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-headline font-bold text-[#1c1b1b] tracking-tighter leading-none">
-              Everything Your{" "}
-              <span className="italic text-[#FF1E41]">Business</span>{" "}Needs
+              Services That Help You   {" "}
+              <span className="italic text-[#FF1E41]">Grow </span>{" "}
             </h2>
           </div>
-          <p className="text-[#5e3f3e] text-base leading-relaxed max-w-xs opacity-70 md:text-right">
-            Systems that run, scale, and grow your business — around the clock.
-          </p>
+          
         </div>
 
         {/* Bento grid */}
@@ -258,34 +257,34 @@ function ValuePropSection() {
           {/* ── Cloud Infrastructure ── */}
           <Link
             href="/services/cloud-infrastructure"
-            className="md:col-span-4 bg-white rounded-[2rem] md:rounded-[3rem] p-8 md:p-10 flex flex-col justify-between relative overflow-hidden group border border-[#e8bcbb]/25 hover:border-[#FF1E41]/35 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 min-h-[280px]"
+            className="md:col-span-4 bg-white rounded-2xl md:rounded-3xl p-6 md:p-7 flex flex-col justify-between relative overflow-hidden group border border-[#e8bcbb]/25 hover:border-[#FF1E41]/35 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-500"
           >
-            <div className="absolute -right-10 -top-10 w-36 h-36 bg-[#FF1E41]/5 rounded-full group-hover:scale-150 transition-transform duration-700" />
+            <div className="absolute -right-8 -top-8 w-28 h-28 bg-[#FF1E41]/5 rounded-full group-hover:scale-150 transition-transform duration-700" />
 
-            <div className="relative z-10 flex items-start justify-between gap-3 mb-5">
+            <div className="relative z-10 flex items-center justify-between gap-3 mb-3">
               <div>
-                <span className="text-[10px] font-black tracking-[0.3em] uppercase text-[#FF1E41] block mb-3">Infrastructure</span>
-                <h3 className="text-2xl md:text-3xl font-headline font-bold text-[#1c1b1b] tracking-tighter">Cloud Infrastructure</h3>
+                <span className="text-[9px] font-black tracking-[0.3em] uppercase text-[#FF1E41] block mb-1.5">Infrastructure</span>
+                <h3 className="text-xl md:text-2xl font-headline font-bold text-[#1c1b1b] tracking-tighter">Cloud Infrastructure</h3>
               </div>
-              <span className="material-symbols-outlined text-[#FF1E41] shrink-0 group-hover:scale-110 transition-transform duration-500" style={{ fontSize: "40px" }}>
+              <span className="material-symbols-outlined text-[#FF1E41] shrink-0 group-hover:scale-110 transition-transform duration-500" style={{ fontSize: "34px" }}>
                 cloud
               </span>
             </div>
 
-            <p className="relative z-10 text-[#5e3f3e] text-sm leading-relaxed opacity-80 mb-6">
-              AWS, GCP, or Azure — we set up, secure, and scale your cloud without the complexity or surprise bills.
+            <p className="relative z-10 text-[#5e3f3e] text-sm leading-relaxed opacity-75 mb-4">
+              AWS, GCP, or Azure — set up, secured, and scaled without the complexity or surprise bills.
             </p>
 
-            <div className="relative z-10 flex flex-wrap gap-2 mb-6">
+            <div className="relative z-10 flex flex-wrap gap-1.5 mb-4">
               {["AWS / GCP", "Docker", "Kubernetes", "CI/CD"].map((tag) => (
-                <span key={tag} className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-[#f7f4f3] text-[#5e3f3e] border border-[#e8bcbb]/40">
+                <span key={tag} className="text-[9px] font-bold px-2.5 py-1 rounded-full bg-[#f7f4f3] text-[#5e3f3e] border border-[#e8bcbb]/40">
                   {tag}
                 </span>
               ))}
             </div>
 
-            <div className="relative z-10 flex items-center justify-between pt-5 border-t border-[#e8bcbb]/30">
-              <span className="text-[#5e3f3e]/40 text-xs font-headline tracking-widest uppercase">Explore</span>
+            <div className="relative z-10 flex items-center justify-between pt-4 border-t border-[#e8bcbb]/30">
+              <span className="text-[#5e3f3e]/35 text-[10px] font-headline tracking-widest uppercase">Explore</span>
               <span className="material-symbols-outlined text-[#5e3f3e]/25 group-hover:text-[#FF1E41] group-hover:translate-x-1 transition-all duration-300">arrow_forward</span>
             </div>
           </Link>
@@ -293,35 +292,34 @@ function ValuePropSection() {
           {/* ── Marketing Services — full-width bottom card ── */}
           <Link
             href="/services/marketing-services"
-            className="md:col-span-12 bg-[#FF1E41] rounded-[2rem] md:rounded-[3rem] p-8 md:p-12 flex flex-col md:flex-row md:items-center md:justify-between relative overflow-hidden group shadow-[0_40px_80px_-20px_rgba(255,30,65,0.3)] hover:shadow-[0_50px_100px_-20px_rgba(255,30,65,0.45)] transition-all duration-500 gap-8"
+            className="md:col-span-12 bg-[#FF1E41] rounded-2xl md:rounded-3xl p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between relative overflow-hidden group shadow-[0_20px_60px_-10px_rgba(255,30,65,0.3)] hover:shadow-[0_30px_70px_-10px_rgba(255,30,65,0.45)] transition-all duration-500 gap-5"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-[#bb0029] to-transparent opacity-0 group-hover:opacity-40 transition-opacity duration-700" />
-            <div className="absolute -right-20 -bottom-20 w-72 h-72 bg-white/5 rounded-full" />
-            <div className="absolute right-64 -top-10 w-40 h-40 bg-white/5 rounded-full" />
+            <div className="absolute -right-16 -bottom-16 w-56 h-56 bg-white/5 rounded-full" />
 
             <div className="relative z-10">
-              <span className="text-[10px] font-black tracking-[0.3em] uppercase text-white/50 block mb-3">Growth Engine</span>
-              <h3 className="text-3xl md:text-4xl font-headline font-bold text-white tracking-tighter mb-4">Marketing Services</h3>
-              <p className="text-white/70 text-base leading-relaxed max-w-xl">
-                SEO & GEO, paid ads, social media, content marketing, and AI-driven campaign automation — we bring customers in while you focus on delivery.
+              <span className="text-[9px] font-black tracking-[0.3em] uppercase text-white block mb-1.5">Growth Engine</span>
+              <h3 className="text-2xl md:text-3xl font-headline font-bold text-white tracking-tighter mb-2">Marketing Services</h3>
+              <p className="text-white text-sm leading-relaxed max-w-lg">
+                SEO & GEO, paid ads, social media, content, and AI campaign automation — we bring customers in.
               </p>
             </div>
 
-            <div className="relative z-10 flex flex-wrap md:flex-nowrap gap-4 shrink-0">
+            <div className="relative z-10 flex flex-wrap gap-2 shrink-0">
               {[
                 { icon: "search", label: "SEO & GEO" },
                 { icon: "ads_click", label: "Paid Ads" },
                 { icon: "share", label: "Social Media" },
                 { icon: "auto_graph", label: "Analytics" },
               ].map((item) => (
-                <div key={item.label} className="flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/15 rounded-2xl px-5 py-3.5 transition-colors">
-                  <span className="material-symbols-outlined text-white" style={{ fontSize: "18px" }}>{item.icon}</span>
-                  <span className="text-white font-headline font-bold text-sm whitespace-nowrap">{item.label}</span>
+                <div key={item.label} className="flex items-center gap-1.5 bg-white/10 border border-white/15 rounded-xl px-3.5 py-2 transition-colors hover:bg-white/20">
+                  <span className="material-symbols-outlined text-white" style={{ fontSize: "15px" }}>{item.icon}</span>
+                  <span className="text-white font-headline font-bold text-xs whitespace-nowrap">{item.label}</span>
                 </div>
               ))}
-              <div className="flex items-center gap-2 bg-white text-[#FF1E41] rounded-2xl px-5 py-3.5 font-headline font-black text-sm whitespace-nowrap group-hover:bg-[#fcf9f8] transition-colors">
+              <div className="flex items-center gap-1.5 bg-white text-[#FF1E41] rounded-xl px-3.5 py-2 font-headline font-black text-xs whitespace-nowrap group-hover:bg-[#fcf9f8] transition-colors">
                 Explore
-                <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform" style={{ fontSize: "16px" }}>arrow_forward</span>
+                <span className="material-symbols-outlined group-hover:translate-x-0.5 transition-transform" style={{ fontSize: "14px" }}>arrow_forward</span>
               </div>
             </div>
           </Link>
@@ -512,12 +510,12 @@ function CaseStudiesSection() {
               <div className="relative z-10">
                 <div className="flex items-start justify-between mb-5 gap-3">
                   <div>
-                    <span className="text-[10px] font-black tracking-[0.3em] uppercase text-white/50 block mb-2">Performance Ad Network</span>
+                    <span className="text-[10px] font-black tracking-[0.3em] uppercase text-white block mb-2">Performance Ad Network</span>
                     <h3 className="text-2xl md:text-3xl font-headline font-bold text-white tracking-tighter">CashAds</h3>
                   </div>
-                  <span className="material-symbols-outlined text-white/25 text-4xl group-hover:text-white/50 transition-colors duration-500">campaign</span>
+                  <span className="material-symbols-outlined text-white text-4xl group-hover:text-white/50 transition-colors duration-500">campaign</span>
                 </div>
-                <p className="text-white/75 text-sm leading-relaxed mb-6">
+                <p className="text-white text-sm leading-relaxed mb-6">
                   Full-stack ad platform connecting advertisers &amp; publishers. Real-time tracking, payout management, and AI bid optimization built to scale.
                 </p>
               </div>
@@ -548,8 +546,8 @@ function CTASection() {
   return (
     <section className="py-16 md:py-28 px-4 sm:px-8 md:px-12 bg-[#fcf9f8] relative overflow-hidden">
       <div className="max-w-7xl mx-auto text-center bg-white px-6 py-16 sm:px-12 sm:py-20 md:p-24 rounded-[2rem] md:rounded-[5rem] relative overflow-hidden border border-[#e8bcbb]/20 shadow-[0_60px_120px_-30px_rgba(0,0,0,0.1)]">
-        <div className="absolute inset-0 kinetic-gradient opacity-[0.02]" />
-        <div className="absolute top-0 left-0 w-full h-1 kinetic-gradient" />
+        <div className="absolute inset-0 kinetic-gradient opacity-[0.02] pointer-events-none" />
+        <div className="absolute top-0 left-0 w-full h-1 kinetic-gradient pointer-events-none" />
         <h2 className="text-4xl sm:text-5xl md:text-7xl font-headline font-bold text-[#1c1b1b] mb-8 md:mb-12 tracking-tighter leading-none">
           Ready to{" "}
           <span className="italic text-[#FF1E41] block sm:inline">

@@ -156,7 +156,7 @@ function ContactSection() {
 function MapSection() {
   return (
     <section className="max-w-[1440px] mx-auto px-8 md:px-12 mt-20">
-      <div className="relative w-full h-[400px] rounded-2xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
+      <div className="relative w-full h-[400px] rounded-2xl overflow-hidden 0 hover:0-0 transition-all duration-700">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5vJ2XgDAEUpa3Z0jTCzLYiWF3xpGByOB_16ilLezIFAi2XSIgX1eOZSvJbaBgSVwUUE_r-0B1JCxh2hNyxxVVJJpiUln5Zh_M5n7LKNjEaPcPuUT-kJLdWwM36t3Z7DpoJalMDpw7a30D8QwH_Uy4UINDSbmQ_7An747hFNZJ-jprXL67ihEKLAqqDh-3AQwUDxdhSXYocVWf1N31PD6c0RuxxUQr5qwS7R615o2wtDS0JjySZDh0ydjsQ5apYoJcG21N7rNbrhDo"
