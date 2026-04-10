@@ -136,6 +136,39 @@ const REVIEWERS: Reviewer[] = [
   },
 ]
 
+/* ─── Compact horizontal card for mobile marquee ─────────────────── */
+
+function MobileReviewCard({ reviewer }: { reviewer: Reviewer }) {
+  return (
+    <div className="flex-shrink-0 w-72 bg-white rounded-2xl border border-[#e8bcbb]/30 p-4 shadow-sm flex gap-3 items-start">
+      {/* Avatar */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={reviewer.avatar}
+        alt={reviewer.name}
+        className="w-10 h-10 rounded-full object-cover shrink-0 border-2 border-[#e8bcbb]/40"
+      />
+      <div className="min-w-0">
+        {/* Stars */}
+        <div className="flex gap-0.5 mb-1">
+          {Array.from({ length: reviewer.stars }).map((_, i) => (
+            <span key={i} className="text-[#FF1E41] text-[10px]">★</span>
+          ))}
+        </div>
+        {/* Quote */}
+        <p className="text-[11px] text-[#5e3f3e] leading-snug line-clamp-2 mb-1.5">
+          &ldquo;{reviewer.quote}&rdquo;
+        </p>
+        {/* Name + role */}
+        <p className="text-[10px] font-bold text-[#1c1b1b] uppercase tracking-widest truncate">
+          {reviewer.name}
+        </p>
+        <p className="text-[9px] text-[#5e3f3e]/60 truncate">{reviewer.role}</p>
+      </div>
+    </div>
+  )
+}
+
 /* ─── Single photo/review card ────────────────────────────────────── */
 
 function ReviewCard({ reviewer, size = "md" }: { reviewer: Reviewer; size?: "sm" | "md" | "lg" }) {
@@ -313,6 +346,22 @@ export function GlobalPresenceSection() {
           <div className="w-1/2 mt-24">
             <FloatColumn reviewers={rightGroup2} animClass="float-col-down-slow" />
           </div>
+        </div>
+      </div>
+
+      {/* ── Mobile / Tablet reviews (hidden on lg+) ────────────────── */}
+      <div className="lg:hidden pb-16 space-y-4 overflow-hidden">
+        {/* Row 1 — scrolls left */}
+        <div className="flex gap-3 animate-marquee" style={{ width: "max-content" }}>
+          {[...REVIEWERS.slice(0, 6), ...REVIEWERS.slice(0, 6)].map((r, i) => (
+            <MobileReviewCard key={`r1-${i}`} reviewer={r} />
+          ))}
+        </div>
+        {/* Row 2 — scrolls right (reversed) */}
+        <div className="flex gap-3 animate-marquee-reverse" style={{ width: "max-content" }}>
+          {[...REVIEWERS.slice(6), ...REVIEWERS.slice(6)].map((r, i) => (
+            <MobileReviewCard key={`r2-${i}`} reviewer={r} />
+          ))}
         </div>
       </div>
     </section>

@@ -212,6 +212,13 @@
 .animate-marquee-slow {
   animation: marquee 55s linear infinite;
 }
+@keyframes marquee-reverse {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+.animate-marquee-reverse {
+  animation: marquee-reverse 50s linear infinite;
+}
 @keyframes pulse-glow {
   0%, 100% { opacity: 0.5; }
   50%       { opacity: 1; }

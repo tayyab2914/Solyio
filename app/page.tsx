@@ -485,8 +485,8 @@ function CaseStudiesSection() {
           <div className="lg:col-span-5 flex flex-col gap-5 md:gap-6">
 
             {/* ── PriceSmurf ── */}
-            <div className="flex-1 bg-[#f7f4f3] rounded-[2rem] md:rounded-[3rem] p-8 sm:p-10 md:p-12 flex flex-col justify-between relative overflow-hidden group border border-[#e8bcbb]/20 hover:border-[#FF1E41]/30 hover:shadow-2xl transition-all duration-500">
-              <div className="absolute -right-12 -top-12 w-40 h-40 bg-[#FF1E41]/5 rounded-full group-hover:scale-150 transition-transform duration-700" />
+            <div className="flex-1 bg-[#f7f4f3] rounded-[2rem] md:rounded-[3rem] p-8 sm:p-10 md:p-12 flex flex-col justify-between relative group border border-[#e8bcbb]/20 hover:border-[#FF1E41]/30 hover:shadow-2xl transition-all duration-500">
+              <div className="absolute -right-12 -top-12 w-40 h-40 bg-[#FF1E41]/5 rounded-full group-hover:scale-150 transition-transform duration-700 overflow-hidden pointer-events-none" />
 
               <div className="relative z-10">
                 <div className="flex items-start justify-between mb-5 gap-3">
@@ -515,7 +515,7 @@ function CaseStudiesSection() {
                 </div>
               </div>
 
-              <div className="relative z-10 grid grid-cols-3 gap-3 pt-5 border-t border-[#e8bcbb]/40">
+              <div className="relative z-10 grid grid-cols-3 gap-3 pt-5 border-t border-[#e8bcbb]/40 mt-auto">
                 {[
                   { num: "5", label: "AI Agents" },
                   { num: "Multi", label: "Tenant" },
