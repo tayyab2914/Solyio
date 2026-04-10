@@ -51,7 +51,7 @@ const PROJECTS: {
   name: "PriceSmurf",
   category: "SaaS",
   thumbnail: "/PriceSmurf.png",
-  metric: "Pricing Intellignece",
+  metric: "Pricing Intelligence",
   description:
     "Multi-tenant AI pricing intelligence platform — 5 specialized agents that detect margin leakage, upsell gaps, and win/loss patterns directly from enterprise sales data.",
   detailHref: "/portfolio/pricing-intelligence",
@@ -156,7 +156,7 @@ function ProjectCard({
             <h3 className="text-4xl font-headline font-bold tracking-tight text-[#1c1b1b] group-hover:text-[#bb0029] transition-colors">
               {project.name}
             </h3>
-            <span className="text-[#bb0029] font-headline font-black text-2xl tracking-tighter shrink-0">
+            <span className="text-[#bb0029] font-headline font-black text-2xl tracking-tighter hidden md:block shrink-0">
               {project.metric}
             </span>
           </div>
@@ -196,13 +196,13 @@ export function PortfolioGrid() {
   return (
     <>
       {/* Filter bar */}
-      <section className="px-8 max-w-[1440px] mx-auto mb-16 overflow-x-auto">
-        <div className="flex items-center gap-3 pb-4">
+      <section className="px-6 md:px-8 max-w-[1440px] mx-auto mb-16">
+        <div className="flex flex-wrap items-center gap-2 md:gap-3">
           {CATEGORIES.map((cat) => (
             <button
               key={cat}
               onClick={() => setActive(cat)}
-              className={`px-6 py-2 rounded-full font-semibold text-sm whitespace-nowrap transition-colors ${
+              className={`px-5 md:px-6 py-2 rounded-full font-semibold text-sm whitespace-nowrap transition-colors ${
                 active === cat
                   ? "bg-[#1c1b1b] text-[#fcf9f8]"
                   : "bg-[#eae7e7] text-[#5e3f3e] hover:bg-[#e5e2e1]"

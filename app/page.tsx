@@ -176,29 +176,29 @@ function ValuePropSection() {
             </div>
           </Link>
 
-          {/* ── Cyber Security ── */}
+          {/* ── Cloud Infrastructure ── */}
           <Link
-            href="/services/cyber-security"
+            href="/services/cloud-infrastructure"
             className="md:col-span-5 bg-[#1c1b1b] rounded-2xl md:rounded-3xl p-6 md:p-8 flex flex-col justify-between relative overflow-hidden group border border-[#FF1E41]/10 hover:border-[#FF1E41]/30 hover:shadow-xl transition-all duration-500"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-[#FF1E41]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
             <div className="relative z-10 flex items-center justify-between gap-3 mb-3">
               <div>
-                <span className="text-[9px] font-black tracking-[0.3em] uppercase text-[#FF1E41]/70 block mb-1.5">Security</span>
-                <h3 className="text-xl md:text-2xl font-headline font-bold text-white tracking-tighter">Cyber Security</h3>
+                <span className="text-[9px] font-black tracking-[0.3em] uppercase text-[#FF1E41]/70 block mb-1.5">Infrastructure</span>
+                <h3 className="text-xl md:text-2xl font-headline font-bold text-white tracking-tighter">Cloud Infrastructure</h3>
               </div>
               <span className="material-symbols-outlined text-[#FF1E41]/40 group-hover:text-[#FF1E41] transition-colors duration-500 shrink-0" style={{ fontSize: "36px" }}>
-                security
+                cloud
               </span>
             </div>
 
             <p className="relative z-10 text-white/45 text-sm leading-relaxed mb-4">
-              Pentests, security audits, zero-trust architecture, and compliance — find the gaps before attackers do.
+              AWS, GCP, or Azure — set up, secured, and scaled without the complexity or surprise bills.
             </p>
 
             <div className="relative z-10 flex flex-wrap gap-1.5 mb-4">
-              {["Penetration Testing", "GDPR/HIPAA", "Zero-Trust", "SOC 2"].map((tag) => (
+              {["AWS / GCP", "Docker", "Kubernetes", "CI/CD"].map((tag) => (
                 <span key={tag} className="text-[9px] font-bold px-2.5 py-1 rounded-full bg-white/6 text-white/35 border border-white/8">
                   {tag}
                 </span>
@@ -281,29 +281,29 @@ function ValuePropSection() {
             </div>
           </Link>
 
-          {/* ── Cloud Infrastructure ── */}
+          {/* ── Cyber Security ── */}
           <Link
-            href="/services/cloud-infrastructure"
+            href="/services/cyber-security"
             className="md:col-span-4 bg-white rounded-2xl md:rounded-3xl p-6 md:p-7 flex flex-col justify-between relative overflow-hidden group border border-[#e8bcbb]/25 hover:border-[#FF1E41]/35 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-500"
           >
             <div className="absolute -right-8 -top-8 w-28 h-28 bg-[#FF1E41]/5 rounded-full group-hover:scale-150 transition-transform duration-700" />
 
             <div className="relative z-10 flex items-center justify-between gap-3 mb-3">
               <div>
-                <span className="text-[9px] font-black tracking-[0.3em] uppercase text-[#FF1E41] block mb-1.5">Infrastructure</span>
-                <h3 className="text-xl md:text-2xl font-headline font-bold text-[#1c1b1b] tracking-tighter">Cloud Infrastructure</h3>
+                <span className="text-[9px] font-black tracking-[0.3em] uppercase text-[#FF1E41] block mb-1.5">Security</span>
+                <h3 className="text-xl md:text-2xl font-headline font-bold text-[#1c1b1b] tracking-tighter">Cyber Security</h3>
               </div>
               <span className="material-symbols-outlined text-[#FF1E41] shrink-0 group-hover:scale-110 transition-transform duration-500" style={{ fontSize: "34px" }}>
-                cloud
+                security
               </span>
             </div>
 
             <p className="relative z-10 text-[#5e3f3e] text-sm leading-relaxed opacity-75 mb-4">
-              AWS, GCP, or Azure — set up, secured, and scaled without the complexity or surprise bills.
+              Pentests, security audits, zero-trust architecture, and compliance — find the gaps before attackers do.
             </p>
 
             <div className="relative z-10 flex flex-wrap gap-1.5 mb-4">
-              {["AWS / GCP", "Docker", "Kubernetes", "CI/CD"].map((tag) => (
+              {["Penetration Testing", "GDPR/HIPAA", "Zero-Trust", "SOC 2"].map((tag) => (
                 <span key={tag} className="text-[9px] font-bold px-2.5 py-1 rounded-full bg-[#f7f4f3] text-[#5e3f3e] border border-[#e8bcbb]/40">
                   {tag}
                 </span>

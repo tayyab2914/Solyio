@@ -63,6 +63,16 @@ export function SiteNavbar({ variant = "light" }: SiteNavbarProps) {
     setMobileServicesOpen(false)
   }, [pathname])
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = ""
+    }
+    return () => { document.body.style.overflow = "" }
+  }, [mobileOpen])
+
   const linkBase = dark
     ? "text-white/60 hover:text-white"
     : "text-[#1c1b1b] opacity-70 hover:opacity-100 hover:text-[#bb0029]"
@@ -78,21 +88,21 @@ export function SiteNavbar({ variant = "light" }: SiteNavbarProps) {
           dark ? "bg-[#0f0e0e]/80" : "bg-[#fcf9f8]/80"
         }`}
       >
-        <div className="flex justify-between items-center px-6 md:px-8 py-4 md:py-5 max-w-screen-2xl mx-auto">
+        <div className="flex justify-between items-center px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-5 max-w-screen-2xl mx-auto">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/logo.svg"
               alt="Solyio"
-              className={`h-16 md:h-20 w-auto object-contain transition-transform hover:scale-105 duration-300 ${
+              className={`h-12 sm:h-14 lg:h-20 w-auto object-contain transition-transform hover:scale-105 duration-300 ${
                 dark ? "brightness-0 invert" : ""
               }`}
             />
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-10">
+          <div className="hidden lg:flex items-center gap-6 xl:gap-10">
             {/* Services dropdown */}
             <div 
               className="relative" 
@@ -204,7 +214,7 @@ export function SiteNavbar({ variant = "light" }: SiteNavbarProps) {
           <div className="flex items-center gap-4">
             <Link
               href="/book"
-              className="hidden md:block bg-[#FF1E41] text-white font-headline text-sm font-bold tracking-widest uppercase px-8 py-3 rounded-full hover:bg-[#bb0029] active:scale-95 transition-all duration-300"
+              className="hidden lg:block bg-[#FF1E41] text-white font-headline text-sm font-bold tracking-widest uppercase px-6 xl:px-8 py-2.5 xl:py-3 rounded-full hover:bg-[#bb0029] active:scale-95 transition-all duration-300"
             >
               Get Started
             </Link>
@@ -212,7 +222,7 @@ export function SiteNavbar({ variant = "light" }: SiteNavbarProps) {
             {/* Mobile hamburger */}
             <button
               onClick={() => setMobileOpen((v) => !v)}
-              className={`md:hidden flex flex-col gap-1.5 p-2 rounded-lg transition-colors ${
+              className={`lg:hidden flex flex-col gap-1.5 p-2 rounded-lg transition-colors ${
                 dark ? "text-white hover:bg-white/10" : "text-[#1c1b1b] hover:bg-black/5"
               }`}
               aria-label="Toggle menu"
@@ -239,7 +249,7 @@ export function SiteNavbar({ variant = "light" }: SiteNavbarProps) {
 
       {/* Mobile menu drawer */}
       <div
-        className={`fixed inset-0 z-40 md:hidden transition-all duration-300 ${
+        className={`fixed inset-0 z-40 lg:hidden transition-all duration-300 ${
           mobileOpen ? "pointer-events-auto" : "pointer-events-none"
         }`}
       >

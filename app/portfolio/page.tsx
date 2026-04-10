@@ -25,9 +25,9 @@ function HeroSection() {
             Our Impact
           </h1>
           <p className="text-xl md:text-2xl text-[#5e3f3e] font-light leading-relaxed max-w-2xl">
-            A gallery of neural-first solutions that transformed legacy systems
-            into high-efficiency profit engines. We don&apos;t just build
-            software; we engineer competitive advantages.
+            Real projects. Real results. From AI-powered SaaS platforms and
+            mobile apps to brand campaigns and enterprise software — work
+            that moved the needle for the businesses behind it.
           </p>
         </div>
 
