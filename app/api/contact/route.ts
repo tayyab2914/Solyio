@@ -244,7 +244,7 @@ export async function POST(req: Request) {
     // 1. Notify Solyio team
     resend.emails.send({
       from: "Solyio Contact <noreply@solyio.com>",
-      to: "info@solyio.com",
+      to: process.env.ADMIN_EMAIL!,
       replyTo: email,
       subject: `New Inquiry: ${subject}`,
       html: adminTemplate(name, email, subject, message),

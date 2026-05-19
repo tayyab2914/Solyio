@@ -42,8 +42,11 @@ AI-powered digital foundations for effortless business growth — web, mobile, c
           </h4>
           <ul className="space-y-5 font-headline text-sm tracking-tight">
             {[
-              { label: "About Solyio", href: "/about" },
-              { label: "Careers",      href: "/careers" },
+              { label: "About Solyio",  href: "/about" },
+              { label: "Careers",       href: "/careers" },
+              { label: "Privacy Policy",href: "/privacy-policy" },
+              { label: "Terms of Service", href: "/terms-of-service" },
+              { label: "Refund Policy", href: "/refund-policy" },
             ].map(({ label, href }) => (
               <li key={label}>
                 <Link href={href} className="text-[#5e3f3e] hover:text-[#bb0029] transition-colors opacity-70 hover:opacity-100">
