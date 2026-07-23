@@ -167,7 +167,7 @@ function JsonLd() {
     contactPoint: [
       {
         "@type": "ContactPoint",
-        telephone: "+1-555-123-4567",
+        telephone: "+1-678-551-7478",
         contactType: "sales",
         areaServed: ["US", "GB", "DE", "FR", "NL", "ES", "IT"],
         availableLanguage: ["English", "German", "French"],

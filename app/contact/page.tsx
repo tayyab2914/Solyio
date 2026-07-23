@@ -35,7 +35,7 @@ function ContactJsonLd() {
       "@type": "Organization",
       name: "Solyio",
       email: "hello@solyio.com",
-      telephone: "+1-555-123-4567",
+      telephone: "+1-678-551-7478",
       address: {
         "@type": "PostalAddress",
         addressCountry: "US",

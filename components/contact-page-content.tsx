@@ -58,7 +58,7 @@ export function ContactPageContent() {
                 <Phone className="h-6 w-6 text-[#1e3a5f]" />
               </div>
               <h3 className="mb-1 font-semibold text-foreground">Call Us</h3>
-              <p className="text-sm text-muted-foreground">+1 (555) 123-4567</p>
+              <p className="text-sm text-muted-foreground">+1 (678) 551-7478</p>
               <p className="text-sm text-muted-foreground">Mon-Fri, 9am-6pm EST</p>
             </div>
             <div className="rounded-xl border border-border bg-card p-6 text-center">

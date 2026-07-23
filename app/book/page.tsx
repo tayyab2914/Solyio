@@ -63,27 +63,6 @@ function ContactSection() {
       <div className="lg:col-span-5 space-y-12">
         {/* Info grid */}
         <div className="bg-[#f0eded] rounded-2xl p-10 space-y-12">
-          {/* Location */}
-          <div className="flex gap-6">
-            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shrink-0 shadow-sm">
-              <span className="material-symbols-outlined text-[#bb0029]">
-                location_on
-              </span>
-            </div>
-            <div>
-              <h4 className="text-[0.7rem] uppercase tracking-widest font-black text-[#1c1b1b] mb-2">
-                Office Headquarters
-              </h4>
-              <p className="text-[#5e3f3e] leading-relaxed">
-                42 Technology Plaza, Suite 900
-                <br />
-                Canary Wharf, London E14 5AB
-                <br />
-                United Kingdom
-              </p>
-            </div>
-          </div>
-
           {/* Email */}
           <div className="flex gap-6">
             <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shrink-0 shadow-sm">
@@ -113,9 +92,9 @@ function ContactSection() {
               <h4 className="text-[0.7rem] uppercase tracking-widest font-black text-[#1c1b1b] mb-2">
                 Global Direct
               </h4>
-              <p className="text-xl font-bold text-[#1c1b1b]">+44 20 7946 0123</p>
+              <p className="text-xl font-bold text-[#1c1b1b]">+1 (678) 551-7478</p>
               <p className="text-sm text-[#5e3f3e]">
-                Mon – Fri, 08:00 – 18:00 GMT
+                Mon – Fri, 08:00 – 18:00 EST
               </p>
             </div>
           </div>
