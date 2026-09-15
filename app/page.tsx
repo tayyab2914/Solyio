@@ -1,10 +1,10 @@
 import Link from "next/link"
 import type { Metadata } from "next"
 import { SiteNavbar } from "@/components/site-navbar"
-import { GlobalPresenceSection } from "@/components/global-presence-section"
 import { HeroVisual } from "@/components/hero-visual"
 import { HeroHeadline } from "@/components/hero-headline"
 import { SiteFooter } from "@/components/site-footer"
+import { VideoTestimonialsSection } from "@/components/video-testimonials-section"
 
 export const metadata: Metadata = {
   title: "Solyio | Web, Mobile, Cloud & AI Solutions",
@@ -606,8 +606,9 @@ export default function HomePage() {
       <main>
         <HeroSection />
         <ValuePropSection />
+                <VideoTestimonialsSection />
+
         <CaseStudiesSection />
-        <GlobalPresenceSection />
         <CTASection />
       </main>
       <SiteFooter />
