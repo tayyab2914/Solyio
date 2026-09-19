@@ -3,12 +3,76 @@ import type { Metadata } from "next"
 import { SiteNavbar } from "@/components/site-navbar"
 import { PortfolioGallerySection } from "@/components/portfolio-gallery-section"
 import { SiteFooter } from "@/components/site-footer"
+import { JsonLd } from "@/components/json-ld"
+import { ORGANIZATION_ID, SITE, WEBSITE_ID, absoluteUrl, breadcrumbSchema, ogImage } from "@/lib/seo"
+
+const PAGE_DESCRIPTION =
+  "Solyio builds custom AI solutions for businesses — workflow automation, intelligent chatbots, and business intelligence dashboards tailored to your operations."
 
 export const metadata: Metadata = {
-  title: "Solutions | Solyio — AI Tools We Build",
-  description:
-    "Solyio builds custom AI solutions for businesses — workflow automation, intelligent chatbots, and business intelligence dashboards tailored to your operations.",
-  alternates: { canonical: "https://solyio.com/products" },
+  title: "Solutions — AI Tools We Build",
+  description: PAGE_DESCRIPTION,
+  alternates: { canonical: absoluteUrl("/products") },
+  openGraph: {
+    images: ogImage(),
+    type: "website",
+    url: absoluteUrl("/products"),
+    title: "Solyio Solutions — AI Tools Built for Your Business",
+    description: PAGE_DESCRIPTION,
+    siteName: SITE.name,
+  },
+}
+
+/* ─── STRUCTURED DATA ──────────────────────────────────── */
+
+/** Mirrors the three modules rendered in <ForgeSection /> below. */
+const SOLUTIONS = [
+  {
+    name: "Business Intelligence Dashboard",
+    serviceType: "Business Intelligence",
+    description:
+      "An AI layer on top of your existing data — pulling from multiple sources and turning it into plain-English answers, auto-generated reports, and real-time alerts.",
+  },
+  {
+    name: "Custom AI Chatbots",
+    serviceType: "AI Chatbot Development",
+    description:
+      "AI agents that handle customer enquiries, qualify leads, answer FAQs, and escalate when needed — in your brand's tone, available 24/7.",
+  },
+  {
+    name: "Workflow Automation Suite",
+    serviceType: "AI Workflow Automation",
+    description:
+      "A fully custom AI system that automates the manual work eating your team's time — lead follow-ups, scheduling, invoicing, reporting, tenant management, and more.",
+  },
+]
+
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${absoluteUrl("/products")}#collection`,
+  url: absoluteUrl("/products"),
+  name: "AI Solutions We Build",
+  description: PAGE_DESCRIPTION,
+  inLanguage: "en",
+  isPartOf: { "@id": WEBSITE_ID },
+  mainEntity: {
+    "@type": "ItemList",
+    name: "What We Build",
+    numberOfItems: SOLUTIONS.length,
+    itemListElement: SOLUTIONS.map((s, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@type": "Service",
+        name: s.name,
+        serviceType: s.serviceType,
+        description: s.description,
+        provider: { "@id": ORGANIZATION_ID },
+        areaServed: "Worldwide",
+      },
+    })),
+  },
 }
 
 /* ─── NAV ────────────────────────────────────────────────────────── */
@@ -423,6 +487,9 @@ function CTASection() {
 export default function ProductsPage() {
   return (
     <div className="font-body bg-[#fcf9f8] text-[#1c1b1b] leading-relaxed selection:bg-[#FF1E41]/20 selection:text-[#FF1E41]">
+      <JsonLd
+        data={[collectionSchema, breadcrumbSchema([{ name: "Solutions", path: "/products" }])]}
+      />
       <SiteNavbar />
       <main className="pt-24">
         <HeroSection />

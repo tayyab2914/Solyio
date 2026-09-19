@@ -2,12 +2,22 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { SiteNavbar } from "@/components/site-navbar"
 import { SiteFooter } from "@/components/site-footer"
+import { JsonLd } from "@/components/json-ld"
+import { ORGANIZATION_ID, absoluteUrl, breadcrumbSchema, faqSchema, ogImage } from "@/lib/seo"
 
 export const metadata: Metadata = {
-  title: "Pricing | Solyio — Transparent Plans for Web, Mobile, Cloud & AI",
+  title: "Pricing — Fixed Quotes From $1,900",
   description:
-    "Simple, transparent pricing for Solyio's web development, mobile apps, cloud infrastructure, and AI automation services. Find the plan that fits your business.",
-  alternates: { canonical: "https://solyio.com/pricing" },
+    "Solyio pricing starts at $1,900 for a Launch project and $6,900 for a full custom build. Fixed quotes, milestone payments, no hidden fees.",
+  alternates: { canonical: absoluteUrl("/pricing") },
+  openGraph: {
+    images: ogImage(),
+    type: "website",
+    url: absoluteUrl("/pricing"),
+    title: "Solyio Pricing — Fixed Quotes From $1,900",
+    description:
+      "Public starting prices for web, mobile, cloud, AI automation and security work. Fixed scope and fixed price before any work begins.",
+  },
 }
 
 /* ─── DATA ───────────────────────────────────────────────────────── */
@@ -106,6 +116,60 @@ const FAQS = [
     a: "No. Third-party costs like hosting, domains, or licenses are always discussed upfront and billed transparently or passed through at cost.",
   },
 ]
+
+/* ─── STRUCTURED DATA ─────────────────────────────── */
+
+/** Starting prices, mirrored from PLANS so schema can never drift from the page. */
+const PRICE_SPECS: Record<string, number | null> = {
+  Launch: 1900,
+  Build: 6900,
+  Scale: null,
+}
+
+const offerCatalogSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": `${absoluteUrl("/pricing")}#service`,
+  name: "Software Design & Engineering",
+  serviceType: "Custom Software Development",
+  description:
+    "Web platforms, mobile apps, cloud infrastructure, AI automation, and security engagements delivered at a fixed, agreed price.",
+  url: absoluteUrl("/pricing"),
+  provider: { "@id": ORGANIZATION_ID },
+  areaServed: "Worldwide",
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Solyio Engagement Plans",
+    itemListElement: PLANS.map((plan) => {
+      const price = PRICE_SPECS[plan.name]
+      return {
+        "@type": "Offer",
+        name: plan.name,
+        description: plan.tagline,
+        url: absoluteUrl("/pricing"),
+        category: plan.name,
+        availability: "https://schema.org/InStock",
+        itemOffered: {
+          "@type": "Service",
+          name: `${plan.name} — ${plan.tagline}`,
+          description: plan.features.join(". "),
+          provider: { "@id": ORGANIZATION_ID },
+        },
+        ...(price
+          ? {
+              priceSpecification: {
+                "@type": "PriceSpecification",
+                price,
+                priceCurrency: "USD",
+                valueAddedTaxIncluded: false,
+                description: "Starting price. Final quote is fixed to scope.",
+              },
+            }
+          : { priceSpecification: { "@type": "PriceSpecification", priceCurrency: "USD", description: "Quoted to scope." } }),
+      }
+    }),
+  },
+}
 
 /* ─── HERO ───────────────────────────────────────────────────────── */
 
@@ -382,6 +446,14 @@ function CTASection() {
 export default function PricingPage() {
   return (
     <div className="font-body bg-[#fcf9f8] text-[#1c1b1b] leading-relaxed selection:bg-[#FF1E41]/20 selection:text-[#FF1E41]">
+      {/* FAQPage is emitted here because this page actually renders these Q&As. */}
+      <JsonLd
+        data={[
+          offerCatalogSchema,
+          faqSchema(FAQS),
+          breadcrumbSchema([{ name: "Pricing", path: "/pricing" }]),
+        ]}
+      />
       <SiteNavbar />
       <main>
         <HeroSection />

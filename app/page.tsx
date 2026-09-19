@@ -5,13 +5,58 @@ import { HeroVisual } from "@/components/hero-visual"
 import { HeroHeadline } from "@/components/hero-headline"
 import { SiteFooter } from "@/components/site-footer"
 import { VideoTestimonialsSection } from "@/components/video-testimonials-section"
+import { JsonLd } from "@/components/json-ld"
+import { ORGANIZATION_ID, SITE, absoluteUrl, faqSchema, ogImage, type Faq } from "@/lib/seo"
 
 export const metadata: Metadata = {
-  title: "Solyio | Web, Mobile, Cloud & AI Solutions",
+  title: { absolute: "Solyio | Web, Mobile, Cloud & AI Solutions" },
   description:
-    "Solyio builds web platforms, mobile apps, cloud infrastructure, and AI automation that simplify your business and accelerate growth.",
-  alternates: { canonical: "https://solyio.com" },
+    "Solyio builds web platforms, mobile apps, cloud infrastructure, and AI automation that simplify your business and accelerate growth. Fixed quotes from $1,900.",
+  alternates: { canonical: absoluteUrl("/") },
+  openGraph: {
+    images: ogImage(),
+    type: "website",
+    url: absoluteUrl("/"),
+    siteName: SITE.name,
+    title: "Solyio | Web, Mobile, Cloud & AI Solutions",
+    description:
+      "Web platforms, mobile apps, cloud infrastructure, and AI automation \u2014 built by a team that quotes a fixed price before any work starts.",
+  },
 }
+
+/* \u2500\u2500\u2500 FAQ DATA \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 */
+
+/** Rendered visibly in FaqSection below, then mirrored into FAQPage schema. */
+const HOME_FAQS: Faq[] = [
+  {
+    q: "What does Solyio actually build?",
+    a: "Web platforms and SaaS products, mobile apps, cloud infrastructure, AI automation and agents, and the security work that keeps all of it safe. Most engagements combine two or three of those \u2014 a product plus the infrastructure and automation around it.",
+  },
+  {
+    q: "How much does a project cost?",
+    a: "Launch projects start at $1,900, full custom builds start at $6,900, and ongoing partnerships are quoted to scope. Every project gets a fixed quote before work begins, so the number you approve is the number you pay.",
+  },
+  {
+    q: "How long does a typical project take?",
+    a: "It depends on scope, and the timeline is agreed in writing before work starts. Smaller Launch projects move in weeks rather than months; larger custom builds are planned as milestones, each with a defined deliverable, so you can see progress at every stage.",
+  },
+  {
+    q: "Do I need technical knowledge to work with you?",
+    a: "No. We regularly work with non-technical founders and operators. We handle architecture, tooling, and deployment decisions, and explain the trade-offs in plain language whenever a choice affects cost or timeline.",
+  },
+  {
+    q: "What happens after launch?",
+    a: "Every plan includes a post-launch support window for fixes and adjustments \u2014 two weeks on Launch, thirty days on Build. After that, you can move onto a monthly maintenance retainer sized to what you actually need.",
+  },
+  {
+    q: "Who owns the code and the intellectual property?",
+    a: "Once all project fees are paid, ownership of the custom deliverables built specifically for you transfers to you. Any pre-existing tools or components we bring to the project stay ours, and you receive a license to use them as part of your product. The details are in our Terms of Service and your Project Agreement.",
+  },
+  {
+    q: "Where are your clients based?",
+    a: "Primarily the United States, United Kingdom, Germany, France, and the Netherlands, though we work with clients worldwide.",
+  },
+]
 
 /* ─── NAV ────────────────────────────────────────────────────────── */
 
@@ -567,6 +612,66 @@ function CaseStudiesSection() {
   )
 }
 
+/* ─── FAQ ──────────────────────────────────────────── */
+
+function FaqSection() {
+  return (
+    <section className="py-20 md:py-28 px-4 sm:px-8 md:px-12 bg-[#f7f4f4]">
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-14">
+          <span className="text-[#FF1E41] text-xs font-bold tracking-[0.3em] uppercase mb-5 block">
+            Questions
+          </span>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-headline font-bold tracking-tighter leading-[0.95] text-[#1c1b1b]">
+            The things everyone{" "}
+            <span className="italic text-[#FF1E41]">asks first.</span>
+          </h2>
+        </div>
+
+        <div className="space-y-4">
+          {HOME_FAQS.map((faq) => (
+            <details
+              key={faq.q}
+              className="group bg-white rounded-2xl border border-[#d8c2c1]/40 p-6 sm:p-7 [&_summary::-webkit-details-marker]:hidden"
+            >
+              <summary className="flex items-center justify-between gap-4 cursor-pointer font-headline text-lg sm:text-xl font-bold tracking-tight text-[#1c1b1b]">
+                <span>{faq.q}</span>
+                <span
+                  className="material-symbols-outlined shrink-0 text-[#FF1E41] transition-transform group-open:rotate-45"
+                  style={{ fontSize: "22px" }}
+                >
+                  add
+                </span>
+              </summary>
+              <p className="mt-4 text-base sm:text-[17px] leading-relaxed text-[#5e3f3e]">
+                {faq.a}
+              </p>
+            </details>
+          ))}
+        </div>
+
+        <p className="mt-10 text-center text-[#5e3f3e]/80">
+          Still deciding?{" "}
+          <Link
+            href="/pricing"
+            className="text-[#bb0029] font-semibold underline underline-offset-4 decoration-[#FF1E41]/30 hover:decoration-[#FF1E41]"
+          >
+            See full pricing
+          </Link>{" "}
+          or{" "}
+          <Link
+            href="/blog"
+            className="text-[#bb0029] font-semibold underline underline-offset-4 decoration-[#FF1E41]/30 hover:decoration-[#FF1E41]"
+          >
+            read our cost guides
+          </Link>
+          .
+        </p>
+      </div>
+    </section>
+  )
+}
+
 /* ─── CTA ────────────────────────────────────────────────────────── */
 
 function CTASection() {
@@ -599,16 +704,31 @@ function CTASection() {
 
 /* ─── PAGE ───────────────────────────────────────────────────────── */
 
+const homePageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${absoluteUrl("/")}#webpage`,
+  url: absoluteUrl("/"),
+  name: `${SITE.name} | ${SITE.tagline}`,
+  description: SITE.description,
+  inLanguage: "en",
+  isPartOf: { "@id": `${SITE.url}/#website` },
+  about: { "@id": ORGANIZATION_ID },
+  primaryImageOfPage: { "@type": "ImageObject", url: absoluteUrl(SITE.ogImage) },
+}
+
 export default function HomePage() {
   return (
     <div className="font-body bg-[#fcf9f8] text-[#1c1b1b] leading-relaxed selection:bg-[#FF1E41]/20 selection:text-[#FF1E41]">
+      {/* FAQPage is safe here: FaqSection renders these exact Q&As on the page. */}
+      <JsonLd data={[homePageSchema, faqSchema(HOME_FAQS)]} />
       <SiteNavbar />
       <main>
         <HeroSection />
         <ValuePropSection />
-                <VideoTestimonialsSection />
-
+        <VideoTestimonialsSection />
         <CaseStudiesSection />
+        <FaqSection />
         <CTASection />
       </main>
       <SiteFooter />

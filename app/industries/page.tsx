@@ -2,11 +2,103 @@ import Link from "next/link"
 import type { Metadata } from "next"
 import { SiteNavbar } from "@/components/site-navbar"
 import { SiteFooter } from "@/components/site-footer"
+import { JsonLd } from "@/components/json-ld"
+import { ORGANIZATION_ID, SITE, WEBSITE_ID, absoluteUrl, breadcrumbSchema, ogImage } from "@/lib/seo"
+
+const PAGE_TITLE = "Industries We Build For"
+const PAGE_DESCRIPTION =
+  "See how Solyio helps businesses in marketing, e-commerce, pricing intelligence, financial analysis, logistics and more scale with web, mobile, cloud and AI solutions."
 
 export const metadata: Metadata = {
-  title: "Industries | Solyio — Real Results Across Every Sector",
-description: "See how Solyio helps businesses in marketing, e-commerce, pricing intelligence, financial analysis, logistics and more scale with web, mobile, cloud and AI solutions.",
-  alternates: { canonical: "https://solyio.com/industries" },
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+  alternates: { canonical: absoluteUrl("/industries") },
+  openGraph: {
+    images: ogImage(),
+    type: "website",
+    locale: "en_US",
+    url: absoluteUrl("/industries"),
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    siteName: SITE.name,
+  },
+}
+
+/* ─── STRUCTURED DATA ─────────────────────────────────── */
+
+/**
+ * Mirrors the six industry cards rendered by IndustrySection below, in the same
+ * order. Every name and claim here is copied from visible on-page copy — keep
+ * the two in sync if a card is ever added, removed, or reworded.
+ */
+const INDUSTRIES = [
+  {
+    name: "Marketing Agencies",
+    headline: "10x Content Output with AI Automation",
+    description:
+      "RoboMarketer deploys three AI agents — content creation in the agency’s brand voice, campaign scheduling, and real-time performance optimization — producing 10x content output, 40 hours saved per week, and 285% campaign ROI.",
+  },
+  {
+    name: "Pricing Intelligence",
+    headline: "Pricing Intelligence",
+    description:
+      "PriceSmurf is a multi-tenant AI pricing intelligence SaaS where 5 specialized Gemini AI agents analyze uploaded sales data and produce structured reports on margin leakage, opportunity gaps, win/loss patterns, and value analysis.",
+  },
+  {
+    name: "E-Commerce & Retail",
+    headline: "E-Commerce & Retail",
+    description:
+      "CashAds manages $2M+ in monthly ad spend with AI-driven bidding and creative optimization across Google, Meta and TikTok, while ZenCart — a Flutter app with Apple Pay and Google Pay — achieved 185% higher conversion.",
+  },
+  {
+    name: "Financial Analysis & SaaS",
+    headline: "Financial Analysis & SaaS",
+    description:
+      "Upgrr is a financial analysis platform for the printing equipment industry where 100+ consultants generate boardroom-ready NPV lease comparison reports in 5 seconds — 2,000+ reports generated and $400K+ in monthly deals influenced.",
+  },
+  {
+    name: "Delivery & Logistics",
+    headline: "Delivery & Logistics",
+    description:
+      "DeliverIQ is a React Native on-demand delivery marketplace with Stripe Connect split payments, real-time driver tracking and automated payouts to 500+ courier partners, cutting delivery coordination time by 45%.",
+  },
+  {
+    name: "SaaS & AI Coaching",
+    headline: "Scale Your Expertise with AI",
+    description:
+      "ExpertAIQ turns a coach’s knowledge base into a white-label AI persona via a RAG engine, answering student questions in the coach’s own voice 24/7 — 25+ coaches onboarded and 1M+ AI interactions.",
+  },
+]
+
+const industriesCollectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${absoluteUrl("/industries")}#collection`,
+  url: absoluteUrl("/industries"),
+  name: "Industries Solyio Serves",
+  description: PAGE_DESCRIPTION,
+  inLanguage: "en",
+  isPartOf: { "@id": WEBSITE_ID },
+  publisher: { "@id": ORGANIZATION_ID },
+  mainEntity: {
+    "@type": "ItemList",
+    name: "Industry Use Cases",
+    itemListOrder: "https://schema.org/ItemListOrderAscending",
+    numberOfItems: INDUSTRIES.length,
+    itemListElement: INDUSTRIES.map((industry, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: industry.name,
+      item: {
+        "@type": "Service",
+        name: industry.headline,
+        serviceType: industry.name,
+        description: industry.description,
+        url: absoluteUrl("/industries"),
+        provider: { "@id": ORGANIZATION_ID },
+      },
+    })),
+  },
 }
 
 /* ─── HERO ───────────────────────────────────────────────────────── */
@@ -458,6 +550,12 @@ function CTASection() {
 export default function IndustriesPage() {
   return (
     <div className="font-body bg-[#fcf9f8] text-[#1c1b1b] leading-relaxed selection:bg-[#FF1E41]/20 selection:text-[#FF1E41]">
+      <JsonLd
+        data={[
+          industriesCollectionSchema,
+          breadcrumbSchema([{ name: "Industries", path: "/industries" }]),
+        ]}
+      />
       <SiteNavbar />
       <main className="pt-20">
         <HeroSection />

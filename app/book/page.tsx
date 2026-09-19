@@ -2,12 +2,40 @@ import type { Metadata } from "next"
 import { SiteNavbar } from "@/components/site-navbar"
 import { ContactForm } from "@/components/contact-form"
 import { SiteFooter } from "@/components/site-footer"
+import { JsonLd } from "@/components/json-ld"
+import { ORGANIZATION_ID, WEBSITE_ID, absoluteUrl, breadcrumbSchema, ogImage } from "@/lib/seo"
 
 export const metadata: Metadata = {
-  title: "Contact Solyio | Book a Free Call",
+  title: "Book a Free Scoping Call",
   description:
     "Tell us what you need — web, mobile, cloud or AI. We'll get back to you within 2 hours and figure out the best way to build it together.",
-  alternates: { canonical: "https://solyio.com/book" },
+  alternates: { canonical: absoluteUrl("/book") },
+  openGraph: {
+    images: ogImage(),
+    type: "website",
+    url: absoluteUrl("/book"),
+    title: "Book a Free Call with Solyio",
+    description:
+      "Tell us what you need — web, mobile, cloud or AI — and we'll map out how to build it.",
+  },
+}
+
+/**
+ * ContactPage for the booking form. The Organization (and its contact details)
+ * is emitted once site-wide in app/layout.tsx, so it is referenced by @id here
+ * rather than redefined.
+ */
+const bookPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "@id": `${absoluteUrl("/book")}#webpage`,
+  name: "Book a Call with Solyio",
+  description:
+    "Book a free call with Solyio to scope a web, mobile, cloud or AI automation project.",
+  url: absoluteUrl("/book"),
+  inLanguage: "en",
+  isPartOf: { "@id": WEBSITE_ID },
+  mainEntity: { "@id": ORGANIZATION_ID },
 }
 
 /* ─── HERO ───────────────────────────────────────────────────────── */
@@ -159,6 +187,12 @@ function MapSection() {
 export default function BookPage() {
   return (
     <div className="font-body bg-[#fcf9f8] text-[#1c1b1b] selection:bg-[#bb0029]/10 selection:text-[#bb0029]">
+      <JsonLd
+        data={[
+          bookPageSchema,
+          breadcrumbSchema([{ name: "Book a Call", path: "/book" }]),
+        ]}
+      />
       <SiteNavbar />
       <main className="pt-32 pb-20">
         <HeroSection />

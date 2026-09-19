@@ -2,23 +2,28 @@ import Link from "next/link"
 import type { Metadata } from "next"
 import { SiteNavbar } from "@/components/site-navbar"
 import { SiteFooter } from "@/components/site-footer"
+import { JsonLd } from "@/components/json-ld"
+import { SITE, absoluteUrl, breadcrumbSchema, ogImage, serviceSchema } from "@/lib/seo"
+
+const SERVICE_PATH = "/services/marketing-services"
+
+const SERVICE_DESCRIPTION =
+  "Full Stack Brand Marketing & Creative Agency — social media, TVCs, corporate branding, AI creative, talent management, events, and brand strategy."
 
 export const metadata: Metadata = {
-  title: "Full Stack Brand Marketing & Creative Agency | Solyio",
+  title: "Brand Marketing & Creative Services",
   description:
     "Solyio is a Full Stack Brand Marketing & Creative Agency with 15+ years of experience. Corporate branding, social media, TVCs, AI creative, talent management, events, and more.",
-  alternates: { canonical: "https://solyio.com/services/marketing-services" },
-}
-
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  name: "Full Stack Brand Marketing & Creative Services",
-  provider: { "@type": "Organization", name: "Solyio", url: "https://solyio.com" },
-  description:
-    "Full Stack Brand Marketing & Creative Agency — social media, TVCs, corporate branding, AI creative, talent management, events, and brand strategy.",
-  areaServed: "Worldwide",
-  serviceType: "Brand Marketing & Creative Agency",
+  alternates: { canonical: absoluteUrl(SERVICE_PATH) },
+  openGraph: {
+    images: ogImage(),
+    type: "website",
+    url: absoluteUrl(SERVICE_PATH),
+    title: "Brand Marketing & Creative Services",
+    description:
+      "Corporate branding, social media, TVCs and jingles, AI creative, talent management, events, and photography — all under one roof.",
+    siteName: SITE.name,
+  },
 }
 
 /* ─── HERO ─────────────────────────────────────────────────────────── */
@@ -26,7 +31,6 @@ const schema = {
 function HeroSection() {
   return (
     <section className="relative pt-40 pb-32 px-6 sm:px-8 overflow-hidden bg-[#fcf9f8]">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute -top-40 -right-40 w-[700px] h-[700px] bg-[#FF1E41]/5 rounded-full blur-[160px]" />
         <div className="absolute bottom-0 -left-20 w-80 h-80 bg-[#FF1E41]/4 rounded-full blur-[100px]" />
@@ -343,6 +347,23 @@ const SERVICES = [
       "High-res delivery · Usage rights",
     ],
   },
+]
+
+/* ─── STRUCTURED DATA ────────────────────────────────────── */
+
+/** Offers mirror the visible capability cards so schema can never drift. */
+const pageSchemas = [
+  serviceSchema({
+    name: "Full Stack Brand Marketing & Creative Services",
+    serviceType: "Brand Marketing & Creative Agency",
+    description: SERVICE_DESCRIPTION,
+    path: SERVICE_PATH,
+    offers: SERVICES.map((service) => ({ name: service.title, description: service.desc })),
+  }),
+  breadcrumbSchema([
+    { name: "Services", path: "/services" },
+    { name: "Marketing Services", path: SERVICE_PATH },
+  ]),
 ]
 
 function ServicesSection() {
@@ -895,6 +916,7 @@ function CTASection() {
 export default function MarketingServicesPage() {
   return (
     <div className="font-body bg-[#fcf9f8] text-[#1c1b1b] leading-relaxed selection:bg-[#FF1E41]/20 selection:text-[#FF1E41]">
+      <JsonLd data={pageSchemas} />
       <SiteNavbar />
       <main>
         <HeroSection />

@@ -1,12 +1,39 @@
 import type { Metadata } from "next"
 import { LegalPage, type LegalSection } from "@/components/legal-page"
+import { JsonLd } from "@/components/json-ld"
+import {
+  ORGANIZATION_ID,
+  WEBSITE_ID,
+  absoluteUrl,
+  breadcrumbSchema,
+} from "@/lib/seo"
+
+const PATH = "/refund-policy"
+
+/** Rendered visibly as "Last updated: …" in the page hero. */
+const LAST_UPDATED = "May 17, 2026"
+const LAST_UPDATED_ISO = "2026-05-17"
 
 export const metadata: Metadata = {
-  title: "Refund Policy | Solyio",
+  title: "Refund Policy",
   description:
     "Solyio's refund policy — how deposits, milestones, cancellations, and refund requests are handled across our development and service engagements.",
-  alternates: { canonical: "https://solyio.com/refund-policy" },
+  alternates: { canonical: absoluteUrl(PATH) },
   robots: { index: true, follow: true },
+}
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${absoluteUrl(PATH)}#webpage`,
+  name: "Refund Policy",
+  description:
+    "How deposits, milestones, cancellations, and refund requests are handled across Solyio development and service engagements.",
+  url: absoluteUrl(PATH),
+  inLanguage: "en",
+  isPartOf: { "@id": WEBSITE_ID },
+  publisher: { "@id": ORGANIZATION_ID },
+  dateModified: LAST_UPDATED_ISO,
 }
 
 const sections: LegalSection[] = [
@@ -178,16 +205,21 @@ const sections: LegalSection[] = [
 
 export default function RefundPolicyPage() {
   return (
-    <LegalPage
-      eyebrow="Legal"
-      title={
-        <>
-          Refund <span className="text-[#FF1E41] italic">Policy.</span>
-        </>
-      }
-      intro="We believe in fair, transparent terms. Here's exactly how deposits, milestones, cancellations, and refunds work at Solyio."
-      lastUpdated="May 17, 2026"
-      sections={sections}
-    />
+    <>
+      <JsonLd
+        data={[pageSchema, breadcrumbSchema([{ name: "Refund Policy", path: PATH }])]}
+      />
+      <LegalPage
+        eyebrow="Legal"
+        title={
+          <>
+            Refund <span className="text-[#FF1E41] italic">Policy.</span>
+          </>
+        }
+        intro="We believe in fair, transparent terms. Here's exactly how deposits, milestones, cancellations, and refunds work at Solyio."
+        lastUpdated={LAST_UPDATED}
+        sections={sections}
+      />
+    </>
   )
 }

@@ -2,12 +2,62 @@ import Link from "next/link"
 import type { Metadata } from "next"
 import { SiteNavbar } from "@/components/site-navbar"
 import { SiteFooter } from "@/components/site-footer"
+import { JsonLd } from "@/components/json-ld"
+import { ORGANIZATION_ID, SITE, absoluteUrl, breadcrumbSchema } from "@/lib/seo"
+
+const PAGE_DESCRIPTION =
+  "Solyio builds web platforms, mobile apps, cloud infrastructure, and AI automation. We help businesses operate smarter and scale faster."
 
 export const metadata: Metadata = {
-  title: "Services | Solyio — Web, Mobile, Cloud & AI",
-  description:
-    "Solyio builds web platforms, mobile apps, cloud infrastructure, and AI automation. We help businesses operate smarter and scale faster.",
-  alternates: { canonical: "https://solyio.com/services" },
+  title: "Services — Web, Mobile, Cloud & AI",
+  description: PAGE_DESCRIPTION,
+  alternates: { canonical: absoluteUrl("/services") },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: absoluteUrl("/services"),
+    title: "Services — Web, Mobile, Cloud & AI",
+    description: PAGE_DESCRIPTION,
+    siteName: SITE.name,
+    // A page-level openGraph object REPLACES the root layout's wholesale
+    // (Next.js merges metadata shallowly), so the shared image must be
+    // restated here or this page ships with no og:image at all.
+    images: [SITE.ogImage],
+  },
+}
+
+/* ─── STRUCTURED DATA ────────────────────────────────────────────── */
+
+/** The six service pages this index links out to. Labels match the site nav. */
+const SERVICE_INDEX = [
+  { name: "AI Automation", path: "/services/ai-automation" },
+  { name: "Web Development", path: "/services/web-development" },
+  { name: "Mobile Development", path: "/services/mobile-development" },
+  { name: "Cloud Infrastructure", path: "/services/cloud-infrastructure" },
+  { name: "Cyber Security", path: "/services/cyber-security" },
+  { name: "Marketing Services", path: "/services/marketing-services" },
+]
+
+const servicesCollectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${absoluteUrl("/services")}#collection`,
+  url: absoluteUrl("/services"),
+  name: `Services — ${SITE.name}`,
+  description: PAGE_DESCRIPTION,
+  inLanguage: "en",
+  publisher: { "@id": ORGANIZATION_ID },
+  mainEntity: {
+    "@type": "ItemList",
+    name: `${SITE.name} Services`,
+    numberOfItems: SERVICE_INDEX.length,
+    itemListElement: SERVICE_INDEX.map((s, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: s.name,
+      url: absoluteUrl(s.path),
+    })),
+  },
 }
 
 /* ─── NAV ────────────────────────────────────────────────────────── */
@@ -378,6 +428,12 @@ function CTASection() {
 export default function ServicesPage() {
   return (
     <div className="font-body bg-[#fcf9f8] text-[#1c1b1b] leading-relaxed selection:bg-[#FF1E41]/20 selection:text-[#FF1E41]">
+      <JsonLd
+        data={[
+          servicesCollectionSchema,
+          breadcrumbSchema([{ name: "Services", path: "/services" }]),
+        ]}
+      />
       <SiteNavbar />
       <main className="pt-24">
         <HeroSection />

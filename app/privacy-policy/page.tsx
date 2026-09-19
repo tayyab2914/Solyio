@@ -1,12 +1,39 @@
 import type { Metadata } from "next"
 import { LegalPage, type LegalSection } from "@/components/legal-page"
+import { JsonLd } from "@/components/json-ld"
+import {
+  ORGANIZATION_ID,
+  WEBSITE_ID,
+  absoluteUrl,
+  breadcrumbSchema,
+} from "@/lib/seo"
+
+const PATH = "/privacy-policy"
+
+/** Rendered visibly as "Last updated: …" in the page hero. */
+const LAST_UPDATED = "May 17, 2026"
+const LAST_UPDATED_ISO = "2026-05-17"
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Solyio",
+  title: "Privacy Policy",
   description:
     "How Solyio collects, uses, stores, and protects your personal data across our website and services. Read our full privacy policy.",
-  alternates: { canonical: "https://solyio.com/privacy-policy" },
+  alternates: { canonical: absoluteUrl(PATH) },
   robots: { index: true, follow: true },
+}
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${absoluteUrl(PATH)}#webpage`,
+  name: "Privacy Policy",
+  description:
+    "How Solyio collects, uses, stores, and protects your personal data across our website and services.",
+  url: absoluteUrl(PATH),
+  inLanguage: "en",
+  isPartOf: { "@id": WEBSITE_ID },
+  publisher: { "@id": ORGANIZATION_ID },
+  dateModified: LAST_UPDATED_ISO,
 }
 
 const sections: LegalSection[] = [
@@ -187,16 +214,21 @@ const sections: LegalSection[] = [
 
 export default function PrivacyPolicyPage() {
   return (
-    <LegalPage
-      eyebrow="Legal"
-      title={
-        <>
-          Privacy <span className="text-[#FF1E41] italic">Policy.</span>
-        </>
-      }
-      intro="Your privacy matters to us. This policy explains exactly what data we collect, why we collect it, and the control you have over it."
-      lastUpdated="May 17, 2026"
-      sections={sections}
-    />
+    <>
+      <JsonLd
+        data={[pageSchema, breadcrumbSchema([{ name: "Privacy Policy", path: PATH }])]}
+      />
+      <LegalPage
+        eyebrow="Legal"
+        title={
+          <>
+            Privacy <span className="text-[#FF1E41] italic">Policy.</span>
+          </>
+        }
+        intro="Your privacy matters to us. This policy explains exactly what data we collect, why we collect it, and the control you have over it."
+        lastUpdated={LAST_UPDATED}
+        sections={sections}
+      />
+    </>
   )
 }

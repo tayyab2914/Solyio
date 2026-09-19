@@ -16,6 +16,7 @@ const SERVICE_LINKS = [
 const NAV_LINKS = [
   { label: "Industries", href: "/industries" },
   { label: "Portfolio", href: "/portfolio" },
+  { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },
 ]
 
@@ -39,6 +40,7 @@ export function SiteNavbar({ variant = "light" }: SiteNavbarProps) {
     if (href === "/industries") return pathname === "/industries"
     if (href === "/portfolio")
       return pathname === "/portfolio" || pathname.startsWith("/portfolio/")
+    if (href === "/blog") return pathname === "/blog" || pathname.startsWith("/blog/")
     if (href === "/about") return pathname === "/about"
     return false
   }
@@ -95,6 +97,9 @@ export function SiteNavbar({ variant = "light" }: SiteNavbarProps) {
             <img
               src="/logo.svg"
               alt="Solyio"
+              width={1024}
+              height={768}
+              fetchPriority="high"
               className={`h-12 sm:h-14 lg:h-20 w-auto object-contain transition-transform hover:scale-105 duration-300 ${
                 dark ? "brightness-0 invert" : ""
               }`}

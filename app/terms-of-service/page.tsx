@@ -1,12 +1,39 @@
 import type { Metadata } from "next"
 import { LegalPage, type LegalSection } from "@/components/legal-page"
+import { JsonLd } from "@/components/json-ld"
+import {
+  ORGANIZATION_ID,
+  WEBSITE_ID,
+  absoluteUrl,
+  breadcrumbSchema,
+} from "@/lib/seo"
+
+const PATH = "/terms-of-service"
+
+/** Rendered visibly as "Last updated: …" in the page hero. */
+const LAST_UPDATED = "May 17, 2026"
+const LAST_UPDATED_ISO = "2026-05-17"
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Solyio",
+  title: "Terms of Service",
   description:
     "The terms and conditions that govern your use of the Solyio website and our web, mobile, cloud, and AI development services.",
-  alternates: { canonical: "https://solyio.com/terms-of-service" },
+  alternates: { canonical: absoluteUrl(PATH) },
   robots: { index: true, follow: true },
+}
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${absoluteUrl(PATH)}#webpage`,
+  name: "Terms of Service",
+  description:
+    "The terms and conditions that govern your use of the Solyio website and our web, mobile, cloud, and AI development services.",
+  url: absoluteUrl(PATH),
+  inLanguage: "en",
+  isPartOf: { "@id": WEBSITE_ID },
+  publisher: { "@id": ORGANIZATION_ID },
+  dateModified: LAST_UPDATED_ISO,
 }
 
 const sections: LegalSection[] = [
@@ -207,16 +234,21 @@ const sections: LegalSection[] = [
 
 export default function TermsOfServicePage() {
   return (
-    <LegalPage
-      eyebrow="Legal"
-      title={
-        <>
-          Terms of <span className="text-[#FF1E41] italic">Service.</span>
-        </>
-      }
-      intro="The ground rules for working with Solyio. These terms cover how we engage, deliver, and protect both sides of every project."
-      lastUpdated="May 17, 2026"
-      sections={sections}
-    />
+    <>
+      <JsonLd
+        data={[pageSchema, breadcrumbSchema([{ name: "Terms of Service", path: PATH }])]}
+      />
+      <LegalPage
+        eyebrow="Legal"
+        title={
+          <>
+            Terms of <span className="text-[#FF1E41] italic">Service.</span>
+          </>
+        }
+        intro="The ground rules for working with Solyio. These terms cover how we engage, deliver, and protect both sides of every project."
+        lastUpdated={LAST_UPDATED}
+        sections={sections}
+      />
+    </>
   )
 }

@@ -3,6 +3,8 @@ import { notFound } from "next/navigation"
 import type { Metadata } from "next"
 import { SiteNavbar } from "@/components/site-navbar"
 import { SiteFooter } from "@/components/site-footer"
+import { JsonLd } from "@/components/json-ld"
+import { ORGANIZATION_ID, SITE, absoluteUrl, breadcrumbSchema } from "@/lib/seo"
 
 /* ─── Data ───────────────────────────────────────────────────────── */
 
@@ -109,7 +111,7 @@ const caseStudies = {
     name: "CashAds",
     category: "Ad Tech & E-commerce",
     year: "2024",
-    thumbnail: "/CashAds.png",
+    thumbnail: "/Cashads.png",
     tagline: "AI-optimized advertising that maximizes ROAS",
     quoteText:
       "We handed CashAds $2M/month in ad spend and watched it turn into a $2.7M return. The ROI was visible within the first 72 hours.",
@@ -203,7 +205,7 @@ const caseStudies = {
       { value: "4.8/5", label: "Patient Rating", description: "average satisfaction score" },
     ],
   },
-  Upgrr: {
+  upgrr: {
     name: "Upgrr",
     category: "PropTech",
     year: "2024",
@@ -252,7 +254,7 @@ const caseStudies = {
       { value: "4.8/5", label: "Tenant Rating", description: "average platform satisfaction" },
     ],
   },
-  Meon: {
+  meon: {
     name: "Meon",
     category: "Productivity SaaS",
     year: "2024",
@@ -305,6 +307,16 @@ const caseStudies = {
 
 type SlugKey = keyof typeof caseStudies
 
+/** schema.org applicationCategory, derived from the category each page already states. */
+const APPLICATION_CATEGORY: Record<SlugKey, string> = {
+  robomarketer: "BusinessApplication",
+  expertaiq: "BusinessApplication",
+  cashads: "BusinessApplication",
+  "healthtrack-ai": "HealthApplication",
+  upgrr: "BusinessApplication",
+  meon: "BusinessApplication",
+}
+
 export function generateStaticParams() {
   return Object.keys(caseStudies).map((slug) => ({ slug }))
 }
@@ -316,11 +328,24 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params
   const cs = caseStudies[slug as SlugKey]
-  if (!cs) return { title: "Case Study Not Found - Solyio" }
+  if (!cs) return { title: "Case Study Not Found" }
+
+  const url = absoluteUrl(`/products/${slug}`)
+  const title = `${cs.name} Case Study`
+  const description = `${cs.tagline}. See how Solyio built ${cs.name} in ${cs.challenge.timeline} — ${cs.challenge.outcome}.`
+
   return {
-    title: `${cs.name} Case Study | Solyio`,
-    description: `${cs.tagline}. See how Solyio built ${cs.name} in ${cs.challenge.timeline} — ${cs.challenge.outcome}.`,
-    alternates: { canonical: `https://solyio.com/products/${slug}` },
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      type: "article",
+      url,
+      title,
+      description,
+      siteName: SITE.name,
+      ...(cs.thumbnail ? { images: [{ url: absoluteUrl(cs.thumbnail), alt: cs.name }] } : {}),
+    },
   }
 }
 
@@ -714,8 +739,36 @@ export default async function CaseStudyPage({
 
   if (!cs) notFound()
 
+  const url = absoluteUrl(`/products/${slug}`)
+
+  const softwareSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "@id": `${url}#software`,
+    name: cs.name,
+    url,
+    description: `${cs.tagline}. ${cs.solution.body}`,
+    applicationCategory: APPLICATION_CATEGORY[slug as SlugKey],
+    applicationSubCategory: cs.category,
+    inLanguage: "en",
+    featureList: cs.architectureCards.map((card) => card.title),
+    keywords: cs.challenge.techStack.join(", "),
+    publisher: { "@id": ORGANIZATION_ID },
+    creator: { "@id": ORGANIZATION_ID },
+    ...(cs.thumbnail ? { image: absoluteUrl(cs.thumbnail) } : {}),
+  }
+
   return (
     <div className="font-body bg-[#0f0e0e] text-[#1c1b1b] selection:bg-[#FF1E41]/20 selection:text-[#FF1E41]">
+      <JsonLd
+        data={[
+          softwareSchema,
+          breadcrumbSchema([
+            { name: "Solutions", path: "/products" },
+            { name: cs.name, path: `/products/${slug}` },
+          ]),
+        ]}
+      />
       <SiteNavbar variant="dark" />
       <main>
         <HeroSection cs={cs} slug={slug} />

@@ -41,7 +41,7 @@ const allProjects = [
     year: "2024",
   },
   {
-    slug: "Upgrr",
+    slug: "upgrr",
     name: "Upgrr",
     thumbnail: "/upgrr.png",
     category: "Real Estate",
@@ -50,7 +50,7 @@ const allProjects = [
     year: "2024",
   },
   {
-    slug: "Meon",
+    slug: "meon",
     name: "Meon",
     thumbnail: "/upgrr.png",
     category: "SaaS",

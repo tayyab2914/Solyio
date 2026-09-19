@@ -2,28 +2,33 @@ import Link from "next/link"
 import type { Metadata } from "next"
 import { SiteNavbar } from "@/components/site-navbar"
 import { SiteFooter } from "@/components/site-footer"
+import { JsonLd } from "@/components/json-ld"
+import { SITE, absoluteUrl, breadcrumbSchema, ogImage, serviceSchema } from "@/lib/seo"
+
+const SERVICE_PATH = "/services/cyber-security"
+
+const SERVICE_DESCRIPTION =
+  "Cybersecurity services including penetration testing, security audits, compliance consulting, and zero-trust architecture implementation."
 
 export const metadata: Metadata = {
-  title: "Cyber Security Services | Solyio — Penetration Testing & Compliance",
+  title: "Cyber Security & Penetration Testing",
   description:
     "Solyio provides cybersecurity services including penetration testing, security audits, HIPAA/GDPR compliance, and zero-trust architecture. Protect your business before attackers find the gap.",
-  alternates: { canonical: "https://solyio.com/services/cyber-security" },
-}
-
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  name: "Cyber Security Services",
-  provider: { "@type": "Organization", name: "Solyio", url: "https://solyio.com" },
-  description: "Cybersecurity services including penetration testing, security audits, compliance consulting, and zero-trust architecture implementation.",
-  areaServed: "Worldwide",
-  serviceType: "Cybersecurity",
+  alternates: { canonical: absoluteUrl(SERVICE_PATH) },
+  openGraph: {
+    images: ogImage(),
+    type: "website",
+    url: absoluteUrl(SERVICE_PATH),
+    title: "Cyber Security & Penetration Testing",
+    description:
+      "Penetration testing, security audits, HIPAA/GDPR/SOC 2 compliance consulting, and zero-trust architecture — find the gaps before attackers do.",
+    siteName: SITE.name,
+  },
 }
 
 function HeroSection() {
   return (
     <section className="relative pt-40 pb-32 px-6 sm:px-8 overflow-hidden bg-[#1c1b1b]">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute -top-40 -right-40 w-[700px] h-[700px] bg-[#FF1E41]/8 rounded-full blur-[160px]" />
         <div className="absolute bottom-0 -left-20 w-80 h-80 bg-[#FF1E41]/5 rounded-full blur-[100px]" />
@@ -123,6 +128,23 @@ const services = [
   { icon: "fact_check", title: "Security Audit", desc: "A comprehensive review of your codebase, infrastructure configuration, access controls, and security policies — identifying vulnerabilities before they become incidents.", tags: ["Code Review", "Config Audit", "Access Control", "Dependency Scan"] },
   { icon: "policy", title: "Compliance Consulting", desc: "We guide you through HIPAA, GDPR, SOC 2, and PCI-DSS requirements — mapping your current state, identifying gaps, and implementing the controls needed to pass audits.", tags: ["HIPAA", "GDPR", "SOC 2", "PCI-DSS"] },
   { icon: "hub", title: "Zero-Trust Architecture", desc: "Implementing least-privilege access, network micro-segmentation, MFA everywhere, and continuous verification — so a compromised credential doesn't mean a compromised system.", tags: ["Zero Trust", "MFA", "Network Segmentation", "IAM"] },
+]
+
+/* ─── STRUCTURED DATA ──────────────────────────────────── */
+
+/** Offers mirror the visible "What We Secure" cards so schema can never drift. */
+const pageSchemas = [
+  serviceSchema({
+    name: "Cyber Security Services",
+    serviceType: "Cybersecurity",
+    description: SERVICE_DESCRIPTION,
+    path: SERVICE_PATH,
+    offers: services.map((s) => ({ name: s.title, description: s.desc })),
+  }),
+  breadcrumbSchema([
+    { name: "Services", path: "/services" },
+    { name: "Cyber Security", path: SERVICE_PATH },
+  ]),
 ]
 
 function ServicesSection() {
@@ -354,6 +376,7 @@ function CTASection() {
 export default function CyberSecurityPage() {
   return (
     <div className="font-body bg-[#fcf9f8] text-[#1c1b1b] leading-relaxed selection:bg-[#FF1E41]/20 selection:text-[#FF1E41]">
+      <JsonLd data={pageSchemas} />
       <SiteNavbar />
       <main>
         <HeroSection />

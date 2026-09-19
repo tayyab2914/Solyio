@@ -2,12 +2,46 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { SiteNavbar } from "@/components/site-navbar"
 import { SiteFooter } from "@/components/site-footer"
+import { JsonLd } from "@/components/json-ld"
+import { ORGANIZATION_ID, SITE, WEBSITE_ID, absoluteUrl, breadcrumbSchema, ogImage } from "@/lib/seo"
+
+const PAGE_DESCRIPTION =
+  "Solyio is a software agency that builds web platforms, mobile apps, cloud infrastructure, and AI automation to help businesses operate smarter and grow faster."
 
 export const metadata: Metadata = {
-  title: "About Solyio | Web, Mobile, Cloud & AI",
-  description:
-    "Solyio is a software agency that builds web platforms, mobile apps, cloud infrastructure, and AI automation to help businesses operate smarter and grow faster.",
-  alternates: { canonical: "https://solyio.com/about" },
+  title: "About Us — The Team Behind Your Build",
+  description: PAGE_DESCRIPTION,
+  alternates: { canonical: absoluteUrl("/about") },
+  openGraph: {
+    images: ogImage(),
+    type: "website",
+    locale: "en_US",
+    url: absoluteUrl("/about"),
+    title: "About Us — The Team Behind Your Build",
+    description: PAGE_DESCRIPTION,
+    siteName: SITE.name,
+  },
+}
+
+/* ─── STRUCTURED DATA ────────────────────────────────────────────── */
+
+/**
+ * AboutPage only. The Organization itself is defined once in app/layout.tsx —
+ * here we just point at it with @id so the two can never disagree.
+ */
+const aboutPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "@id": `${absoluteUrl("/about")}#aboutpage`,
+  url: absoluteUrl("/about"),
+  name: "About Solyio",
+  description: PAGE_DESCRIPTION,
+  inLanguage: "en",
+  isPartOf: { "@id": WEBSITE_ID },
+  publisher: { "@id": ORGANIZATION_ID },
+  mainEntity: { "@id": ORGANIZATION_ID },
+  about: { "@id": ORGANIZATION_ID },
+  significantLink: [absoluteUrl("/portfolio"), absoluteUrl("/book")],
 }
 
 /* ─── HERO ───────────────────────────────────────────────────────── */
@@ -290,6 +324,12 @@ function CTASection() {
 export default function AboutPage() {
   return (
     <div className="font-body bg-[#fcf9f8] text-[#1c1b1b] leading-relaxed selection:bg-[#FF1E41]/20 selection:text-[#FF1E41]">
+      <JsonLd
+        data={[
+          aboutPageSchema,
+          breadcrumbSchema([{ name: "About", path: "/about" }]),
+        ]}
+      />
       <SiteNavbar />
       <main className="pt-24 md:pt-0 lg:pt-5">
         <HeroSection />

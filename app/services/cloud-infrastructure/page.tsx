@@ -2,28 +2,31 @@ import Link from "next/link"
 import type { Metadata } from "next"
 import { SiteNavbar } from "@/components/site-navbar"
 import { SiteFooter } from "@/components/site-footer"
+import { JsonLd } from "@/components/json-ld"
+import { SITE, absoluteUrl, breadcrumbSchema, serviceSchema } from "@/lib/seo"
+
+const PATH = "/services/cloud-infrastructure"
 
 export const metadata: Metadata = {
-  title: "Cloud Infrastructure Services | Solyio — AWS, GCP & Azure",
+  title: "Cloud Infrastructure — AWS, GCP & Azure",
   description:
     "Solyio designs and manages cloud infrastructure on AWS, GCP, and Azure. Secure, scalable, cost-efficient environments with DevOps, CI/CD, and 24/7 monitoring.",
-  alternates: { canonical: "https://solyio.com/services/cloud-infrastructure" },
-}
-
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  name: "Cloud Infrastructure Services",
-  provider: { "@type": "Organization", name: "Solyio", url: "https://solyio.com" },
-  description: "Cloud infrastructure design, migration, DevOps, CI/CD pipelines, and managed cloud services on AWS, GCP, and Azure.",
-  areaServed: "Worldwide",
-  serviceType: "Cloud Infrastructure",
+  alternates: { canonical: absoluteUrl(PATH) },
+  openGraph: {
+    type: "website",
+    url: absoluteUrl(PATH),
+    title: "Cloud Infrastructure — AWS, GCP & Azure",
+    description:
+      "Cloud architecture, migration, DevOps and CI/CD on AWS, GCP and Azure — secure, scalable environments with 24/7 monitoring.",
+    siteName: SITE.name,
+    locale: "en_US",
+    images: [{ url: SITE.ogImage, width: 1200, height: 630, alt: `${SITE.name} — ${SITE.tagline}`, type: "image/png" }],
+  },
 }
 
 function HeroSection() {
   return (
     <section className="relative pt-40 pb-32 px-6 sm:px-8 overflow-hidden bg-[#fcf9f8]">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute -top-40 -right-40 w-[700px] h-[700px] bg-[#FF1E41]/5 rounded-full blur-[160px]" />
         <div className="absolute bottom-0 -left-20 w-80 h-80 bg-[#FF1E41]/4 rounded-full blur-[100px]" />
@@ -343,9 +346,28 @@ function CTASection() {
   )
 }
 
+/* ─── STRUCTURED DATA ────────────────────────────────────────────── */
+/* No FAQ section is rendered on this page, so no FAQPage schema is emitted.
+   Offers are derived from the "How We Set Up Your Cloud" steps shown above. */
+
+const serviceLd = serviceSchema({
+  name: "Cloud Infrastructure Services",
+  serviceType: "Cloud Infrastructure",
+  description:
+    "Cloud infrastructure design, migration, DevOps, CI/CD pipelines, and managed cloud services on AWS, GCP, and Azure.",
+  path: PATH,
+  offers: steps.map((s) => ({ name: s.title, description: s.desc })),
+})
+
+const breadcrumbLd = breadcrumbSchema([
+  { name: "Services", path: "/services" },
+  { name: "Cloud Infrastructure", path: PATH },
+])
+
 export default function CloudInfrastructurePage() {
   return (
     <div className="font-body bg-[#fcf9f8] text-[#1c1b1b] leading-relaxed selection:bg-[#FF1E41]/20 selection:text-[#FF1E41]">
+      <JsonLd data={[serviceLd, breadcrumbLd]} />
       <SiteNavbar />
       <main>
         <HeroSection />

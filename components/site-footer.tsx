@@ -8,7 +8,7 @@ export function SiteFooter() {
         <div className="col-span-1">
           <div className="mb-8 flex items-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.svg" alt="Solyio" className="h-20 w-auto mr-3" />
+            <img src="/logo.svg" alt="Solyio" width={1024} height={768} loading="lazy" decoding="async" className="h-20 w-auto mr-3" />
           </div>
           <p className="font-body text-base text-[#5e3f3e] leading-relaxed mb-10 opacity-80">
 AI-powered digital foundations for effortless business growth — web, mobile, cloud, and automation built to scale.          </p>
@@ -25,6 +25,7 @@ AI-powered digital foundations for effortless business growth — web, mobile, c
               { label: "Industries", href: "/industries" },
               { label: "Portfolio",  href: "/portfolio" },
               { label: "Pricing",    href: "/pricing" },
+              { label: "Blog",       href: "/blog" },
               { label: "Contact",    href: "/book" },
             ].map(({ label, href }) => (
               <li key={label}>

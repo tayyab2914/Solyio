@@ -2,12 +2,25 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { SiteNavbar } from "@/components/site-navbar"
 import { SiteFooter } from "@/components/site-footer"
+import { JsonLd } from "@/components/json-ld"
+import { SITE, absoluteUrl, breadcrumbSchema, ogImage } from "@/lib/seo"
+
+const PAGE_DESCRIPTION =
+  "Join the team engineering the future of AI. We're always looking for exceptional minds — check back soon for open roles."
 
 export const metadata: Metadata = {
-  title: "Careers | Solyio",
-  description:
-    "Join the team engineering the future of AI. We're always looking for exceptional minds — check back soon for open roles.",
-  alternates: { canonical: "https://solyio.com/careers" },
+  title: "Careers — Work With Us",
+  description: PAGE_DESCRIPTION,
+  alternates: { canonical: absoluteUrl("/careers") },
+  openGraph: {
+    images: ogImage(),
+    type: "website",
+    locale: "en_US",
+    url: absoluteUrl("/careers"),
+    title: "Careers — Work With Us",
+    description: PAGE_DESCRIPTION,
+    siteName: SITE.name,
+  },
 }
 
 const PERKS = [
@@ -22,6 +35,12 @@ const PERKS = [
 export default function CareersPage() {
   return (
     <div className="font-body bg-[#fcf9f8] text-[#1c1b1b] leading-relaxed selection:bg-[#FF1E41]/20 selection:text-[#FF1E41]">
+      {/*
+        Breadcrumb only. The page states "No vacancies available right now", so
+        there is no JobPosting schema to emit — marking up a placeholder role
+        with no title, location, or date would be structured-data spam.
+      */}
+      <JsonLd data={breadcrumbSchema([{ name: "Careers", path: "/careers" }])} />
       <SiteNavbar />
 
       <main className="pt-32">

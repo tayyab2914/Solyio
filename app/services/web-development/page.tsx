@@ -2,34 +2,47 @@ import Link from "next/link"
 import type { Metadata } from "next"
 import { SiteNavbar } from "@/components/site-navbar"
 import { SiteFooter } from "@/components/site-footer"
+import { JsonLd } from "@/components/json-ld"
+import { SITE, absoluteUrl, breadcrumbSchema, serviceSchema } from "@/lib/seo"
 
 export const metadata: Metadata = {
-  title: "Web Development Services | Solyio — Custom Platforms & SaaS",
+  title: "Web Development & SaaS Platforms",
   description:
     "Solyio builds fast, scalable web platforms, SaaS products, and dashboards tailored to your business. From marketing sites to full-stack applications — built to perform and grow.",
-  alternates: { canonical: "https://solyio.com/services/web-development" },
+  alternates: { canonical: absoluteUrl("/services/web-development") },
+  openGraph: {
+    type: "website",
+    url: absoluteUrl("/services/web-development"),
+    title: "Web Development & SaaS Platforms",
+    description:
+      "Fast, clean, production-ready web platforms — SaaS dashboards, data intelligence tools, marketing sites, and e-commerce experiences built to scale.",
+    siteName: SITE.name,
+    locale: "en_US",
+    images: [{ url: SITE.ogImage, width: 1200, height: 630, alt: `${SITE.name} — ${SITE.tagline}`, type: "image/png" }],
+  },
 }
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  name: "Web Development Services",
-  provider: { "@type": "Organization", name: "Solyio", url: "https://solyio.com" },
-  description:
-    "Custom web development, SaaS platforms, dashboards, and full-stack applications built for performance and scale.",
-  areaServed: "Worldwide",
-  serviceType: "Web Development",
-}
+/* ─── STRUCTURED DATA ────────────────────────────────────────────── */
+
+const SCHEMAS = [
+  serviceSchema({
+    name: "Web Development Services",
+    serviceType: "Web Development",
+    description:
+      "Custom web development, SaaS platforms, dashboards, and full-stack applications built for performance and scale.",
+    path: "/services/web-development",
+  }),
+  breadcrumbSchema([
+    { name: "Services", path: "/services" },
+    { name: "Web Development", path: "/services/web-development" },
+  ]),
+]
 
 /* ─── HERO ───────────────────────────────────────────────────────── */
 
 function HeroSection() {
   return (
     <section className="relative pt-40 pb-32 px-6 sm:px-8 overflow-hidden bg-[#fcf9f8]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute -top-40 -right-40 w-[700px] h-[700px] bg-[#FF1E41]/5 rounded-full blur-[160px]" />
         <div className="absolute bottom-0 -left-20 w-80 h-80 bg-[#FF1E41]/4 rounded-full blur-[100px]" />
@@ -570,6 +583,7 @@ function CTASection() {
 export default function WebDevelopmentPage() {
   return (
     <div className="font-body bg-[#fcf9f8] text-[#1c1b1b] leading-relaxed selection:bg-[#FF1E41]/20 selection:text-[#FF1E41]">
+      <JsonLd data={SCHEMAS} />
       <SiteNavbar />
       <main>
         <HeroSection />

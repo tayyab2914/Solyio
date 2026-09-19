@@ -3,6 +3,8 @@ import { notFound } from "next/navigation"
 import type { Metadata } from "next"
 import { SiteNavbar } from "@/components/site-navbar"
 import { SiteFooter } from "@/components/site-footer"
+import { JsonLd } from "@/components/json-ld"
+import { ORGANIZATION_ID, SITE, absoluteUrl, breadcrumbSchema } from "@/lib/seo"
 
 /* ─── DATA ────────────────────────────────────────────────────────── */
 
@@ -906,6 +908,14 @@ robomarketer: {
 
 type SlugKey = keyof typeof caseStudies
 
+/** "SaaS · AI Coaching" → ["SaaS", "AI Coaching"] */
+function categoryKeywords(category: string): string[] {
+  return category
+    .split("·")
+    .map((part) => part.trim())
+    .filter(Boolean)
+}
+
 export function generateStaticParams() {
   return Object.keys(caseStudies).map((slug) => ({ slug }))
 }
@@ -917,11 +927,31 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params
   const cs = caseStudies[slug as SlugKey]
-  if (!cs) return { title: "Case Study Not Found - Solyio" }
+  if (!cs) return { title: "Case Study Not Found" }
+
+  const url = absoluteUrl(`/portfolio/${slug}`)
+  const title = `${cs.name} Case Study`
+  const image = absoluteUrl(cs.thumbnail)
+
   return {
-    title: `${cs.name} Case Study | Solyio`,
+    title,
     description: cs.tagline,
-    alternates: { canonical: `https://solyio.com/portfolio/${slug}` },
+    keywords: [cs.name, "case study", ...categoryKeywords(cs.category)],
+    alternates: { canonical: url },
+    openGraph: {
+      type: "article",
+      url,
+      title,
+      description: cs.tagline,
+      siteName: SITE.name,
+      images: [{ url: image, alt: `${cs.name} case study` }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: cs.tagline,
+      images: [image],
+    },
   }
 }
 
@@ -936,8 +966,44 @@ export default async function CaseStudyPage({
   const cs = caseStudies[slug as SlugKey]
   if (!cs) notFound()
 
+  const url = absoluteUrl(`/portfolio/${slug}`)
+  const keywords = categoryKeywords(cs.category)
+
+  const caseStudySchema = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "@id": `${url}#case-study`,
+    name: cs.name,
+    headline: `${cs.name} Case Study`,
+    description: cs.tagline,
+    abstract: cs.tagline,
+    genre: "Case Study",
+    inLanguage: "en",
+    url,
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    image: absoluteUrl(cs.thumbnail),
+    about: keywords.map((k) => ({ "@type": "Thing", name: k })),
+    keywords: keywords.join(", "),
+    author: { "@id": ORGANIZATION_ID },
+    creator: { "@id": ORGANIZATION_ID },
+    publisher: { "@id": ORGANIZATION_ID },
+    isPartOf: { "@id": `${absoluteUrl("/portfolio")}#collection` },
+    /* The quote below is rendered verbatim in the hero of this page. */
+    citation: {
+      "@type": "Quotation",
+      text: cs.quote.text,
+      creditText: cs.quote.author,
+    },
+  }
+
+  const crumbs = breadcrumbSchema([
+    { name: "Portfolio", path: "/portfolio" },
+    { name: cs.name, path: `/portfolio/${slug}` },
+  ])
+
   return (
     <div className="font-body bg-white text-black antialiased overflow-x-hidden">
+      <JsonLd data={[caseStudySchema, crumbs]} />
       <SiteNavbar />
 
       <main>
