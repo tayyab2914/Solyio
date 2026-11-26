@@ -42,7 +42,7 @@ const projects = [
     outcome: "35% improvement in ROAS",
     tags: ["Advertising", "Optimization", "AI"],
     clientType: "E-commerce Brand",
-    thumbnail: "/CashAds.png",
+    thumbnail: "/Cashads.png",
   },
   {
     slug: "Upgrr",

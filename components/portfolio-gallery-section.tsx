@@ -25,7 +25,7 @@ const allProjects = [
   {
     slug: "cashads",
     name: "CashAds",
-    thumbnail: "/CashAds.png",
+    thumbnail: "/Cashads.png",
     category: "E-commerce",
     tagline: "AI-optimized advertising that maximizes ROAS",
     outcome: "35% ROAS improvement",
