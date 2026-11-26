@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "next build",
-    "dev": "next dev",
+    "build": "node scripts/build-icon-font.mjs && next build",
+    "dev": "node scripts/build-icon-font.mjs && next dev",
+    "icons": "node scripts/build-icon-font.mjs",
     "lint": "eslint .",
     "start": "next start"
   },

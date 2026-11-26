@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
 import { Geist, Geist_Mono, Space_Grotesk, Manrope } from "next/font/google"
+import localFont from "next/font/local"
 import { Analytics } from "@vercel/analytics/next"
 import { JsonLd } from "@/components/json-ld"
 import { SITE, absoluteUrl, ogImage, organizationSchema, websiteSchema } from "@/lib/seo"
@@ -17,6 +18,19 @@ const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-manrope",
   weight: ["300", "400", "500", "600", "700", "800"],
+})
+// Material Symbols subset holding only the icons the site uses (~27 KB instead of
+// the ~4 MB Google-hosted font), built by scripts/build-icon-font.mjs. next/font
+// self-hosts it, preloads it on every page and caches it long-term, so icons
+// render with the page instead of flashing their names ("arrow_forward") first.
+const materialSymbols = localFont({
+  src: "./fonts/material-symbols-outlined.woff2",
+  variable: "--font-material-symbols",
+  weight: "400",
+  style: "normal",
+  display: "block",
+  preload: true,
+  adjustFontFallback: false,
 })
 
 export const metadata: Metadata = {
@@ -110,12 +124,6 @@ export default function RootLayout({
         {/* Site-wide entity graph only. Page-specific schema (Service, FAQPage,
             BlogPosting, BreadcrumbList) is emitted by the page that renders it. */}
         <JsonLd data={[organizationSchema, websiteSchema]} />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-        />
         <link
           rel="alternate"
           type="application/rss+xml"
@@ -123,7 +131,9 @@ export default function RootLayout({
           href={absoluteUrl("/blog/rss.xml")}
         />
       </head>
-      <body className={`font-sans antialiased ${spaceGrotesk.variable} ${manrope.variable}`}>
+      <body
+        className={`font-sans antialiased ${spaceGrotesk.variable} ${manrope.variable} ${materialSymbols.variable}`}
+      >
         {children}
         <Analytics />
       </body>
