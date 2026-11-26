@@ -232,36 +232,72 @@ function confirmationTemplate(name: string, subject: string, message: string) {
 }
 
 /* ─── Route handler ───────────────────────────────────────────────── */
+const GENERIC_ERROR =
+  "We couldn't send your message right now. Please try again shortly or email us directly at info@solyio.com."
+
 export async function POST(req: Request) {
-  const resend = new Resend(process.env.RESEND_API_KEY)
-  const { name, email, subject, message } = await req.json()
+  const apiKey = process.env.RESEND_API_KEY?.trim()
+  const adminEmail = process.env.ADMIN_EMAIL?.trim()
+
+  if (!apiKey || !adminEmail) {
+    console.error(
+      "[contact] Missing env vars:",
+      [!apiKey && "RESEND_API_KEY", !adminEmail && "ADMIN_EMAIL"].filter(Boolean).join(", "),
+    )
+    return NextResponse.json({ error: GENERIC_ERROR }, { status: 500 })
+  }
+
+  let body: Record<string, unknown>
+  try {
+    body = await req.json()
+  } catch {
+    return NextResponse.json({ error: "Invalid request." }, { status: 400 })
+  }
+
+  const name = String(body.name ?? "").trim()
+  const email = String(body.email ?? "").trim()
+  const subject = String(body.subject ?? "").trim()
+  const message = String(body.message ?? "").trim()
 
   if (!name || !email || !subject || !message) {
     return NextResponse.json({ error: "All fields are required." }, { status: 400 })
   }
 
-  const [adminResult, confirmResult] = await Promise.all([
-    // 1. Notify Solyio team
-    resend.emails.send({
-      from: "Solyio Contact <noreply@solyio.com>",
-      to: process.env.ADMIN_EMAIL!,
-      replyTo: email,
-      subject: `New Inquiry: ${subject}`,
-      html: adminTemplate(name, email, subject, message),
-    }),
-    // 2. Confirm to the sender
-    resend.emails.send({
-      from: "Solyio AI <noreply@solyio.com>",
-      to: email,
-      subject: "We received your inquiry — Solyio",
-      html: confirmationTemplate(name, subject, message),
-    }),
-  ])
+  const resend = new Resend(apiKey)
 
-  if (adminResult.error || confirmResult.error) {
-    const msg = adminResult.error?.message ?? confirmResult.error?.message ?? "Failed to send."
-    return NextResponse.json({ error: msg }, { status: 500 })
+  try {
+    const [adminResult, confirmResult] = await Promise.all([
+      // 1. Notify Solyio team
+      resend.emails.send({
+        from: "Solyio Contact <noreply@solyio.com>",
+        to: adminEmail,
+        replyTo: email,
+        subject: `New Inquiry: ${subject}`,
+        html: adminTemplate(name, email, subject, message),
+      }),
+      // 2. Confirm to the sender
+      resend.emails.send({
+        from: "Solyio AI <noreply@solyio.com>",
+        to: email,
+        subject: "We received your inquiry — Solyio",
+        html: confirmationTemplate(name, subject, message),
+      }),
+    ])
+
+    // The team notification is what matters; without it the inquiry is lost.
+    if (adminResult.error) {
+      console.error("[contact] Admin notification failed:", adminResult.error)
+      return NextResponse.json({ error: GENERIC_ERROR }, { status: 500 })
+    }
+
+    // The team already has the inquiry, so a failed confirmation shouldn't fail the request.
+    if (confirmResult.error) {
+      console.error("[contact] Confirmation email failed:", confirmResult.error)
+    }
+
+    return NextResponse.json({ success: true })
+  } catch (err) {
+    console.error("[contact] Unexpected error sending email:", err)
+    return NextResponse.json({ error: GENERIC_ERROR }, { status: 500 })
   }
-
-  return NextResponse.json({ success: true })
 }

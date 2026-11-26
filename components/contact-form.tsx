@@ -18,18 +18,23 @@ export function ContactForm() {
     setStatus("loading")
     setErrorMsg("")
 
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
-    })
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      })
 
-    if (res.ok) {
-      setStatus("success")
-      setForm({ name: "", email: "", subject: "", message: "" })
-    } else {
-      const data = await res.json().catch(() => ({}))
-      setErrorMsg(data.error ?? "Something went wrong. Please try again.")
+      if (res.ok) {
+        setStatus("success")
+        setForm({ name: "", email: "", subject: "", message: "" })
+      } else {
+        const data = await res.json().catch(() => ({}))
+        setErrorMsg(data.error ?? "Something went wrong. Please try again.")
+        setStatus("error")
+      }
+    } catch {
+      setErrorMsg("Network error. Please check your connection and try again.")
       setStatus("error")
     }
   }
