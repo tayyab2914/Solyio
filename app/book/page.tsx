@@ -127,32 +127,6 @@ function ContactSection() {
             </div>
           </div>
         </div>
-
-        {/* Fast-track CTA card */}
-        <div className="bg-[#1c1b1b] text-[#fcf9f8] rounded-2xl p-10 relative overflow-hidden group">
-          <div className="relative z-10">
-            <h3 className="text-2xl font-headline font-bold mb-4">
-              Prefer a Direct Call?
-            </h3>
-            <p className="text-[#e5e2e1] mb-8 text-sm leading-relaxed">
-              Skip the form. Email us directly and we&apos;ll schedule a
-              call to discuss your project — web, mobile, cloud or{" "}
-              <span className="text-[#bb0029] font-bold">AI automation</span>{" "}
-              — and figure out the best approach together.
-            </p>
-            <a
-              href="mailto:info@solyio.ai"
-              className="inline-flex items-center gap-2 border border-[#e5e2e1]/30 rounded-full px-6 py-3 hover:bg-white hover:text-[#1c1b1b] transition-all font-bold text-sm"
-            >
-              Schedule a Call
-              <span className="material-symbols-outlined text-sm">
-                arrow_forward
-              </span>
-            </a>
-          </div>
-          {/* Glow */}
-          <div className="absolute -right-10 -bottom-10 w-48 h-48 rounded-full bg-[#bb0029]/20 blur-3xl group-hover:scale-150 transition-transform duration-700 pointer-events-none" />
-        </div>
       </div>
     </section>
   )
